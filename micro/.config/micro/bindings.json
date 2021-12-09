@@ -1,0 +1,9 @@
+{
+    "CtrlUnderscore": "lua:comment.comment",
+    "Alt-/": "None",
+    "Ctrl-d": "SpawnMultiCursor",
+    "AltUp": "MoveLinesUp",
+    "AltDown": "MoveLinesDown",
+    "CtrlUp": "HalfPageUp",
+    "CtrlDown": "HalfPageDown",
+}
