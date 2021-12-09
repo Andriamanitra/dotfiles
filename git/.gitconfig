@@ -2,3 +2,5 @@
 	defaultBranch = main
 [pull]
 	ff = only
+[core]
+	excludesfile = ~/.gitignore_global
