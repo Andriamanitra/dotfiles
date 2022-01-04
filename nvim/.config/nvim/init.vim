@@ -1,4 +1,6 @@
 set number
+set tabstop=4
+set shiftwidth=4
 colorscheme afterglow
 
 " move to first non-whitespace with å
