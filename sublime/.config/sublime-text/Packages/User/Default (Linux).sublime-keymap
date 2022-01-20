@@ -1,6 +1,5 @@
 [
-	{
-		"keys": ["alt+m"],
-		"command": "toggle_markdown_preview"
-	}
+	{ "keys": ["alt+m"], "command": "toggle_markdown_preview" },
+	{ "keys": ["alt+up"], "command": "swap_line_up" },
+	{ "keys": ["alt+down"], "command": "swap_line_down" },
 ]
