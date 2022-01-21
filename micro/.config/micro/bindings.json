@@ -2,6 +2,7 @@
     "CtrlUnderscore": "lua:comment.comment",
     "Alt-/": "None",
     "Ctrl-d": "SpawnMultiCursor",
+    "Ctrl-w": "DeleteWordLeft",
     "AltUp": "MoveLinesUp",
     "AltDown": "MoveLinesDown",
     "CtrlUp": "HalfPageUp",
