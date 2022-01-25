@@ -11,12 +11,16 @@ nnoremap <A-k>    :m .-2<CR>
 nnoremap <A-j>    :m .+1<CR>
 nnoremap <A-Up>   :m .-2<CR>
 nnoremap <A-Down> :m .+1<CR>
-inoremap <A-Up>   <Esc>:m .-2<CR>i
-inoremap <A-Down> <Esc>:m .+1<CR>i
+inoremap <A-Up>   <Esc>:m .-2<CR>a
+inoremap <A-Down> <Esc>:m .+1<CR>a
 
 " Ctrl+Q to quit without saving changes
 inoremap <C-q> <esc>:q!<cr>
 nnoremap <C-q> :q!<cr>
+
+" Ctrl+S to save
+inoremap <C-s> <esc>:w<cr>a
+nnoremap <C-s> :w<cr>
 
 " helper function to keep cursor position when indenting
 func! Indent(ind)
