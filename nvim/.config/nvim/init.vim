@@ -14,6 +14,9 @@ nnoremap <A-Down> :m .+1<CR>
 inoremap <A-Up>   <Esc>:m .-2<CR>i
 inoremap <A-Down> <Esc>:m .+1<CR>i
 
+" Ctrl+Q to quit without saving changes
+inoremap <C-q> <esc>:q!<cr>
+nnoremap <C-q> :q!<cr>
 
 " helper function to keep cursor position when indenting
 func! Indent(ind)
