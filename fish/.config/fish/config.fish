@@ -5,7 +5,9 @@ set fish_greeting
 # just pick the first matching one
 set -Ux MAN_POSIXLY_CORRECT
 
-# Add /home/$USER/bin to path
+fish_add_path ~/Packages/cargo/bin
+fish_add_path ~/Packages/npm/bin
+fish_add_path ~/.local/bin
 fish_add_path ~/bin
 
 # Make micro (https://github.com/zyedidia/micro/) the default editor if it is installed
@@ -20,5 +22,22 @@ if type -q bat
 
     # replace "cat" with bat's plain mode (no decorations or paging)
     # NOTE: use ctrl+space instead of space to prevent abbreviation from expanding
-    abbr -a cat bat -pp
+    alias cat="bat -pp"
 end
+
+# If btop is installed
+if type -q btop
+    alias top="btop"
+end
+
+# Package installation locations
+# todo: maybe use .gemrc, .npmrc instead?
+set -Ux CARGO_PATH ~/Packages/cargo
+set -Ux GEM_HOME ~/Packages/gem
+set -Ux GEM_PATH $GEM_HOME:/usr/lib64/ruby/gems/3.0.0
+set -Ux GEM_SPEC_CACHE ~/Packages/gem/spec_cache
+set -Ux JULIA_DEPOT_PATH ~/Packages/julia
+npm config set prefix ~/Packages/npm
+
+# enable fzf key bindings
+fzf_key_bindings
