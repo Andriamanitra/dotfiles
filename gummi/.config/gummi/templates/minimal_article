@@ -1,0 +1,16 @@
+\documentclass[11pt]{article}
+    \title{\textbf{Example title} \\ second line}
+    \author{A. Uthor}
+    \date{}
+    
+    \addtolength{\topmargin}{-3cm}
+    \addtolength{\textheight}{3cm}
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\section{First section}
+Content
+
+\end{document}

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="andarktica" name="ANdarktica" version="1.0">
+  <author>Andriamanitra</author>
+  <_description>Editor color scheme to somewhat match Adapta-Nokto cinnamon theme</_description>
+
+  <color name="black"                       value="#000000"/>
+  <color name="white"                       value="#FFFFFF"/>
+  <color name="brown"                       value="#B08000"/>
+  <color name="red"                         value="#FF0000"/>
+
+  <!-- colors from adapta-nokto -->
+  <color name="bggray1"                     value="#222D32"/>
+  <color name="bggray2"                     value="#243035"/>
+  <color name="bggray3"                     value="#29353B"/>
+  <color name="fggray"                      value="#B9C2C7"/>
+  <color name="hlgreen"                     value="#4DB6AC"/>
+
+  <!-- colors that should work as fg on bggray2 -->
+  <color name="purple"                      value="#d097df"/>
+  <color name="cyan"                        value="#97cadf"/>
+  <color name="green"                       value="#a6df97"/>
+  <color name="orange"                      value="#dfac97"/>
+  <color name="yellow"                      value="#dfd797"/>
+  <color name="gray"                        value="#777777"/>
+  <color name="darkgray"                    value="#555555"/>
+
+  <!-- Global Settings -->
+  <style name="text"                        foreground="#fggray" background="bggray3"/>
+  <style name="selection"                   foreground="bggray1" background="hlgreen"/>
+  <style name="current-line"                background="#354750"/>
+  <style name="line-numbers"                foreground="darkgray" background="bggray2"/>
+  <style name="right-margin"                foreground="black" background="black"/>
+  <style name="bracket-match"               foreground="hlgreen" bold="true"/>
+  <style name="bracket-mismatch"            background="red"/>
+  <style name="draw-spaces"                 foreground="#d2d2d2"/>
+  <style name="background-pattern"          background="#f3f3f3"/>
+  <style name="snippet-focus"               foreground="white" background="gray"/>
+
+  <!-- Search Matching -->
+  <style name="search-match"                background="orange"/>
+
+  <!-- Comments -->
+  <style name="def:comment"                 foreground="gray"/>
+
+  <!-- Others -->
+  <style name="def:preprocessor"            foreground="#2a773d"/>
+  <style name="def:note"                    italic="true"/>
+  <style name="def:error"                   foreground="red" bold="true"/>
+  <style name="def:warning"                 foreground="brown" bold="true"/>
+  <style name="def:net-address"             underline="single"/>
+
+  <!-- Language specific styles -->
+  <style name="latex:display-math"          foreground="purple" bold="true"/>
+  <style name="latex:inline-math"           foreground="purple"/>
+  <style name="latex:math-bound"            bold="true"/>
+  <style name="latex:common-commands"       foreground="green" bold="true"/>
+  <style name="latex:command"               foreground="cyan" bold="true"/>
+  <style name="latex:include"               use-style="latex:common-commands"/>
+
+</style-scheme>
