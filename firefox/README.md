@@ -18,3 +18,4 @@ Convenient links to quickly install the essentials:
 * Switch tabs by scrolling: `toolkit.tabbox.switchByScrolling = true`
 * Middle click to auto scroll: `general.autoScroll = true`
 * Disable pocket (also gets rid of the entry in right click menu): `extensions.pocket.enabled = false`
+* Disable annoying beep when ctrl+f finds nothing: `accessibility.typeaheadfind.enablesound = false`
