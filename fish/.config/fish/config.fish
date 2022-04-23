@@ -17,7 +17,7 @@ type -q micro && set -Ux EDITOR (which micro)
 if type -q bat
 
     # Use bat as a manpager (for syntax highlighting in man pages)
-    set -Ux MANPAGER "sh -c 'col -bx | bat -l man -p'"
+    set -Ux MANPAGER "sh -c \"col -bx | bat -l man -p\""
     set -Ux MANROFFOPT "-c" # get rid of extra formatting characters
 
     # replace "cat" with bat's plain mode (no decorations or paging)
