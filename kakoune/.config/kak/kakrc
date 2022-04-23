@@ -1,0 +1,85 @@
+map -docstring "save file" global normal <c-s> ': write; echo -markup ''{Information}File saved''<ret>'
+map -docstring "save file" global insert <c-s> '<a-;>: write; echo -markup ''{Information}File saved''<ret>'
+map -docstring "erase character" global normal <backspace> 'i<backspace><esc>'
+map -docstring "delete character" global normal <del> 'i<del><esc>'
+map -docstring "quit" global normal <c-q> ': quit!<ret>'
+map -docstring "quit" global insert <c-q> '<a-;>: quit!<ret>'
+map -docstring "search" global normal <c-f> '%s'
+map -docstring "search" global insert <c-f> '<a-;>%s'
+map -docstring "run command" global insert <c-e> '<a-;>:'
+map -docstring "run command" global normal <c-e> ':'
+map -docstring "erase word" global insert <c-w> '<esc><a-t> di'
+map -docstring "move line up" global normal <a-up> ': move-lines-up<ret>'
+map -docstring "move line up" global insert <a-up> '<esc>: move-lines-up<ret>i'
+map -docstring "move line down" global normal <a-down> ': move-lines-down<ret>'
+map -docstring "move line down" global insert <a-down> '<esc>: move-lines-down<ret>i'
+map -docstring "add cursor on current word and jump to the next match" global normal '<c-d>' ': select-or-add-cursor<ret>'
+map -docstring "previous buffer" global normal <a-,> ': buffer-previous<ret>'
+map -docstring "next buffer" global normal <a-.> ': buffer-next<ret>'
+
+map global normal <c-right> '5l'
+map global normal <c-left> '5h'
+map global normal <c-up> '5k'
+map global normal <c-down> '5j'
+
+map global insert <s-left> '<esc>H'
+map global insert <s-right> '<esc>L'
+map global insert <s-up> '<esc>K'
+map global insert <s-down> '<esc>J'
+
+# use tab and shift tab to autocomplete
+hook global InsertCompletionShow .* %{
+    map window insert <tab> <c-n>
+    map window insert <s-tab> <c-p>
+}
+hook global InsertCompletionHide .* %{
+    unmap window insert <tab> <c-n>
+    unmap window insert <s-tab> <c-p>
+}
+
+define-command uppercase -docstring "transform selection to uppercase" %{
+    execute-keys -draft '~'
+}
+
+define-command lowercase -docstring "transform selection to lowercase" %{
+    execute-keys -draft '`'
+}
+
+define-command swapcase -docstring "swaps casing on the selection" %{
+    execute-keys -draft '<a-`>'
+}
+
+define-command -override move-lines-down -docstring "move line down" %{
+    execute-keys -draft '<a-x><a-_><a-:>Z;ezj<a-x>dzP'
+}
+
+define-command -override move-lines-up -docstring "move line up" %{
+    execute-keys -draft '<a-x><a-_><a-:><a-;>Z;bzk<a-x>dzp'
+}
+
+define-command -hidden -docstring "select a word under cursor, or add cursor on next occurrence of current selection" \
+select-or-add-cursor %{
+    try %{
+        execute-keys "<a-k>\A.\z<ret>"
+        execute-keys -save-regs '' "_<a-i>w*"
+    } catch %{
+        execute-keys -save-regs '' "_*<s-n>"
+    } catch nop
+}
+
+# Plugins
+evaluate-commands %sh{
+    plugins="$kak_config/plugins"
+    mkdir -p "$plugins"
+    [ ! -e "$plugins/plug.kak" ] && \
+        git clone -q https://github.com/andreyorst/plug.kak.git "$plugins/plug.kak"
+    printf "%s\n" "source '$plugins/plug.kak/rc/plug.kak'"
+}
+plug "andreyorst/plug.kak" noload
+plug "andreyorst/powerline.kak" defer powerline %{
+    powerline-format global "mode_info bufname line_column filetype git"
+    powerline-separator bars
+} config %{
+    powerline-start
+}
+
