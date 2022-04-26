@@ -7,4 +7,5 @@
     "AltDown": "MoveLinesDown",
     "CtrlUp": "HalfPageUp",
     "CtrlDown": "HalfPageDown",
+    "F5": "lua:executor.execute"
 }
