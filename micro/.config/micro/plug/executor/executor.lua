@@ -37,8 +37,8 @@ function execute()
 
   local filepath = micro.CurPane().Buf.Path
   local runcmd = string.format(cmd_template, filepath)
-  local wait_for_user = false
+  local wait_for_user = true
   local return_output = false
   shell.RunInteractiveShell(runcmd, wait_for_user, return_output)
-  info("Executed '%s'", runcmd)
+  info("Executed \"%s\"", runcmd)
 end
