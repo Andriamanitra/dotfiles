@@ -10,6 +10,9 @@ local executor_map = {
   ["racket"]  = "racket '%s'",
   ["ruby"]    = "ruby '%s'",
 }
+-- if override_template is set with set_exec_template command,
+-- its value is used instead of executor_map
+local override_template = nil
 
 local micro = import("micro")
 local config = import("micro/config")
@@ -17,6 +20,11 @@ local shell = import("micro/shell")
 
 function init()
   config.MakeCommand("exec", execute, config.NoComplete)
+  config.MakeCommand("set_exec_template", set_template, config.NoComplete)
+end
+
+function set_template(bp, args)
+  override_template = args[1]
 end
 
 function info(msg, ...)
@@ -28,9 +36,11 @@ end
 
 function execute()
   local ftype = micro.CurPane().Buf:FileType()
-  local cmd_template = executor_map[ftype];
+  local cmd_template = executor_map[ftype]
 
-  if cmd_template == nil then
+  if override_template then
+    cmd_template = override_template
+  elseif cmd_template == nil then
     info("can't exec, unknown filetype '%s' :(", ftype)
     return
   end
