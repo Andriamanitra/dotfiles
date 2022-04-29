@@ -7,5 +7,7 @@
     "AltDown": "MoveLinesDown",
     "CtrlUp": "HalfPageUp",
     "CtrlDown": "HalfPageDown",
-    "F5": "lua:executor.execute"
+    "F5": "lua:executor.execute",
+    "Alt-z": "command-edit:textfilter ",
+    "Alt-Z": "command-edit:textfilter ",
 }

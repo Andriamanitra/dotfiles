@@ -1,14 +1,16 @@
 VERSION = "1.0.0"
 
 local executor_map = {
-  ["c"]       = "make run",
-  ["crystal"] = "crystal run '%s'",
-  ["d"]       = "dmd -run '%s'",
-  ["julia"]   = "julia '%s'",
-  ["haskell"] = "runhaskell '%s'",
-  ["python"]  = "python3 '%s'",
-  ["racket"]  = "racket '%s'",
-  ["ruby"]    = "ruby '%s'",
+  ["c"]          = "make run",
+  ["crystal"]    = "crystal run '%s'",
+  ["d"]          = "dmd -run '%s'",
+  ["javascript"] = "node '%s'",
+  ["julia"]      = "julia '%s'",
+  ["haskell"]    = "runhaskell '%s'",
+  ["html"]       = "xdg-open '%s'",
+  ["python"]     = "python3.10 '%s'",
+  ["racket"]     = "racket '%s'",
+  ["ruby"]       = "ruby '%s'",
 }
 -- if override_template is set with set_exec_template command,
 -- its value is used instead of executor_map
