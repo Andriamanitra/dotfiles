@@ -36,8 +36,9 @@ set -Ux CARGO_PATH ~/Packages/cargo
 set -Ux GEM_HOME ~/Packages/gem
 set -Ux GEM_PATH $GEM_HOME:/usr/lib64/ruby/gems/3.0.0
 set -Ux GEM_SPEC_CACHE ~/Packages/gem/spec_cache
+set -Ux GOPATH ~/Packages/go
 set -Ux JULIA_DEPOT_PATH ~/Packages/julia
-npm config set prefix ~/Packages/npm
+type -q npm && npm config set prefix ~/Packages/npm
 
 # enable fzf key bindings
-fzf_key_bindings
+type -q fzf && fzf_key_bindings
