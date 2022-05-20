@@ -1,5 +1,6 @@
 {
     "autoclose": false,
     "mkparents": true,
+    "parsecursor": true,
     "tabstospaces": true
 }
