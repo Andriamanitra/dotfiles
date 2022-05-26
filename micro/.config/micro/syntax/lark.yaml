@@ -1,0 +1,47 @@
+filetype: lark
+
+detect:
+    filename: "\\.lark$"
+
+rules:
+    # Rule definition
+    - identifier: "\\b[a-z0-9_]+\\b"
+    # Terminal definition
+    - constant: "\\b[A-Z0-9_]+\\b"
+
+    # Keywords
+    - statement: "%ignore|%import|%declare|%override|%extend"
+
+    - symbol.operator: ":"
+    - symbol.operator: "\\|"
+    - symbol.operator: "~"
+    - symbol.operator: "\\.\\."
+
+    # Quantifiers
+    - symbol.operator: "\\?|\\*|\\+"
+
+    # Optional alias
+    - symbol.operator: "->"
+
+    - symbol.brackets: "[\\(\\)\\[\\]]"
+    
+    # Strings
+    - constant.string: 
+        start: "\""
+        end: "\""
+        skip: "\\\\."
+        rules: 
+            - constant.specialChar: "\\\\."
+
+    - comment: 
+        start: "//"
+        end: "$"
+        rules: []
+
+    # Regular expressions
+    - special:
+        start: "/"
+        end: "/[aiLmsux]*"
+        skip: "\\\\."
+        rules: 
+            - constant.specialChar: "\\\\."
