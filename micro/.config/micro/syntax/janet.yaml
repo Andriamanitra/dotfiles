@@ -7,15 +7,18 @@ rules:
     - default: "[a-z-?]+"
     - constant: "\\b(nil|true|false)\\b"
     - default: "[a-z-]+[?]"
-    - identifier: "(defn|defmacro)\\s+\\S+"
-    - lightblue: "(def|var)\\s+[A-Za-z\\-0-9?/_]+"
-    - statement: "\\b(def|var|defn|defmacro)\\b"
+    - identifier: "(defn-?|defmacro-?)\\s+[^\\s()']+"
+    - lightblue: "(def-?|var-?)\\s+[A-Za-z\\-0-9?/_]+"
+    - statement: "\\b(def-?|var-?|let-?|defn-?|defmacro-?)\\s"
+    - statement: "\\bimport\\b"
     - symbol.operator: "@"
     - symbol.brackets: "([(){}]|\\[|\\])"
-    
-    - salmon: ":[A-Za-z0-9\\-:]+"
-    - purple: "\\b(if|do|cond|try|forever|fn|while|quote|quasiquote|unquote|splice|set|break|print)\\b"
 
+    - special: "\\B&(opt|keys)?"
+    - salmon: ":[A-Za-z0-9\\-:]+"
+    - purple: "\\(\\b(if-not|if|do|cond|try|forever|loop|fn|while|quote|quasiquote|unquote|splice|set|get|break|print|when|match|with)\\b"
+    - statement: "\\bif-let\\b"
+    - default: "\\("
     # decimal number
     - constant.number: "[-+]?([0-9_]+|[0-9_]+\\.[0-9_]*|\\.[0-9_]+)([eE&][+-]?[0-9]+)?"
     # hexadecimal number
@@ -26,7 +29,12 @@ rules:
     - constant.string:
         start: "\""
         end: "\""
-        rules: []
+        skip: "\\\\."
+        rules:
+            - constant.specialChar: "\\\\x[0-9A-Fa-f]{2}"
+            - constant.specialChar: "\\\\u[0-9A-Fa-f]{4}"
+            - constant.specialChar: "\\\\U[0-9A-Fa-f]{6}"
+            - constant.specialChar: "\\\\."
 
     - constant.string:
         start: "```"
