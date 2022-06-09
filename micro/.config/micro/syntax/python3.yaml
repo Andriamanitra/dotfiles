@@ -35,27 +35,44 @@ rules:
     - constant.string:
         start: "\"\"\""
         end: "\"\"\""
-        rules: []
+        rules:
+            - constant.specialChar: "\\\\['\"nrtbf\\\\]"
+            - constant.specialChar: "\\\\0[0-7]{0,2}"
+            - constant.specialChar: "\\\\x[0-9A-Fa-f]{2}"
+            - constant.specialChar: "\\\\u[0-9A-Fa-f]{4}"
+            - constant.specialChar: "\\\\U[0-9A-Fa-f]{8}"
 
     - constant.string:
         start: "'''"
         end: "'''"
-        rules: []
-
+        rules:
+            - constant.specialChar: "\\\\['\"nrtbf\\\\]"
+            - constant.specialChar: "\\\\0[0-7]{0,2}"
+            - constant.specialChar: "\\\\x[0-9A-Fa-f]{2}"
+            - constant.specialChar: "\\\\u[0-9A-Fa-f]{4}"
+            - constant.specialChar: "\\\\U[0-9A-Fa-f]{8}"
 
     - constant.string:
         start: "\""
         end: "(\"|$)"
         skip: "\\\\."
         rules:
-            - constant.specialChar: "\\\\."
+            - constant.specialChar: "\\\\['\"nrtbf\\\\]"
+            - constant.specialChar: "\\\\0[0-7]{0,2}"
+            - constant.specialChar: "\\\\x[0-9A-Fa-f]{2}"
+            - constant.specialChar: "\\\\u[0-9A-Fa-f]{4}"
+            - constant.specialChar: "\\\\U[0-9A-Fa-f]{8}"
 
     - constant.string:
         start: "'"
         end: "('|$)"
         skip: "\\\\."
         rules:
-            - constant.specialChar: "\\\\."
+            - constant.specialChar: "\\\\['\"nrtbf\\\\]"
+            - constant.specialChar: "\\\\0[0-7]{0,2}"
+            - constant.specialChar: "\\\\x[0-9A-Fa-f]{2}"
+            - constant.specialChar: "\\\\u[0-9A-Fa-f]{4}"
+            - constant.specialChar: "\\\\U[0-9A-Fa-f]{8}"
 
     # f-strings
     - constant.string:
@@ -63,7 +80,11 @@ rules:
         end: "(\"|$)"
         skip: "\\\\."
         rules:
-            - constant.specialChar: "\\\\."
+            - constant.specialChar: "\\\\['\"nrtbf\\\\]"
+            - constant.specialChar: "\\\\0[0-7]{0,2}"
+            - constant.specialChar: "\\\\x[0-9A-Fa-f]{2}"
+            - constant.specialChar: "\\\\u[0-9A-Fa-f]{4}"
+            - constant.specialChar: "\\\\U[0-9A-Fa-f]{8}"
             - constant.specialChar:
                 start: "[{]"
                 end: "(:.+)?[}]"
@@ -74,9 +95,12 @@ rules:
     - constant.string:
         start: "f\"\"\""
         end: "(\"\"\"|$)"
-        skip: "\\\\."
         rules:
-            - constant.specialChar: "\\\\."
+            - constant.specialChar: "\\\\['\"nrtbf\\\\]"
+            - constant.specialChar: "\\\\0[0-7]{0,2}"
+            - constant.specialChar: "\\\\x[0-9A-Fa-f]{2}"
+            - constant.specialChar: "\\\\u[0-9A-Fa-f]{4}"
+            - constant.specialChar: "\\\\U[0-9A-Fa-f]{8}"
             - constant.specialChar:
                 start: "[{]"
                 end: "(:.+)?[}]"
@@ -88,7 +112,11 @@ rules:
         end: "('|$)"
         skip: "\\\\."
         rules:
-            - constant.specialChar: "\\\\."
+            - constant.specialChar: "\\\\['\"nrtbf\\\\]"
+            - constant.specialChar: "\\\\0[0-7]{0,2}"
+            - constant.specialChar: "\\\\x[0-9A-Fa-f]{2}"
+            - constant.specialChar: "\\\\u[0-9A-Fa-f]{4}"
+            - constant.specialChar: "\\\\U[0-9A-Fa-f]{8}"
             - constant.specialChar:
                 start: "[{]"
                 end: "(:.+)?[}]"
@@ -99,9 +127,12 @@ rules:
     - constant.string:
         start: "f'''"
         end: "('''|$)"
-        skip: "\\\\."
         rules:
-            - constant.specialChar: "\\\\."
+            - constant.specialChar: "\\\\['\"nrtbf\\\\]"
+            - constant.specialChar: "\\\\0[0-7]{0,2}"
+            - constant.specialChar: "\\\\x[0-9A-Fa-f]{2}"
+            - constant.specialChar: "\\\\u[0-9A-Fa-f]{4}"
+            - constant.specialChar: "\\\\U[0-9A-Fa-f]{8}"
             - constant.specialChar:
                 start: "[{]"
                 end: "(:.+)?[}]"
