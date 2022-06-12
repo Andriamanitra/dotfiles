@@ -5,7 +5,7 @@ detect:
     header: "^#!.*/(env +)?python(3)?$"
 
 rules:
-    # built-in objects
+      # built-in objects
     - constant: "\\b(Ellipsis|None|self|cls|True|False)\\b"
       # built-in attributes
     - constant: "\\b(__bases__|__builtin__|__class__|__debug__|__dict__|__doc__|__file__|__members__|__methods__|__name__|__self__)\\b"
@@ -20,10 +20,10 @@ rules:
       # keywords
     - statement: "\\b(and|as|assert|async|await|break|case|class|continue|def|del|elif|else|except|finally|for|from|global|if|import|in|is|lambda|match|nonlocal|not|or|pass|raise|return|try|while|with|yield)\\b"
       # operators
-    - symbol.operator: "([~.:;,+*|=!\\%@]|<|>|/|-|&)"
+    - symbol.operator: "([~.:;,+*|=!\\%]|<|>|/|-|&)"
     - symbol.operator: "\\^"
       # decorators
-    - brightgreen: "^@[\\w]+([.]\\w+)*"
+    - brightgreen: "@[\\w]+([.]\\w+)*"
       # parentheses
     - symbol.brackets: "([(){}]|\\[|\\])"
       # numbers
