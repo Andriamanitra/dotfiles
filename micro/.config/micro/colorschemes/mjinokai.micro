@@ -28,6 +28,7 @@ color-link gutter-error "#CB4B16,#282828"
 color-link gutter-warning "#E6DB74,#282828"
 color-link symbol.brackets "default"
 color-link symbol.tag "#AE81FF,#282828"
+color-link error-message "#D70000"
 
 # custom additions
 color-link diff-added "#00AF00"
