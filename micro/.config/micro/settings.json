@@ -1,5 +1,7 @@
 {
     "autoclose": false,
+    "colorscheme": "mjinokai",
+    "diffgutter": true,
     "mkparents": true,
     "parsecursor": true,
     "tabstospaces": true
