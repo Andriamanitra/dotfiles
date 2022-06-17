@@ -8,6 +8,7 @@
     "CtrlUp": "HalfPageUp",
     "CtrlDown": "HalfPageDown",
     "F5": "lua:executor.execute",
+    "F6": "command:reload",
     "Alt-z": "command-edit:textfilter ",
     "Alt-Z": "command-edit:textfilter ",
 }
