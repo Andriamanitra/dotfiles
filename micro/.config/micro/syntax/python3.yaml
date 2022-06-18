@@ -87,7 +87,7 @@ rules:
             - constant.specialChar: "\\\\U[0-9A-Fa-f]{8}"
             - constant.specialChar:
                 start: "[{]"
-                end: "(:.+)?[}]"
+                end: "[}]"
                 skip: ""
                 rules:
                     - default: "."
@@ -103,7 +103,7 @@ rules:
             - constant.specialChar: "\\\\U[0-9A-Fa-f]{8}"
             - constant.specialChar:
                 start: "[{]"
-                end: "(:.+)?[}]"
+                end: "[}]"
                 skip: ""
                 rules:
                     - default: "."
@@ -119,7 +119,7 @@ rules:
             - constant.specialChar: "\\\\U[0-9A-Fa-f]{8}"
             - constant.specialChar:
                 start: "[{]"
-                end: "(:.+)?[}]"
+                end: "[}]"
                 skip: ""
                 rules:
                     - default: "."
@@ -135,7 +135,7 @@ rules:
             - constant.specialChar: "\\\\U[0-9A-Fa-f]{8}"
             - constant.specialChar:
                 start: "[{]"
-                end: "(:.+)?[}]"
+                end: "[}]"
                 skip: ""
                 rules:
                     - default: "."
