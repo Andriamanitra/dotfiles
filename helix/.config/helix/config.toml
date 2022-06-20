@@ -1,0 +1,47 @@
+theme = "my_theme"
+
+[editor]
+auto-pairs = false
+scrolloff = 8
+middle-click-paste = false
+gutters = ["diagnostics", "line-numbers"]
+
+[editor.file-picker]
+hidden = false
+
+[keys.normal]
+C-s = ":w"
+C-q = ":q!"
+w = "move_line_up"
+a = "move_char_left"
+s = "move_line_down"
+d = "move_char_right"
+W = ["move_line_up", "extend_line"]
+A = "move_prev_word_start"
+S = "extend_line"
+D = "move_next_word_end"
+C-w = ["move_prev_word_start", "delete_selection"]
+C-a = ["move_prev_word_start", "collapse_selection"]
+C-d = ["move_next_word_end", "collapse_selection"]
+r = "replace"
+C-v = "paste_before"
+C-c = "yank"
+c = "change_selection"
+e = ["move_prev_word_start", "move_next_word_end"]
+E = ["move_prev_long_word_start", "move_next_long_word_end"]
+q = "delete_selection" 
+tab = "indent"
+S-tab = "unindent"
+C-left = ["move_prev_word_start", "collapse_selection"]
+C-right = ["move_next_word_end", "collapse_selection"]
+C-p = "command_palette"
+C-e = "command_mode"
+C-f = "search"
+h = "move_prev_long_word_start"
+j = "move_prev_word_start"
+k = "move_next_word_end"
+l = "move_next_long_word_end"
+I = "prepend_to_line"
+X = "toggle_comments"
+x = { w = "increment", s = "decrement", u = "switch_to_uppercase", l = "switch_to_lowercase", k = "switch_case", f = "select_regex", d = "split_selection", j = "join_selections", x = "toggle_comments" }
+
