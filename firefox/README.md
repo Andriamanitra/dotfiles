@@ -19,3 +19,4 @@ Convenient links to quickly install the essentials:
 * Middle click to auto scroll: `general.autoScroll = true`
 * Disable pocket (also gets rid of the entry in right click menu): `extensions.pocket.enabled = false`
 * Disable annoying beep when ctrl+f finds nothing: `accessibility.typeaheadfind.enablesound = false`
+* Always show punycode (prevent [IDN homograph attacks](https://en.wikipedia.org/wiki/IDN_homograph_attack)): `network.IDN_show_punycode = true`
