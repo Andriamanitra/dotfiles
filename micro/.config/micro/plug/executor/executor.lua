@@ -11,6 +11,8 @@ local executor_map = {
   ["python"]     = "python3.10 '%s'",
   ["racket"]     = "racket '%s'",
   ["ruby"]       = "ruby '%s'",
+  ["rust"]       = "cargo run",
+  ["shell"]      = "sh '%s'",
 }
 -- if override_template is set with set_exec_template command,
 -- its value is used instead of executor_map
