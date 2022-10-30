@@ -1,0 +1,20 @@
+blocks:
+    - permission
+    - name
+    - size
+    - date
+
+date: relative
+
+hyperlink: auto
+
+size: short
+
+sorting:
+    column: size
+    dir-grouping: first
+
+symlink-arrow: "->"
+
+ignore-globs:
+    - .git
