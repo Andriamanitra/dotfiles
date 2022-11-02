@@ -1,11 +1,13 @@
 VERSION = "1.0.0"
 
 local executor_map = {
+  ["awk"]        = "awk -f '%s'",
   ["c"]          = "make run",
   ["crystal"]    = "crystal run '%s'",
   ["d"]          = "dmd -run '%s'",
   ["javascript"] = "node '%s'",
   ["julia"]      = "julia '%s'",
+  ["lisp"]       = "sbcl --script '%s'",
   ["haskell"]    = "runhaskell '%s'",
   ["html"]       = "xdg-open '%s'",
   ["python"]     = "python3.10 '%s'",
