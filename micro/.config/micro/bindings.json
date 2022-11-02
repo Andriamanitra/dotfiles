@@ -11,4 +11,6 @@
     "F6": "command:reload",
     "Alt-z": "command-edit:textfilter ",
     "Alt-Z": "command-edit:textfilter ",
+    "Alt-:": "NextSplit",
+    "Alt-;": "PreviousSplit"
 }
