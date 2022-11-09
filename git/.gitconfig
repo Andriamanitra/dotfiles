@@ -4,3 +4,6 @@
 	ff = only
 [core]
 	excludesfile = ~/.gitignore_global
+[alias]
+	undo = reset HEAD^
+	unstage = reset HEAD --
