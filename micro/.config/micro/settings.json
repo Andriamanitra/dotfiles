@@ -1,4 +1,10 @@
 {
+    "*.cr": {
+        "tabsize": 2
+    },
+    "*.rb": {
+        "tabsize": 2
+    },
     "autoclose": false,
     "colorscheme": "mjinokai",
     "diffgutter": true,
