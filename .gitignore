@@ -3,4 +3,6 @@
 
 /sublime/.config/sublime-text/Backup/
 /sublime/.config/sublime-text/Installed Packages/
-/sublime/.config/sublime-text/Packages/
+/sublime/.config/sublime-text/Packages/*/
+!/sublime/.config/sublime-text/Packages/User/
+/sublime/.config/sublime-text/Local/

@@ -1,0 +1,14 @@
+{
+	"target": "terminus_exec",
+	"cancel": "terminus_cancel_build",
+	"working_dir": "$project_path",
+	"title": "Haskell Output",
+	"focus": true,
+	"auto_close": false,
+	"timeit": true,
+
+	"cmd": ["cabal", "run"],
+
+	"file_regex": "^(...*?):([0-9]*):?([0-9]*)",
+	"selector": "source.haskell"
+}

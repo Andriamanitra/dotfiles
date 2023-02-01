@@ -2,4 +2,30 @@
 	{ "keys": ["alt+m"], "command": "toggle_markdown_preview" },
 	{ "keys": ["alt+up"], "command": "swap_line_up" },
 	{ "keys": ["alt+down"], "command": "swap_line_down" },
+	{ "keys": ["f5"], "command": "build"},
+	{ "keys": ["f6"], "command": "cancel_build"},
+	{ "keys": ["ctrl+["], "command": "prompt_select_workspace" },
+	{
+		"keys": ["ctrl+e"],
+		"command": "show_overlay",
+		"args": {"overlay": "command_palette"}
+	},
+	{
+		"keys": ["ctrl+t"],
+		"command": "terminus_exec",
+		"args": {
+			"cmd": "/usr/bin/fish",
+			"focus": true,
+			"cwd": "${file_path:${folder}}",
+			"auto_close": true,
+		}
+	},
+	{
+		"keys": ["enter"],
+		"command": "terminus_close",
+		"context": [
+			{ "key": "terminus_view" },
+			{ "key": "terminus_view.finished", "operator": "equal", "operand": true }
+		]
+	},
 ]

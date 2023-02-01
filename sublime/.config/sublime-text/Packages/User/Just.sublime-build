@@ -1,0 +1,4 @@
+{
+	"shell_cmd": "just run",
+	"keyfiles": ["justfile"]
+}
