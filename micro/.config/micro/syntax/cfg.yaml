@@ -1,0 +1,7 @@
+filetype: ini
+
+detect:
+    filename: "\\.cfg$"
+
+rules:
+    - include: "ini"

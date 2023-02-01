@@ -1,16 +1,17 @@
 {
-    "CtrlUnderscore": "lua:comment.comment",
     "Alt-/": "None",
+    "Alt-:": "NextSplit",
+    "Alt-;": "PreviousSplit",
+    "Alt-Z": "command-edit:textfilter ",
+    "Alt-z": "command-edit:textfilter ",
+    "AltDown": "MoveLinesDown",
+    "AltUp": "MoveLinesUp",
     "Ctrl-d": "SpawnMultiCursor",
     "Ctrl-w": "DeleteWordLeft",
-    "AltUp": "MoveLinesUp",
-    "AltDown": "MoveLinesDown",
-    "CtrlUp": "HalfPageUp",
+    "CtrlAlt-q": "QuitAll",
     "CtrlDown": "HalfPageDown",
+    "CtrlUnderscore": "lua:comment.comment",
+    "CtrlUp": "HalfPageUp",
     "F5": "lua:executor.execute",
-    "F6": "command:reload",
-    "Alt-z": "command-edit:textfilter ",
-    "Alt-Z": "command-edit:textfilter ",
-    "Alt-:": "NextSplit",
-    "Alt-;": "PreviousSplit"
+    "F6": "command:reload"
 }

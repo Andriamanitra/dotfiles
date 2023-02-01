@@ -9,7 +9,9 @@
     "colorscheme": "mjinokai",
     "diffgutter": true,
     "divchars": "  ",
+    "eofnewline": false,
     "mkparents": true,
     "parsecursor": true,
+    "softwrap": true,
     "tabstospaces": true
 }
