@@ -2,6 +2,10 @@
 	"theme": "Adaptive.sublime-theme",
 	"color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
 	"font_size": 10,
+	"auto_match_enabled": false,
+	// auto-complete with Tab instead of Enter
+	"auto_complete_commit_on_tab": true,
+	"hot_exit": "disabled",
 	"ignored_packages":
 	[
 		"Vintage",
