@@ -1,0 +1,185 @@
+[
+    // My commands
+    { "caption": "Make temporary file", "command": "prompt_temp_file"},
+    { "caption": "Terminus: Open", "command": "terminus_open"},
+    { "caption": "Copy File Path", "command": "copy_path" },
+    {
+        "caption": "Open Containing Folder",
+        "command": "open_dir",
+        "args": { "dir": "$file_path" }
+    },
+
+    // The rest are cherry-picked from Sublime-Missing-Palette-Commands
+
+    // File
+    { "command": "new_file", "caption": "File: New File" },
+    { "command": "prompt_open_file", "caption": "File: Open File" },
+    { "command": "reopen_last_file", "caption": "File: Reopen Closed File" },
+    { "command": "save", "caption": "File: Save" },
+    { "command": "prompt_save_as", "caption": "File: Save As…" },
+    { "command": "close", "caption": "File: Close" },
+    { "command": "new_window", "caption": "New Window" },
+    { "command": "close_window", "caption": "Close Window" },
+    { "command": "exit", "caption": "Exit Sublime Text" },
+
+    // Selection
+    { "caption": "Selection: Split into Lines", "command": "split_selection_into_lines" },
+    { "caption": "Selection: Single Selection", "command": "single_selection" },
+    { "caption": "Selection: Invert Selection", "command": "invert_selection" },
+    { "caption": "Selection: Expand to Tag", "command": "expand_selection", "args": {"to": "tag"}},
+    { "caption": "Selection: Undo Selection", "command": "soft_undo" },
+    { "caption": "Selection: Redo Selection", "command": "soft_redo" },
+
+    // Edit
+    { "caption": "Edit: Undo", "command": "undo" },
+    { "caption": "Edit: Redo or Repeat", "command": "redo_or_repeat" },
+    { "caption": "Edit: Copy", "command": "copy" },
+    { "caption": "Edit: Cut", "command": "cut" },
+    { "caption": "Edit: Paste", "command": "paste" },
+    { "caption": "Edit: Paste and Indent", "command": "paste_and_indent" },
+    { "caption": "Edit: Paste from History", "command": "paste_from_history" },
+    { "caption": "Indentation: Indent", "command": "indent" },
+    { "caption": "Indentation: Unindent", "command": "unindent" },
+    { "caption": "Edit: Swap Line Up", "command": "swap_line_up" },
+    { "caption": "Edit: Swap Line Down", "command": "swap_line_down" },
+    { "caption": "Edit: Duplicate Line", "command": "duplicate_line" },
+    { "caption": "Edit: Delete Line", "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
+    { "caption": "Edit: Join Lines", "command": "join_lines" },
+    { "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"}, "caption": "Edit: Delete Line" },
+    { "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete to Hard EOL.sublime-macro"}, "caption": "Edit: Delete to End" },
+    { "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete to Hard BOL.sublime-macro"}, "caption": "Edit: Delete to Beginning" },
+    { "command": "set_mark", "caption": "Mark: Set Mark" },
+    { "command": "select_to_mark", "caption": "Mark: Select to Mark" },
+    { "command": "delete_to_mark", "caption": "Mark: Delete to Mark" },
+    { "command": "swap_with_mark", "caption": "Mark: Swap with Mark" },
+    { "command": "clear_bookmarks", "args": {"name": "mark"}, "caption": "Mark: Clear Mark" },
+    { "caption": "Code Folding: Fold", "command": "fold" },
+    { "caption": "Code Folding: Fold All", "command": "fold_all" },
+    { "caption": "Code Folding: Unfold", "command": "unfold" },
+
+    // Find
+    { "command": "show_panel", "args": {"panel": "find", "reverse": false}, "caption": "Find…" },
+    { "command": "show_panel", "args": {"panel": "replace", "reverse": false}, "caption": "Replace…" },
+    { "command": "replace_next", "caption": "Replace Next" },
+    { "command": "find_under", "caption": "Quick Find" },
+    { "command": "find_all_under", "caption": "Quick Find All" },
+    { "command": "show_panel", "args": {"panel": "find_in_files"}, "caption": "Find in Files…" },
+
+    // View
+    { "command": "show_panel", "args": {"panel": "console"}, "caption": "View: Show Console" },
+    { "command": "toggle_full_screen", "caption": "View: Toggle Full Screen"},
+    { "command": "toggle_distraction_free", "caption": "View: Toggle Distraction Free Mode" },
+    {
+        "caption": "Layout: Single",
+        "command": "set_layout",
+        "args":
+        {
+            "cols": [0.0, 1.0],
+            "rows": [0.0, 1.0],
+            "cells": [[0, 0, 1, 1]]
+        }
+    },
+    {
+        "caption": "Layout: 2 Columns",
+        "command": "set_layout",
+        "args":
+        {
+            "cols": [0.0, 0.5, 1.0],
+            "rows": [0.0, 1.0],
+            "cells": [[0, 0, 1, 1], [1, 0, 2, 1]]
+        }
+    },
+    {
+        "caption": "Layout: 3 Columns",
+        "command": "set_layout",
+        "args":
+        {
+            "cols": [0.0, 0.33, 0.66, 1.0],
+            "rows": [0.0, 1.0],
+            "cells": [[0, 0, 1, 1], [1, 0, 2, 1], [2, 0, 3, 1]]
+        }
+    },
+    {
+        "caption": "Layout: 4 Columns",
+        "command": "set_layout",
+        "args":
+        {
+            "cols": [0.0, 0.25, 0.5, 0.75, 1.0],
+            "rows": [0.0, 1.0],
+            "cells": [[0, 0, 1, 1], [1, 0, 2, 1], [2, 0, 3, 1], [3, 0, 4, 1]]
+        }
+    },
+    {
+        "caption": "Layout: 2 Rows",
+        "command": "set_layout",
+        "args":
+        {
+            "cols": [0.0, 1.0],
+            "rows": [0.0, 0.5, 1.0],
+            "cells": [[0, 0, 1, 1], [0, 1, 1, 2]]
+        }
+    },
+    {
+        "caption": "Layout: 3 Rows",
+        "command": "set_layout",
+        "args":
+        {
+            "cols": [0.0, 1.0],
+            "rows": [0.0, 0.33, 0.66, 1.0],
+            "cells": [[0, 0, 1, 1], [0, 1, 1, 2], [0, 2, 1, 3]]
+        }
+    },
+    {
+        "caption": "Layout: Grid",
+        "command": "set_layout",
+        "args":
+        {
+            "cols": [0.0, 0.5, 1.0],
+            "rows": [0.0, 0.5, 1.0],
+            "cells":
+            [
+                [0, 0, 1, 1], [1, 0, 2, 1],
+                [0, 1, 1, 2], [1, 1, 2, 2]
+            ]
+        }
+    },
+    { "command": "detect_indentation", "caption": "Indentation: Guess Settings From Buffer" },
+    { "caption": "Indentation: Tab Width: 2", "command": "set_setting", "args": {"setting": "tab_size", "value": 2} },
+    { "caption": "Indentation: Tab Width: 4", "command": "set_setting", "args": {"setting": "tab_size", "value": 4} },
+    { "command": "toggle_setting", "args": {"setting": "translate_tabs_to_spaces"}, "caption": "Indentation: Use Spaces" },
+    { "command": "set_line_ending", "args": {"type": "windows"}, "caption": "Line Endings: Windows" },
+    { "command": "set_line_ending", "args": {"type": "unix"}, "caption": "Line Endings: Unix" },
+    { "command": "set_line_ending", "args": {"type": "cr"}, "caption": "Line Endings: Mac OS 9" },
+    { "command": "toggle_setting", "args": {"setting": "spell_check"}, "caption": "Spelling: Spell Check" },
+    { "command": "next_misspelling", "caption": "Spelling: Next Misspelling" },
+    { "command": "prev_misspelling", "caption": "Spelling: Previous Misspelling" },
+
+    // Goto
+    { "command": "show_overlay", "args": {"overlay": "goto", "show_files": true}, "caption": "Goto: Anything…" },
+    { "command": "show_overlay", "args": {"overlay": "goto", "text": "@"}, "caption": "Goto: Symbol…" },
+    { "command": "goto_symbol_in_project", "caption": "Goto: Symbol in Project…" },
+    { "command": "goto_definition", "caption": "Goto: Definition…" },
+    { "command": "show_overlay", "args": {"overlay": "goto", "text": ":"}, "caption": "Goto: Line…" },
+    { "command": "show_at_center", "caption": "Scroll to Selection" },
+    { "command": "move_to", "args": {"to": "brackets"}, "caption": "Jump to Matching Bracket" },
+
+    // Tools
+    { "command": "build", "args": {"variant": "Run"}, "caption": "Build: Run Build" },
+    { "command": "toggle_record_macro", "caption": "Macro: Record Macro" },
+    { "command": "run_macro", "caption": "Macro: Playback Macro" },
+    { "command": "save_macro", "caption": "Macro: Save Macro…" },
+    { "command": "new_snippet", "caption": "New Snippet…" },
+
+    // Project
+    { "command": "prompt_open_project_or_workspace", "caption": "Project: Open Project…" },
+    { "command": "prompt_switch_project_or_workspace", "caption": "Project: Switch Project…" },
+    { "command": "prompt_select_workspace", "caption": "Project: Quick Switch Project…"},
+    { "command": "close_project", "caption": "Project: Close Project" },
+    { "command": "new_window_for_project", "caption": "Project: New Workspace for Project" },
+    { "command": "close_folder_list", "caption": "Project: Remove all Folders from Project" },
+
+    // Misc (not in menu)
+    { "caption": "View: Toggle Gutter", "command": "toggle_setting", "args": {"setting": "gutter"} },
+    { "caption": "View: Toggle Line Numbers", "command": "toggle_setting", "args": {"setting": "line_numbers"} },
+    { "caption": "Check for Updates", "command": "update_check" },
+]

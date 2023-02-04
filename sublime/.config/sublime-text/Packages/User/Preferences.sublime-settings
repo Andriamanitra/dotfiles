@@ -6,6 +6,7 @@
 	// auto-complete with Tab instead of Enter
 	"auto_complete_commit_on_tab": true,
 	"hot_exit": "disabled",
+	"translate_tabs_to_spaces": true,
 	"ignored_packages":
 	[
 		"Vintage",
