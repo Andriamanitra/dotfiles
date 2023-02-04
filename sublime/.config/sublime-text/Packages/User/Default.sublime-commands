@@ -8,6 +8,20 @@
         "command": "open_dir",
         "args": { "dir": "$file_path" }
     },
+    { "caption": "Evaluate in Shell", "command": "shell_eval_selection" },
+
+    // Scratch buffer commands
+
+    { "caption": "Scratch Buffer: Plain Text",      "command": "scratch_buffer", "args": {"syntax": "Packages/Text/Plain text.tmLanguage"}},
+    { "caption": "Scratch Buffer: Markdown",        "command": "scratch_buffer", "args": {"syntax": "Packages/Markdown/Markdown.sublime-syntax"}},
+    { "caption": "Scratch Buffer: HTML",            "command": "scratch_buffer", "args": {"syntax": "Packages/HTML/HTML.sublime-syntax"}},
+    { "caption": "Scratch Buffer: JavaScript",      "command": "scratch_buffer", "args": {"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"}},
+    { "caption": "Scratch Buffer: JSON",            "command": "scratch_buffer", "args": {"syntax": "Packages/JSON/JSON.sublime-syntax"}},
+    { "caption": "Scratch Buffer: Python",          "command": "scratch_buffer", "args": {"syntax": "Packages/Python/Python.sublime-syntax"}},
+    { "caption": "Scratch Buffer: Ruby",            "command": "scratch_buffer", "args": {"syntax": "Packages/Ruby/Ruby.sublime-syntax"}},
+
+    // When no syntax is provided, you are prompted for the syntax to use.
+    { "caption": "Scratch Buffer: Prompt for Syntax", "command": "scratch_buffer" },
 
     // The rest are cherry-picked from Sublime-Missing-Palette-Commands
 
