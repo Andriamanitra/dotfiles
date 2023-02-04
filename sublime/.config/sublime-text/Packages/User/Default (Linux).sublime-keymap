@@ -28,4 +28,9 @@
 			{ "key": "terminus_view.finished", "operator": "equal", "operand": true }
 		]
 	},
+	{
+		"keys": ["ctrl+-"],
+		"command": "toggle_comment",
+		"args": { "block": false }
+	},
 ]
