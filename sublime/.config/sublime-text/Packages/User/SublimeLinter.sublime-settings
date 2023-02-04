@@ -3,4 +3,14 @@
     "highlights.demote_while_editing": "all",
     "highlights.time_to_idle": 1.0,
     "show_panel_on_save": "view",
+    "styles": [
+        {
+            "priority": 1,
+            "icon": "dot",
+            "mark_style": "squiggly_underline",
+            "scope": "region.redish markup.error.sublime_linter",
+            "phantom": "",
+            "annotation": "{msg} ({code})",
+        }
+    ],
 }
