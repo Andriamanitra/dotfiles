@@ -26,6 +26,10 @@
 			"windows": {
 				"cmd": ["py", "-m", "py_compile", "$file"],
 			}
+		},
+		{
+			"name": "venv",
+			"cmd": ["$folder/venv/bin/python", "-u", "$file"],
 		}
 	]
 }
