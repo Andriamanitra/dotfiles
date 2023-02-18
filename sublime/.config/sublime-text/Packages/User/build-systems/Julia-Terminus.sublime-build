@@ -1,0 +1,13 @@
+{
+    "target": "terminus_exec",
+    "cancel": "terminus_cancel_build",
+    "title": "Julia Output",
+    "focus": true,
+    "auto_close": false,
+    "timeit": true,
+
+    "cmd": ["julia", "$file"],
+    "file_regex": " ([~/].*[.]jl):([0-9]*)",
+
+    "selector": "source.julia",
+}

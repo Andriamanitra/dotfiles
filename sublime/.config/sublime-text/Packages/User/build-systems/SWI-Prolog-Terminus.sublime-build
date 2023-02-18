@@ -1,0 +1,37 @@
+{
+    "target": "terminus_exec",
+    "cancel": "terminus_cancel_build",
+    "title": "SWI-Prolog",
+    "focus": true,
+    "auto_close": false,
+    "timeit": false,
+    "cmd": ["swipl", "$file"],
+
+    "selector": "source.prolog",
+
+    "variants":
+    [
+        {
+            "name": "Docker",
+            "cmd": [
+                "docker", "run", "--rm", "-it",
+                "-v", "$file_path:/workspace",
+                "--workdir", "/workspace",
+                "swipl:latest",
+                "swipl", "$file_name"
+            ],
+
+        },
+        {
+            "name": "Docker (bash)",
+            "cmd": [
+                "docker", "run", "--rm", "-it",
+                "-v", "$file_path:/workspace",
+                "--workdir", "/workspace",
+                "swipl:latest",
+                "bash"
+            ],
+        },
+
+    ]
+}
