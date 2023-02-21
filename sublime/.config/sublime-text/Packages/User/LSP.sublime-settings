@@ -13,6 +13,11 @@
 			"initializationOptions": {
 				"diagnostics": false
 			}
+		},
+		"crystal": {
+			"enabled": true,
+			"command": ["crystalline", "--stdio"],
+			"selector": "source.crystal"
 		}
 	}
 }

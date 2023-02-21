@@ -1,0 +1,21 @@
+{
+	"target": "terminus_exec",
+	"cancel": "terminus_cancel_build",
+	"working_dir": "$project_path",
+	"title": "Shards Output",
+	"focus": true,
+	"auto_close": false,
+	"timeit": true,
+
+	"cmd": ["shards", "run"],
+
+	"file_regex": "^Error in (?<filename>.+\\.cr):(?<line_number>[0-9]*):?(?<column_number>[0-9]*): (?<message>.+)$",
+	"keyfiles": ["shard.yml"],
+	"variants":
+	[
+		{
+			"name": "Run specs",
+			"cmd": ["crystal", "spec"],
+		}
+	],
+}
