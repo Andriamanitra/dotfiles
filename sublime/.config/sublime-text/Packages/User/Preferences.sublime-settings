@@ -7,8 +7,23 @@
 	"auto_complete_commit_on_tab": true,
 	"hot_exit": "disabled",
 	"translate_tabs_to_spaces": true,
+	"caret_style": "smooth",
+	"caret_extra_top": 1,
+	"caret_extra_bottom": 1,
+	"caret_extra_width": 1,
 	"ignored_packages":
 	[
+		"Six",
 		"Vintage",
+		"Vintageous",
 	],
+	"neovintageous_build_version": 12700,
+	"vintageous_default_mode": "insert",
+	"vintageous_enable_sneak": true,
+	"vintageous_use_ctrl_keys": false,
+	"vintageous_handle_keys": {
+		// leave esc alone in insert mode
+		// (require custom keybinging to get out of insert mode)
+		"i_<Esc>": false,
+	}
 }

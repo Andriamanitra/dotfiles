@@ -33,4 +33,12 @@
 		"command": "toggle_comment",
 		"args": { "block": false }
 	},
+	{
+		"keys": ["ctrl+i"],
+		"command": "nv_feed_key",
+		"args": {"key": "<esc>"},
+		"context": [
+			{"key": "nv_command_or_insert"},
+		]
+	},
 ]
