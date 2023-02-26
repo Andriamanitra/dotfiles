@@ -33,10 +33,25 @@
 		"command": "toggle_comment",
 		"args": { "block": false }
 	},
+	// ctrl+i to exit insert mode and
+	// cycle between normal and visual mode
 	{
 		"keys": ["ctrl+i"],
-		"command": "nv_feed_key",
-		"args": {"key": "<esc>"},
+		"command": "nv_enter_normal_mode",
+		"context": [
+			{"key": "nv_command_or_insert"},
+		]
+	},
+	{
+		"keys": ["ctrl+i"],
+		"command": "nv_enter_visual_mode",
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["ctrl+shift+."],
+		"command": "nv_cmdline",
 		"context": [
 			{"key": "nv_command_or_insert"},
 		]
