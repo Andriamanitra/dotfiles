@@ -1,8 +1,16 @@
 /fish/.config/fish/fish_variables
+
 /micro/.config/micro/buffers/*
+/micro/.config/micro/backups/*
+/micro/.config/micro/plug/*
+!/micro/.config/micro/plug/executor
 
 /sublime/.config/sublime-text/Backup/
 /sublime/.config/sublime-text/Installed Packages/
+/sublime/.config/sublime-text/Packages/User/*.user-ca-bundle
 /sublime/.config/sublime-text/Packages/*/
 !/sublime/.config/sublime-text/Packages/User/
+/sublime/.config/sublime-text/Packages/User/Projects
 /sublime/.config/sublime-text/Local/
+
+/kakoune/.config/kak/plugins/*
