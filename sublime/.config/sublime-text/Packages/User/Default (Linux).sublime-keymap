@@ -48,16 +48,12 @@
 	{
 		"keys": ["å"],
 		"command": "nv_enter_normal_mode",
-		"context": [
-			{"key": "nv_command_or_insert"},
-		]
+		"context": [{"key": "nv_command_or_insert"}]
 	},
 	{
 		"keys": ["å"],
 		"command": "nv_enter_insert_mode",
-		"context": [
-			{"key": "vi_command_mode_aware"},
-		]
+		"context": [{"key": "vi_command_mode_aware"}]
 	},
 
 	// ctrl+i to exit insert mode and
@@ -65,61 +61,45 @@
 	{
 		"keys": ["ctrl+i"],
 		"command": "nv_enter_normal_mode",
-		"context": [
-			{"key": "nv_command_or_insert"},
-		]
+		"context": [{"key": "nv_command_or_insert"}]
 	},
 	{
 		"keys": ["ctrl+i"],
 		"command": "nv_enter_visual_mode",
-		"context": [
-			{"key": "vi_command_mode_aware"}
-		]
+		"context": [{"key": "vi_command_mode_aware"}]
 	},
 
 	// jklö instead of hjkl
 	{
 		"keys": ["j"],
 		"command": "nv_feed_key", "args": {"key": "h"},
-		"context": [
-			{"key": "vi_command_mode_aware"}
-		]
+		"context": [{"key": "vi_command_mode_aware"}]
 	},
 	{
 		"keys": ["k"],
 		"command": "nv_feed_key", "args": {"key": "j"},
-		"context": [
-			{"key": "vi_command_mode_aware"}
-		]
+		"context": [{"key": "vi_command_mode_aware"}]
 	},
 	{
 		"keys": ["l"],
 		"command": "nv_feed_key", "args": {"key": "k"},
-		"context": [
-			{"key": "vi_command_mode_aware"}
-		]
+		"context": [{"key": "vi_command_mode_aware"}]
 	},
 	{
 		"keys": ["ö"],
 		"command": "nv_feed_key", "args": {"key": "l"},
-		"context": [
-			{"key": "vi_command_mode_aware"}
-		]
+		"context": [{"key": "vi_command_mode_aware"}]
 	},
 
 	// äÄ = more convenient ^$
 	{
 		"keys": ["ä"],
 		"command": "nv_feed_key", "args": {"key": "^"},
-		"context": [
-			{"key": "vi_command_mode_aware"}
-		]
+		"context": [{"key": "vi_command_mode_aware"}]
 	},
 	{
 		"keys": ["Ä"],
 		"command": "nv_feed_key", "args": {"key": "$"},
-		"context": [
-			{"key": "vi_command_mode_aware"}
-		]
+		"context": [{"key": "vi_command_mode_aware"}]
 	},
 ]
