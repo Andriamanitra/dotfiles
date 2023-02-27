@@ -18,6 +18,28 @@
 			"enabled": true,
 			"command": ["crystalline", "--stdio"],
 			"selector": "source.crystal"
-		}
+		},
+		"dockerfile": {
+			"enabled": true,
+			"command": ["docker-langserver", "--stdio"],
+			"selector": "source.dockerfile",
+			"settings": {
+				"docker": {
+					"languageserver": {
+						"diagnostics": {
+							// string values must be equal to "ignore", "warning", or "error"
+							"deprecatedMaintainer": "warning",
+							"directiveCasing": "warning",
+							"emptyContinuationLine": "warning",
+							"instructionCasing": "warning",
+							"instructionCmdMultiple": "error",
+							"instructionEntrypointMultiple": "error",
+							"instructionHealthcheckMultiple": "error",
+							"instructionJSONInSingleQuotes": "warning"
+						}
+					}
+				}
+			}
+		},
 	}
 }
