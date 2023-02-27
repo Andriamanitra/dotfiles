@@ -1,5 +1,14 @@
 {
 	"256color": true,
 	"unix_term": "xterm-256color",
-	"natural_keyboard": false
+	"natural_keyboard": false,
+	"default_config": "fish",
+	"shell_configs": [
+		{
+			"name": "fish",
+			"cmd": ["fish", "-i", "-l"],
+			"env": {"COLORTERM": ""},
+			"enable": true,
+		}
+	]
 }

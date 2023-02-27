@@ -15,6 +15,7 @@
 		"command": "terminus_exec",
 		"args": {
 			"cmd": "/usr/bin/fish",
+			"env": {"COLORTERM": ""},
 			"focus": true,
 			"cwd": "${file_path:${folder}}",
 			"auto_close": true,
