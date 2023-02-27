@@ -5,8 +5,22 @@
 	],
 	"installed_packages":
 	[
+		"Crystal",
+		"Dockerfile Syntax Highlighting",
+		"Edit Command Palette",
+		"Julia",
+		"LSP",
 		"Markdown Extended",
+		"NeoVintageous",
+		"Origami",
+		"OverrideAudit",
 		"Package Control",
+		"ProjectManager",
+		"python-black",
+		"SublimeLinter",
+		"SublimeLinter-mypy",
+		"SublimeLinter-pycodestyle",
+		"Terminus",
 	],
 	"debug": true,
 }
