@@ -1,9 +1,1 @@
 " Type :help nv for help.
-nnoremap ö ^
-nnoremap dö d^
-nnoremap yö y^
-nnoremap ä $
-nnoremap dä d$
-nnoremap yä y$
-nnoremap Ö 5k
-nnoremap Ä 5j

@@ -33,6 +33,33 @@
 		"command": "toggle_comment",
 		"args": { "block": false }
 	},
+
+	// NeoVintageous keybindings
+	{
+		"keys": ["ctrl+shift+."],
+		"command": "nv_cmdline",
+	},
+	{
+		"keys": ["Å"],
+		"command": "nv_cmdline",
+	},
+
+	// 'å' to cycle between insert/normal mode
+	{
+		"keys": ["å"],
+		"command": "nv_enter_normal_mode",
+		"context": [
+			{"key": "nv_command_or_insert"},
+		]
+	},
+	{
+		"keys": ["å"],
+		"command": "nv_enter_insert_mode",
+		"context": [
+			{"key": "vi_command_mode_aware"},
+		]
+	},
+
 	// ctrl+i to exit insert mode and
 	// cycle between normal and visual mode
 	{
@@ -49,11 +76,50 @@
 			{"key": "vi_command_mode_aware"}
 		]
 	},
+
+	// jklö instead of hjkl
 	{
-		"keys": ["ctrl+shift+."],
-		"command": "nv_cmdline",
+		"keys": ["j"],
+		"command": "nv_feed_key", "args": {"key": "h"},
 		"context": [
-			{"key": "nv_command_or_insert"},
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["k"],
+		"command": "nv_feed_key", "args": {"key": "j"},
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["l"],
+		"command": "nv_feed_key", "args": {"key": "k"},
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["ö"],
+		"command": "nv_feed_key", "args": {"key": "l"},
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+
+	// äÄ = more convenient ^$
+	{
+		"keys": ["ä"],
+		"command": "nv_feed_key", "args": {"key": "^"},
+		"context": [
+			{"key": "vi_command_mode_aware"}
+		]
+	},
+	{
+		"keys": ["Ä"],
+		"command": "nv_feed_key", "args": {"key": "$"},
+		"context": [
+			{"key": "vi_command_mode_aware"}
 		]
 	},
 ]
