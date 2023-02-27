@@ -16,7 +16,7 @@ function zin --description 'Usage: zin [PACKAGE SEARCH QUERY]'
     set pkgs_to_install (\
         cut -c-$COLUMNS ~/.zinpackages \
         | fzf -q "$argv" -m --tac --tiebreak=begin --exact --delimiter "\|" \
-              --preview-window=up,24 --preview 'zypper info {2} | tail -n +5' \
+              --preview-window=up,12 --preview 'zypper info {2} | tail -n +5' \
         | cut -d "|" -f2 \
         | xargs)
     # if $pkgs_to_install is not empty (fzf was not cancelled), install selected packages
