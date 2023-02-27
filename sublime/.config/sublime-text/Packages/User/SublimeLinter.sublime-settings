@@ -3,6 +3,22 @@
     "highlights.demote_while_editing": "all",
     "highlights.time_to_idle": 1.0,
     "show_panel_on_save": "view",
+    "linters": {
+        "mypy": {
+            "args": [
+                "--ignore-missing-imports",
+                "--python-version", "3.11",
+            ],
+            "disable": false,
+            "excludes": [],
+            "executable": "~/bin/mypy",
+        },
+        "pycodestyle": {
+            "args": [
+                "--max-line-length=95"
+            ]
+        }
+    },
     "styles": [
         {
             "priority": 1,
