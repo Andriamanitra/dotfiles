@@ -1,12 +1,13 @@
 [global_config]
   dbus = False
   inactive_color_offset = 1.0
-  enabled_plugins = SearchPlugin
+  enabled_plugins = SearchPlugin,
   title_at_bottom = True
 [keybindings]
   go_up = <Alt>KP_8
   go_down = <Alt>KP_2
   full_screen = ""
+  layout_launcher = ""
   help = ""
 [profiles]
   [[default]]
@@ -20,9 +21,9 @@
     custom_command = /usr/bin/fish
     use_system_font = False
     bold_is_bright = True
+    title_transmit_bg_color = "#9a9996"
     title_use_system_font = False
     title_font = Source Code Pro Medium 10
-    title_transmit_bg_color = "#9a9996"
 [layouts]
   [[default]]
     [[[window0]]]
