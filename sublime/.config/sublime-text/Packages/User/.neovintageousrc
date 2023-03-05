@@ -1,1 +1,5 @@
 " Type :help nv for help.
+nnoremap + <C-a>
+nnoremap - <C-x>
+vnoremap + <C-a>
+vnoremap - <C-x>
