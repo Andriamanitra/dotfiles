@@ -1,1 +1,27 @@
 line-length = 95
+select = [
+    "E",
+    "F",
+    "W",
+    "C90",
+    "I",
+    "N",
+    "UP",
+    "YTT",
+    "BLE",
+    "FBT",
+    "B",
+    "A",
+    "COM",
+    "C4",
+    "ISC",
+    "G",
+    "PIE",
+    "PT",
+    "Q",
+    "RET",
+    "PD",
+    "PLE",
+    "PLR",
+    "RUF"
+]
