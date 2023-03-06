@@ -4,20 +4,20 @@
 		"haskell-language-server": {
 			"enabled": true,
 			"command": ["haskell-language-server-wrapper", "--lsp"],
-			"selector": "source.haskell"
+			"selector": "source.haskell",
 		},
 		"ruby": {
 			"enabled": true,
 			"command": ["solargraph", "stdio"],
 			"selector": "source.ruby | text.html.ruby",
 			"initializationOptions": {
-				"diagnostics": false
-			}
+				"diagnostics": false,
+			},
 		},
 		"crystal": {
 			"enabled": true,
 			"command": ["crystalline", "--stdio"],
-			"selector": "source.crystal"
+			"selector": "source.crystal",
 		},
 		"dockerfile": {
 			"enabled": true,
@@ -35,11 +35,11 @@
 							"instructionCmdMultiple": "error",
 							"instructionEntrypointMultiple": "error",
 							"instructionHealthcheckMultiple": "error",
-							"instructionJSONInSingleQuotes": "warning"
-						}
-					}
-				}
-			}
+							"instructionJSONInSingleQuotes": "warning",
+						},
+					},
+				},
+			},
 		},
-	}
+	},
 }
