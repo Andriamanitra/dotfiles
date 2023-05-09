@@ -1,0 +1,2 @@
+# don't print copyright notice every time when starting
+set startup-quietly on
