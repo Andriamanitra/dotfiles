@@ -5,6 +5,7 @@ local executor_map = {
   ["c"]          = "make run",
   ["crystal"]    = "crystal run '%s'",
   ["d"]          = "dmd -run '%s'",
+  ["janet"]      = "janet '%s'",
   ["javascript"] = "node '%s'",
   ["julia"]      = "julia '%s'",
   ["lisp"]       = "sbcl --script '%s'",
@@ -13,7 +14,7 @@ local executor_map = {
   ["python"]     = "python3.10 '%s'",
   ["racket"]     = "racket '%s'",
   ["ruby"]       = "ruby '%s'",
-  ["rust"]       = "cargo run",
+  ["rust"]       = "sh -c \"rustc -o /tmp/rust_prog '%s' && /tmp/rust_prog && rm /tmp/rust_prog\"",
   ["shell"]      = "sh '%s'",
 }
 -- if override_template is set with set_exec_template command,
