@@ -1,6 +1,6 @@
 function fish_setup --description "run once to setup env variables, aliases, etc"
     # Disable default greeting ("Welcome to fish, the friendly interactive shell")
-    set fish_greeting
+    set --universal fish_greeting
 
     # Don't ask which man page if there are multiple matches,
     # just pick the first matching one
