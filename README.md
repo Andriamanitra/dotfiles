@@ -15,6 +15,7 @@ Arch repos should have all of these, other distros are probably missing some...
 * terminator (terminal emulator)
 * tealdeer (tldr pages)
 * stow (for dotfiles)
+* just (command runner)
 * ranger (terminal based file system navigation)
 * julia (programming language for more complicated calculations)
 * fd (better than find)
