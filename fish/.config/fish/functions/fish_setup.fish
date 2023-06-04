@@ -44,4 +44,5 @@ function fish_setup --description "run once to setup env variables, aliases, etc
     set -Ux GOPATH ~/Packages/go
     set -Ux JULIA_DEPOT_PATH ~/Packages/julia
     type -q npm && npm config set prefix ~/Packages/npm
+    return 0
 end

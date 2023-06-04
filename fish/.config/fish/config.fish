@@ -35,5 +35,5 @@ end
 function fish_user_key_bindings
     bind ! bind_bang
     # enable fzf key bindings
-    fzf_key_bindings
+    functions -q fzf_key_bindings && fzf_key_bindings
 end
