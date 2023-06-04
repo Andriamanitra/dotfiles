@@ -1,0 +1,4 @@
+set smarthome
+bind ^Q  exit         all
+bind ^F  whereis      main
+bind ^W  chopwordleft main
