@@ -1,6 +1,7 @@
 VERSION = "1.0.0"
 
 local executor_map = {
+  ["asm"]        = "make run",
   ["awk"]        = "awk -f '%s'",
   ["c"]          = "make run",
   ["crystal"]    = "crystal run '%s'",
