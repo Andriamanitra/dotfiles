@@ -1,3 +1,11 @@
+# abbr
+abbr -a -- j just
+abbr -a -- x xdg-open
+abbr -a -- drun 'docker run --rm -it'
+abbr -a -- vvenv 'test -d venv || python3 -m virtualenv venv && . venv/bin/activate.fish'
+abbr -a -- bpast 'curl https://bpa.st/curl -F "raw=<-"'
+abbr -a -- pasters 'curl -X POST https://paste.rs --data-binary @-'
+
 # key bindings:
 # !! = last command from history
 # head! = first token of the last command from history
@@ -31,9 +39,7 @@ function bind_bang --description "shortcuts using !"
     end
 end
 
-
 function fish_user_key_bindings
     bind ! bind_bang
-    # enable fzf key bindings
     functions -q fzf_key_bindings && fzf_key_bindings
 end
