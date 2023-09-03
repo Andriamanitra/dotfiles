@@ -2,6 +2,9 @@
     "*.cr": {
         "tabsize": 2
     },
+    "*.hs": {
+        "tabsize": 2
+    },
     "*.rb": {
         "tabsize": 2
     },
