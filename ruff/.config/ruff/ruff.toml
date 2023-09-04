@@ -1,27 +1,64 @@
 line-length = 95
+
 select = [
-    "E",
-    "F",
-    "W",
-    "C90",
-    "I",
-    "N",
-    "UP",
-    "YTT",
-    "BLE",
-    "FBT",
-    "B",
-    "A",
-    "COM",
-    "C4",
-    "ISC",
-    "G",
-    "PIE",
-    "PT",
-    "Q",
-    "RET",
-    "PD",
-    "PLE",
-    "PLR",
-    "RUF"
+    "F",    # Pyflakes
+    "E",    # pycodestyle error
+    "W",    # pycodestyle warning
+    "I",    # isort
+    "N",    # pep8-naming
+    "UP",   # pyupgrade
+    "YTT",  # flake8-2020 (some sys related lints)
+    "BLE",  # flake8-blind-except
+    "FBT",  # flake8-boolean-trap
+    "B",    # flake8-bugbear
+    "A",    # flake8-builtins
+    "COM",  # flake8-commas
+    "C4",   # flake8-comprehensions
+    "DTZ",  # flake8-datetimez
+    "EM",   # flake8-errmsg
+    "FA",   # flake8-future-annotations
+    "ISC",  # flake8-implicit-str-concat
+    "G",    # flake8-logging-format
+    "PIE",  # flake8-pie
+    "PT",   # flake8-pytest-style
+    "Q",    # flake8-quotes
+    "RSE",  # flake8-raise
+    "RET",  # flake8-return
+    "SLF",  # flake8-self
+    "SIM",  # flake8-simplify
+    "SLOT", # flake8-slots
+    "ARG",  # flake8-unused-arguments
+    "PL",   # Pylint
+    "TRY",  # tryceratops
+    "FLY",  # flynt
+    "NPY",  # numpy-specific rules
+    "FURB", # refurb
+    "RUF",  # Ruff-specific rules
+]
+
+# rules from nursery need to be explicitly enabled
+extend-select = [
+    # pycodestyle whitespace lints https://beta.ruff.rs/docs/rules/#pycodestyle-e-w
+    "E112", "E113", "E114", "E117",
+    "E201", "E202", "E203",
+    "E211",
+    "E221", "E222", "E223", "E224", "E225", "E226", "E227", "E228",
+    "E231",
+    "E241", "E242",
+    "E251", "E252",
+    "E271", "E272", "E273", "E274", "E275",
+
+    # refurb https://beta.ruff.rs/docs/rules/#refurb-furb
+    "FURB113", "FURB131", "FURB132",
+]
+
+unfixable = [
+    # RUF100 (unused-noqa)
+    # the "noqa" could be meant for other tools that ruff is unaware of
+    "RUF100",
+
+    # SIM105 (suppressible-exception)
+    # using contextlib.suppress over try-except is more of a stylistic
+    # preference, I like the warning but it shouldn't be autofixed
+    "SIM105",
 ]
