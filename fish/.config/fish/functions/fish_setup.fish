@@ -37,7 +37,7 @@ function fish_setup --description "run once to setup env variables, aliases, etc
 
     # If ruff is installed
     if type -q ruff
-        ruff generate-shell-completion fish > fish/.config/fish/completions/ruff.fish
+        ruff generate-shell-completion fish > ~/.config/fish/completions/ruff.fish
     end
 
     # Package installation locations
@@ -54,5 +54,6 @@ function fish_setup --description "run once to setup env variables, aliases, etc
 
     set -Ux RLWRAP_HOME ~/.history/
     set -Ux SQLITE_HISTORY ~/.history/sqlite_history
+    set -Ux NODE_REPL_HISTORY ~/.history/node_history
     return 0
 end
