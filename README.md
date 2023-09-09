@@ -26,6 +26,5 @@ Arch repos should have all of these, other distros are probably missing some...
 
 ### LESSONS LEARNED:
 
-* Arch & friends:
-  - if there are problems with installing/using Pkgs in julia, try julia-bin from AUR
-  - for LaTeX, `pacman -Syu texlive-most` (do **NOT** touch `texlive-full` from AUR) to install everything at once, otherwise you'll go insane
+* forget about texlive and just use [typst](https://github.com/typst/typst) or [tectonic](https://github.com/tectonic-typesetting/tectonic/) for typesetting
+* do **NOT** install ghc or julia or rust directly – use ghcup, juliaup and rustup to manage the installations instead
