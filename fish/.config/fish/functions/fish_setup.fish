@@ -52,6 +52,14 @@ function fish_setup --description "run once to setup env variables, aliases, etc
     set -Ux GHCUP_USE_XDG_DIRS yes
     type -q npm && npm config set prefix ~/Packages/npm
 
+    set -Ux XDG_CACHE_HOME $HOME/.cache
+
+    # i don't think these environment variables for bundler are documented but they
+    # are found in ruby source code:
+    # https://github.com/ruby/ruby/blob/b635a66e957e4dd3fed83ef1d72ce8c9b57e0430/lib/bundler.rb#L263
+    set -Ux BUNDLE_USER_HOME $HOME/.config/bundle
+    set -Ux BUNDLE_USER_CACHE $XDG_CACHE_HOME/bundle
+
     set -Ux RLWRAP_HOME ~/.history/
     set -Ux SQLITE_HISTORY ~/.history/sqlite_history
     set -Ux NODE_REPL_HISTORY ~/.history/node_history
