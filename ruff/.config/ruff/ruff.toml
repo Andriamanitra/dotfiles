@@ -62,3 +62,7 @@ unfixable = [
     # preference, I like the warning but it shouldn't be autofixed
     "SIM105",
 ]
+
+# apparently the default is to pollute every dir where you happen to run
+# ruff with ./.ruff_cache so let's use a global cache dir instead
+cache-dir = "~/.cache/ruff"
