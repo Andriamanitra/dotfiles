@@ -51,5 +51,7 @@ function fish_setup --description "run once to setup env variables, aliases, etc
     set -Ux JULIA_DEPOT_PATH ~/Packages/julia
     set -Ux GHCUP_USE_XDG_DIRS yes
     type -q npm && npm config set prefix ~/Packages/npm
+
+    set -Ux RLWRAP_HOME ~/.history/
     return 0
 end
