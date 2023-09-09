@@ -53,5 +53,6 @@ function fish_setup --description "run once to setup env variables, aliases, etc
     type -q npm && npm config set prefix ~/Packages/npm
 
     set -Ux RLWRAP_HOME ~/.history/
+    set -Ux SQLITE_HISTORY ~/.history/sqlite_history
     return 0
 end
