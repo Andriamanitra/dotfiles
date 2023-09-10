@@ -2,6 +2,11 @@ function fish_setup --description "run once to setup env variables, aliases, etc
     # Disable default greeting ("Welcome to fish, the friendly interactive shell")
     set --universal fish_greeting
 
+    set -Ux XDG_CONFIG_HOME $HOME/.config
+    set -Ux XDG_CACHE_HOME $HOME/.cache
+    set -Ux XDG_DATA_HOME $HOME/.local/share
+    set -Ux XDG_STATE_HOME $HOME/.local/state
+
     # Don't ask which man page if there are multiple matches,
     # just pick the first matching one
     set -Ux MAN_POSIXLY_CORRECT
@@ -37,7 +42,7 @@ function fish_setup --description "run once to setup env variables, aliases, etc
 
     # If ruff is installed
     if type -q ruff
-        ruff generate-shell-completion fish > ~/.config/fish/completions/ruff.fish
+        ruff generate-shell-completion fish > $XDG_CONFIG_HOME/fish/completions/ruff.fish
     end
 
     # Package installation locations
@@ -49,18 +54,26 @@ function fish_setup --description "run once to setup env variables, aliases, etc
     set -Ux GEM_SPEC_CACHE ~/Packages/gem/spec_cache
     set -Ux GOPATH ~/Packages/go
     set -Ux JULIA_DEPOT_PATH ~/Packages/julia
-    set -Ux GHCUP_USE_XDG_DIRS yes
     type -q npm && npm config set prefix ~/Packages/npm
 
-    set -Ux XDG_CACHE_HOME $HOME/.cache
+    set -Ux GHCUP_USE_XDG_DIRS yes
+
+    set -Ux WINEPREFIX $XDG_DATA_HOME/wine
+
+    set -Ux CUDA_CACHE_PATH $XDG_CACHE_HOME/nv
+
+    set -Ux DOCKER_CONFIG $XDG_CONFIG_HOME/docker
 
     # i don't think these environment variables for bundler are documented but they
     # are found in ruby source code:
     # https://github.com/ruby/ruby/blob/b635a66e957e4dd3fed83ef1d72ce8c9b57e0430/lib/bundler.rb#L263
-    set -Ux BUNDLE_USER_HOME $HOME/.config/bundle
+    set -Ux BUNDLE_USER_HOME $XDG_CONFIG_HOME/bundle
     set -Ux BUNDLE_USER_CACHE $XDG_CACHE_HOME/bundle
 
-    set -Ux RLWRAP_HOME ~/.history/
+    set -Ux INPUTRC $XDG_CONFIG_HOME/readline/inputrc
+
+    set -Ux RLWRAP_HOME ~/.history
+    set -Ux HISTFILE ~/.history/bash_history
     set -Ux SQLITE_HISTORY ~/.history/sqlite_history
     set -Ux NODE_REPL_HISTORY ~/.history/node_history
     return 0
