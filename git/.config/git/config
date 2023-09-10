@@ -3,7 +3,7 @@
 [pull]
 	ff = only
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = ~/.config/git/gitignore
 [alias]
 	undo = reset HEAD^
 	unstage = reset HEAD --
