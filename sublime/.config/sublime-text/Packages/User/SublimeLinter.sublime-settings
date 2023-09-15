@@ -16,13 +16,13 @@
         "pycodestyle": {
             "args": [
                 "--max-line-length=95"
-            ]
+            ],
         }
     },
     "styles": [
         {
             "priority": 1,
-            "icon": "dot",
+            "icon": "x",
             "mark_style": "squiggly_underline",
             "scope": "region.redish markup.error.sublime_linter",
             "phantom": "",
