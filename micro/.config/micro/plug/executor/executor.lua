@@ -17,6 +17,7 @@ local executor_map = {
   ["ruby"]       = "ruby '%s'",
   ["rust"]       = "sh -c \"rustc -o /tmp/rust_prog '%s' && /tmp/rust_prog && rm /tmp/rust_prog\"",
   ["shell"]      = "sh '%s'",
+  ["zig"]        = "zig run '%s'",
 }
 -- if override_template is set with set_exec_template command,
 -- its value is used instead of executor_map
