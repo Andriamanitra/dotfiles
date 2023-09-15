@@ -6,15 +6,21 @@
 # can generate one for yourself by running this command (you probably want to
 # do it in a cronjob to keep the file up to date):
 
-#~> zypper search | tail -n+6 > ~/.zinpackages
+#~> zypper search | tail -n+6 > $XDG_CACHE_HOME/zin/packages
 
 # Or you could write a fancier script to include whatever package information
-# you want in ~/.zinpackages!
+# you want in $XDG_CACHE_HOME/zin/packages!
 
 function zin --description 'Usage: zin [PACKAGE SEARCH QUERY]'
+    if set -q XDG_CACHE_HOME; and test -n $XDG_CACHE_HOME
+      set -f packages_file "$XDG_CACHE_HOME/zin/packages"
+    else
+      set -f packages_file "$HOME/.cache/zin/packages"
+    end
+
     # cut makes sure the lines are never too long for the current terminal width
-    set pkgs_to_install (\
-        cut -c-$COLUMNS ~/.zinpackages \
+    set -f pkgs_to_install (\
+        cut -c-$COLUMNS $packages_file \
         | fzf -q "$argv" -m --tac --tiebreak=begin --exact --delimiter "\|" \
               --preview-window=up,12 --preview 'zypper info {2} | tail -n +5' \
         | cut -d "|" -f2 \
