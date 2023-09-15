@@ -1,0 +1,15 @@
+filetype: desktop
+
+detect:
+    filename: "\\.desktop$"
+
+rules:
+    - special: "^\\[[^\\]\\[]+\\]"
+    - statement: "="
+    - statement: ";"
+    - constant.bool.true: "\\btrue\\b"
+    - constant.bool.false: "\\bfalse\\b"
+    - comment:
+        start: "#"
+        end: "$"
+        rules: []
