@@ -19,6 +19,12 @@ function fish_setup --description "run once to setup env variables, aliases, etc
     # Make micro (https://github.com/zyedidia/micro/) the default editor if it is installed
     type -q micro && set -Ux EDITOR (which micro)
 
+    if type -q fd
+        set -Ux FZF_DEFAULT_COMMAND "fd --type file"
+        set -Ux FZF_CTRL_T_COMMAND "fd --type file"
+        set -Ux FZF_ALT_C_COMMAND "fd . --type directory --no-ignore-vcs"
+    end
+
     # If bat (https://github.com/sharkdp/bat/) is installed
     if type -q bat
 
