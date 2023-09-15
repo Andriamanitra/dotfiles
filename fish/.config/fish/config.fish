@@ -1,3 +1,5 @@
+tabs -4  # set tab stops to 4, 8, 12, ...
+
 # abbr
 abbr -a -- j just
 abbr -a -- x xdg-open
