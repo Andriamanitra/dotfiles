@@ -13,6 +13,7 @@
     "diffgutter": true,
     "divchars": "  ",
     "eofnewline": false,
+    "ignorecase": false,
     "mkparents": true,
     "parsecursor": true,
     "softwrap": true,
