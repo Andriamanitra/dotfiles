@@ -51,6 +51,11 @@ function fish_setup --description "run once to setup env variables, aliases, etc
         ruff generate-shell-completion fish > $XDG_CONFIG_HOME/fish/completions/ruff.fish
     end
 
+    # If just is installed
+    if type -q just
+        just --completions fish > $XDG_CONFIG_HOME/fish/completions/just.fish
+    end
+
     # Package installation locations
     # todo: maybe use .gemrc, .npmrc instead?
     set -Ux CARGO_PATH ~/Packages/cargo
