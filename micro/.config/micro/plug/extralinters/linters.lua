@@ -3,7 +3,10 @@ local config = import("micro/config")
 local shell = import("micro/shell")
 
 function init()
-    linter.makeLinter("ruff", "python", "ruff", {"%f"}, "%f:%l:%c: %m")
+    -- linter can be nil if linter is turned off
+    if linter then
+        linter.makeLinter("ruff", "python", "ruff", {"%f"}, "%f:%l:%c: %m")
+    end
     config.MakeCommand("ruffix", ruffix, config.NoComplete)
 end
 
@@ -22,5 +25,5 @@ function ruffix()
     buf.ReOpen(buf)
 
     -- without this the linter warnings in the gutter don't update
-    linter.runLinter(buf)
+    if linter then linter.runLinter(buf) end
 end
