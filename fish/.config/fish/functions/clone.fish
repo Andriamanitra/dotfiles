@@ -1,3 +1,3 @@
 function clone
-    git clone --depth=1 git@github.com:$argv[1]
+    git clone $argv[1..-2] git@github.com:$argv[-1]
 end
