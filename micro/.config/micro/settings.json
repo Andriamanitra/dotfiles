@@ -16,6 +16,8 @@
     "ignorecase": false,
     "mkparents": true,
     "parsecursor": true,
-    "softwrap": true,
+    "pluginrepos": [
+        "https://raw.githubusercontent.com/andriamanitra/micro-gotoctags/main/repo.json"
+    ],
     "tabstospaces": true
 }

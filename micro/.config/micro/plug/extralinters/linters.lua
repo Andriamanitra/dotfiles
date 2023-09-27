@@ -1,3 +1,5 @@
+--VERSION = "0.0.1"
+
 local micro = import("micro")
 local config = import("micro/config")
 local shell = import("micro/shell")
@@ -6,6 +8,7 @@ function init()
     -- linter can be nil if linter is turned off
     if linter then
         linter.makeLinter("ruff", "python", "ruff", {"%f"}, "%f:%l:%c: %m")
+        linter.makeLinter("quick-lint-js", "javascript", "quick-lint-js", {"%f"}, "%f:%l:%c: %m")
     end
     config.MakeCommand("ruffix", ruffix, config.NoComplete)
 end
