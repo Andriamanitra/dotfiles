@@ -21,6 +21,7 @@ Arch repos should have all of these, other distros are probably missing some...
 * ranger (terminal based file system navigation)
 * julia (programming language for more complicated calculations)
 * fd (better than find)
+* the_silver_searcher / ag (code search)
 * fzf (fuzzy search)
 * jq (json querying & formatting)
 * qalculate (superb calculator with unit support)
@@ -30,3 +31,5 @@ Arch repos should have all of these, other distros are probably missing some...
 
 * forget about texlive and just use [typst](https://github.com/typst/typst) or [tectonic](https://github.com/tectonic-typesetting/tectonic/) for typesetting
 * do **NOT** install ghc or julia or rust directly – use ghcup, juliaup and rustup to manage the installations instead
+* use [xdg-ninja](https://github.com/b3nj5m1n/xdg-ninja) to help in the war against $HOME directory pollution
+* themes: use [Fluent](https://github.com/vinceliuice/Fluent-gtk-theme) for good window decorations and [Papirus-folders](https://github.com/PapirusDevelopmentTeam/papirus-folders) to make ePapirus folder colors less silly
