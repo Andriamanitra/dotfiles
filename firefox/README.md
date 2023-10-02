@@ -21,3 +21,5 @@ Convenient links to quickly install the essentials:
 * Disable annoying beep when ctrl+f finds nothing: `accessibility.typeaheadfind.enablesound = false`
 * Always show punycode (prevent [IDN homograph attacks](https://en.wikipedia.org/wiki/IDN_homograph_attack)): `network.IDN_show_punycode = true`
 * Make scrollbar not disappear: `layout.testing.overlay-scrollbars.always-visible = true`
+* Restore "Show image info" in image context menus `browser.menu.showViewImageInfo = true`
+* More about:config tricks: [Betterfox](https://github.com/yokoffing/Betterfox)
