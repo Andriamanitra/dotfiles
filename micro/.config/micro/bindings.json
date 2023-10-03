@@ -18,8 +18,8 @@
     "AltUp": "MoveLinesUp",
     "AltDown": "MoveLinesDown",
 
-    "CtrlAltUp": "DiffPrevious|ParagraphPrevious",
-    "CtrlAltDown": "DiffNext|ParagraphPrevious",
+    "CtrlAltUp": "DiffPrevious",
+    "CtrlAltDown": "DiffNext",
     "CtrlAltLeft": "WordLeft",
     "CtrlAltRight": "WordRight",
     "CtrlAltHome": "Center",
@@ -38,6 +38,10 @@
 
     "<Ctrl-r><b>": "ShellMode",
     "<Ctrl-r><c>": "lua:comment.comment",
+    "<Ctrl-r><d><l>": "command:setlocal linter off",
+    "<Ctrl-r><d><w>": "command:setlocal softwrap off",
+    "<Ctrl-r><e><l>": "command:setlocal linter on",
+    "<Ctrl-r><e><w>": "command:setlocal softwrap on",
     "<Ctrl-r><g>": "JumpLine",
     "<Ctrl-r><s><v>": "VSplit",
     "<Ctrl-r><s><h>": "HSplit",
@@ -61,4 +65,7 @@
     "F10": "None",
     "F11": "ToggleMacro",
     "F12": "PlayMacro",
+
+    "Enter": "lua:ag2.showResult|InsertNewline",
+    "Alt-Enter": "lua:ag2.openInCurrentPane",
 }
