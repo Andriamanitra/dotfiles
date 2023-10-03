@@ -10,18 +10,21 @@ local buffer = import("micro/buffer")
 
 function init()
     config.MakeCommand("ag", ag, config.NoComplete)
+    config.AddRuntimeFile("ag2", config.RTHelp, "help/ag2.md")
 end
 
 function ag(bp, userargs)
     local args = strings.Join(userargs, " ")
     local output, err = shell.RunCommand("ag " .. args)
 
-    if err ~= nil then
-        micro.InfoBar():Error(err)
-        return
+    if err == nil then
+        createHorizontalSplitWithSearchResults(output)
+    elseif err:Error() == "exit status 1" then
+        micro.InfoBar():Message("[ag2] no search results")
+    elseif err ~= nil then
+        micro.InfoBar():Error("[ag2] " .. err:Error())
     end
 
-    createHorizontalSplitWithSearchResults(output)
 end
 
 function createHorizontalSplitWithSearchResults(output)
@@ -33,58 +36,28 @@ function createHorizontalSplitWithSearchResults(output)
     micro.CurPane():HSplitBuf(newBuffer)
 end
 
-function openInBufPane(bp, filename)
-    if filename == nil then return end
-    local newBuffer = buffer.NewBufferFromFile(filename)
-    bp:OpenBuffer(newBuffer)
-    bp:Center()
-end
-
-function openInTab(bp, filename)
-    if filename == nil then return end
-    bp:HandleCommand("tab " .. filename)
-    bp:Center()
-end
-
-function getFilenameFromCurrentLine(bp)
-    local cursor = bp.Cursor
-    local currentLine = bp.Buf:Line(cursor.Y)
-    local found = currentLine:match("([^:]+:%d+)")
-    
-    if found == nil then
-        micro.InfoBar():Error("[ag2] No filename found at current line")
-    end
-
-    return found
-end
-
-function findBufPaneByPath(fname)
-    for tabIdx, tab in userdataIterator(micro.Tabs().List) do
-        for paneIdx, pane in userdataIterator(tab.Panes) do
-            -- TODO: maybe sometimes absolute path is necessary?
-            -- pane.Buf is nil for panes that are not BufPanes (terminals etc)
-            if pane.Buf ~= nil and fname == pane.Buf.path then
-                return pane, tabIdx, paneIdx
-            end
-        end
-    end
-end
-
-function preRune(bp, rune)
+function openInCurrentPane(bp)
     if bp.Buf.path == "ag search results" then
-        if rune == "q" or rune == "z" then
-            bp:HandleCommand("quit")
-        elseif rune == "x" then
-            local filename = getFilenameFromCurrentLine(bp)
-            openInBufPane(bp, filename)
-        end
-        return false
+        local filename = getFilenameFromCurrentLine(bp)
+        if filename == nil then return end
+        local newBuffer = buffer.NewBufferFromFile(filename)
+        bp:OpenBuffer(newBuffer)
+        bp:Center()
+        return true
     end
-    return true
 end
 
--- open the search result when Enter is pressed
-function onInsertNewline(bp)
+function openInTab(bp)
+    if bp.Buf.path == "ag search results" then
+        local filename = getFilenameFromCurrentLine(bp)
+        if filename == nil then return end
+        bp:HandleCommand("tab " .. filename)
+        bp:Center()
+        return true
+    end
+end
+
+function showResult(bp)
     if bp.Buf.path == "ag search results" then
         local fname = getFilenameFromCurrentLine(bp)
         if fname == nil then return end
@@ -104,10 +77,37 @@ function onInsertNewline(bp)
             matchingBufPane:Center()
 
             -- lua indices start from 1 (yay!), go indices start from 0 (eww!)
-            matchingBufPane:tab():SetActive(paneIdx - 1)
-            micro.Tabs():SetActive(tabIdx - 1)
+            if micro.Tabs():Active() ~= tabIdx - 1 then
+                matchingBufPane:tab():SetActive(paneIdx - 1)
+                micro.Tabs():SetActive(tabIdx - 1)
+            end
         else            
-            openInTab(bp, fname)
+            openInTab(bp)
+        end
+        return true
+    end
+end
+
+function getFilenameFromCurrentLine(bp)
+    local cursor = bp.Cursor
+    local currentLine = bp.Buf:Line(cursor.Y)
+    local found = currentLine:match("([^:]+:%d+)")
+
+    if found == nil then
+        micro.InfoBar():Error("[ag2] No filename found at current line")
+    end
+
+    return found
+end
+
+function findBufPaneByPath(fname)
+    for tabIdx, tab in userdataIterator(micro.Tabs().List) do
+        for paneIdx, pane in userdataIterator(tab.Panes) do
+            -- TODO: maybe sometimes absolute path is necessary?
+            -- pane.Buf is nil for panes that are not BufPanes (terminals etc)
+            if pane.Buf ~= nil and fname == pane.Buf.path then
+                return pane, tabIdx, paneIdx
+            end
         end
     end
 end
