@@ -7,6 +7,9 @@
 
     "Alt-,": "PreviousTab",
     "Alt-.": "NextTab",
+    "Alt-d": "command:goto-definition",
+    "Alt-f": "command:find-references",
+    "Alt-h": "command:hover",
     "Alt-q": "PreviousSplit",
     "Alt-w": "NextSplit",
     "Alt-/": "lua:comment.comment",
@@ -17,6 +20,7 @@
 
     "AltUp": "MoveLinesUp",
     "AltDown": "MoveLinesDown",
+    "AltHome": "Center",
 
     "CtrlAltUp": "DiffPrevious",
     "CtrlAltDown": "DiffNext",
@@ -30,7 +34,6 @@
 
     "Ctrl-b": "FindPrevious",
     "Ctrl-d": "SpawnMultiCursor",
-    "Ctrl-j": "command:hover",
     "Ctrl-g": "JumpLine",
     "Ctrl-w": "DeleteWordLeft",
     "CtrlAlt-q": "QuitAll",
@@ -66,6 +69,6 @@
     "F11": "ToggleMacro",
     "F12": "PlayMacro",
 
-    "Enter": "lua:ag2.showResult|InsertNewline",
-    "Alt-Enter": "lua:ag2.openInCurrentPane",
+    "Enter": "lua:ag2.openResultSmart|InsertNewline",
+    "Alt-Enter": "lua:ag2.openResultSmartAndClose",
 }

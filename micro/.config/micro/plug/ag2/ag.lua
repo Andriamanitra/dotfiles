@@ -5,8 +5,9 @@ PLUGIN_NAME = "ag2"
 local micro = import("micro")
 local config = import("micro/config")
 local shell = import("micro/shell")
-local strings = import("strings") 
 local buffer = import("micro/buffer")
+local go_strings = import("strings")
+local go_filepath = import("filepath")
 
 function init()
     config.MakeCommand("ag", ag, config.NoComplete)
@@ -14,7 +15,7 @@ function init()
 end
 
 function ag(bp, userargs)
-    local args = strings.Join(userargs, " ")
+    local args = go_strings.Join(userargs, " ")
     local output, err = shell.RunCommand("ag " .. args)
 
     if err == nil then
@@ -29,84 +30,115 @@ end
 
 function createHorizontalSplitWithSearchResults(output)
     local newBuffer = buffer.NewBuffer(output, "ag search results")
-
-    newBuffer.Type.scratch = true
+    newBuffer.Type.Scratch = true
     newBuffer.Type.Readonly = true
 
     micro.CurPane():HSplitBuf(newBuffer)
 end
 
-function openInCurrentPane(bp)
-    if bp.Buf.path == "ag search results" then
-        local filename = getFilenameFromCurrentLine(bp)
-        if filename == nil then return end
-        local newBuffer = buffer.NewBufferFromFile(filename)
+function openResultInCurrentPane(bp)
+    local fpath, loc = getFilePathFromCurrentLine(bp.Buf)
+
+    if fpath == nil then
+        return false
+    else
+        local newBuffer = buffer.NewBufferFromFile(fpath)
         bp:OpenBuffer(newBuffer)
-        bp:Center()
+        gotoLoc(bp, loc)
         return true
     end
 end
 
-function openInTab(bp)
-    if bp.Buf.path == "ag search results" then
-        local filename = getFilenameFromCurrentLine(bp)
-        if filename == nil then return end
-        bp:HandleCommand("tab " .. filename)
-        bp:Center()
+function openResultInTab(bp)
+    local fpath, loc = getFilePathFromCurrentLine(bp.Buf)
+
+    if fpath == nil then
+        return false
+    else
+        local newBuffer = buffer.NewBufferFromFile(fpath)
+        bp:AddTab()
+        bp = micro.CurPane()
+        bp:OpenBuffer(newBuffer)
+        gotoLoc(bp, loc)
         return true
     end
 end
 
-function showResult(bp)
-    if bp.Buf.path == "ag search results" then
-        local fname = getFilenameFromCurrentLine(bp)
-        if fname == nil then return end
+function openResultSmart(bp, closeResults)
+    local fpath, loc = getFilePathFromCurrentLine(bp.Buf)
 
-        -- switch to the correct buffer if the file was already open, otherwise open a new tab
-        local matchingBufPane, tabIdx, paneIdx = findBufPaneByPath(fname:match("[^:]+"))
+    if fpath == nil then
+        return false
+    else
+        local matchingBufPane, tabIdx, paneIdx = findBufPaneByPath(fpath)
 
         if matchingBufPane ~= nil then
-            local cursor = matchingBufPane.Buf:GetActiveCursor()
-            local linenum = tonumber(fname:match("[^:]+:(%d+)"))
-
-            -- get rid of current selection because having something
-            -- selected messes up moving the cursor
-            cursor:Deselect(false)
-
-            cursor:GotoLoc(buffer.Loc(0, linenum - 1))
-            matchingBufPane:Center()
-
-            -- lua indices start from 1 (yay!), go indices start from 0 (eww!)
-            if micro.Tabs():Active() ~= tabIdx - 1 then
-                matchingBufPane:tab():SetActive(paneIdx - 1)
-                micro.Tabs():SetActive(tabIdx - 1)
+            if micro.Tabs():Active() ~= tabIdx then
+                matchingBufPane:tab():SetActive(paneIdx)
+                micro.Tabs():SetActive(tabIdx)
             end
-        else            
-            openInTab(bp)
+            gotoLoc(matchingBufPane, loc)
+        else
+            local newBuffer = buffer.NewBufferFromFile(fpath)
+            bp:AddTab()
+            local newbp = micro.CurPane()
+            newbp:OpenBuffer(newBuffer)
+            gotoLoc(newbp, loc)
         end
+        if closeResults then bp:HandleCommand("quit") end
         return true
     end
 end
 
-function getFilenameFromCurrentLine(bp)
-    local cursor = bp.Cursor
-    local currentLine = bp.Buf:Line(cursor.Y)
-    local found = currentLine:match("([^:]+:%d+)")
-
-    if found == nil then
-        micro.InfoBar():Error("[ag2] No filename found at current line")
-    end
-
-    return found
+function openResultSmartAndClose(bp)
+    openResultSmart(bp, true)
 end
 
-function findBufPaneByPath(fname)
+function gotoLoc(bp, loc)
+    local cursor = bp.Buf:GetActiveCursor()
+
+    -- get rid of current selection because having something
+    -- selected messes up moving the cursor
+    cursor:Deselect(false)
+
+    cursor:GotoLoc(loc)
+    bp:Center()
+end
+
+function getFilePathFromCurrentLine(buf)
+    if not (buf.Type.Scratch and buf.Type.Readonly) then
+        return nil
+    end
+
+    local currentLine = buf:Line(buf:GetActiveCursor().Y)
+    local fpath, linenum, colnum = currentLine:match("^([^:]+):(%d+):?(%d*)")
+
+
+    if fpath == nil then
+        micro.InfoBar():Error("[ag2] No filename found at current line")
+        return nil
+    end
+
+    fpath = go_filepath.Abs(fpath)
+
+    linenum = tonumber(linenum) - 1
+
+    if colnum == "" then
+        colnum = 0
+    else
+        colnum = tonumber(colnum) - 1
+    end
+
+    return fpath, buffer.Loc(colnum, linenum)
+end
+
+function findBufPaneByPath(filename)
     for tabIdx, tab in userdataIterator(micro.Tabs().List) do
         for paneIdx, pane in userdataIterator(tab.Panes) do
-            -- TODO: maybe sometimes absolute path is necessary?
             -- pane.Buf is nil for panes that are not BufPanes (terminals etc)
-            if pane.Buf ~= nil and fname == pane.Buf.path then
-                return pane, tabIdx, paneIdx
+            if pane.Buf ~= nil and filename == pane.Buf.AbsPath then
+                -- lua indices start from 1 (yay!), go indices start from 0 (eww!)
+                return pane, tabIdx - 1, paneIdx - 1
             end
         end
     end
