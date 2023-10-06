@@ -9,6 +9,7 @@ function init()
     if linter then
         linter.makeLinter("ruff", "python", "ruff", {"%f"}, "%f:%l:%c: %m")
         linter.makeLinter("quick-lint-js", "javascript", "quick-lint-js", {"%f"}, "%f:%l:%c: %m")
+        linter.makeLinter("rubocop", "ruby", "rubocop", {"%f"}, "%f:%l:%c: %m")
     end
     config.MakeCommand("ruffix", ruffix, config.NoComplete)
 end
