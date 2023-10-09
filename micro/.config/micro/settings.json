@@ -1,4 +1,7 @@
 {
+    "*": {
+        "linter": false
+    },
     "*.cr": {
         "tabsize": 2
     },
@@ -19,5 +22,7 @@
     "pluginrepos": [
         "https://raw.githubusercontent.com/andriamanitra/micro-gotoctags/main/repo.json"
     ],
+    "statusformatl": "$(filename) $(modified)($(line),$(col)) $(status.paste)| ft:$(opt:filetype) | µlsp:$(mlsp.status)",
+    "statusformatr": "line $(line)/$(status.lines) ($(status.size)) ",
     "tabstospaces": true
 }
