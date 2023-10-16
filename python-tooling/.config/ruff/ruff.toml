@@ -1,4 +1,4 @@
-line-length = 95
+line-length = 105
 
 select = [
     "F",    # Pyflakes
