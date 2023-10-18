@@ -7,6 +7,7 @@ local executor_map = {
   ["c++"]        = "sh -c \"g++ -std=c++20 -o /tmp/prog '%s' && /tmp/prog\"",
   ["crystal"]    = "crystal run '%s'",
   ["d"]          = "dmd -run '%s'",
+  ["go"]         = "go run '%s'",
   ["janet"]      = "janet '%s'",
   ["javascript"] = "node '%s'",
   ["julia"]      = "julia '%s'",
@@ -24,9 +25,6 @@ local executor_map = {
   ["uiua"]       = "uiua run --no-format '%s'",
   ["zig"]        = "zig run '%s'",
 }
--- if override_template is set with set_exec_template command,
--- its value is used instead of executor_map
-local override_template = nil
 
 local micro = import("micro")
 local config = import("micro/config")
@@ -35,15 +33,17 @@ local go_strings = import("strings")
 
 function init()
   config.MakeCommand("exec", execute, config.NoComplete)
+  -- if a different template is set with set_exec_template command,
+  -- its value will be used instead of executor_map
   config.MakeCommand("set_exec_template", set_template, config.NoComplete)
 end
 
-function set_template(bp, args)
+function set_template(bufpane, args)
   local hasArgs = pcall(function() return args[1] end)
   if hasArgs then
-    override_template = go_strings.Join(args, " ")
+    bufpane.Buf.Settings["executor_template"] = go_strings.Join(args, " ")
   else
-    override_template = nil
+    bufpane.Buf.Settings["executor_template"] = nil
   end
 end
 
@@ -51,6 +51,7 @@ function execute(bufpane, args)
   local hasArgs = pcall(function() return args[1] end)
   local ftype = micro.CurPane().Buf:FileType()
   local cmd_template = executor_map[ftype]
+  local override_template = bufpane.Buf.Settings["executor_template"]
 
   if hasArgs then
     cmd_template = go_strings.Join(args, " ")
