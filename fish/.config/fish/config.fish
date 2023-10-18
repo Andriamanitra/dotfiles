@@ -1,4 +1,7 @@
-tabs -4  # set tab stops to 4, 8, 12, ...
+if status is-interactive
+    tabs -4  # set tab stops to 4, 8, 12, ...
+end
+
 
 # abbr
 abbr -a -- j just
