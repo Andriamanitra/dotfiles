@@ -50,22 +50,20 @@ end
 function execute(bufpane, args)
   local hasArgs = pcall(function() return args[1] end)
   local ftype = micro.CurPane().Buf:FileType()
-  local cmd_template = executor_map[ftype]
-  local override_template = bufpane.Buf.Settings["executor_template"]
 
-  if hasArgs then
-    cmd_template = go_strings.Join(args, " ")
-  elseif override_template then
-    cmd_template = override_template
-  elseif cmd_template == nil then
+  local cmd_template =
+    (hasArgs and go_strings.Join(args, " "))
+    or bufpane.Buf.Settings["executor_template"]
+    or executor_map[ftype]
+
+  if cmd_template ~= nil then
+    local runcmd = string.format(cmd_template, bufpane.Buf.Path)
+    local wait_for_user = true
+    local return_output = false
+    shell.RunInteractiveShell(runcmd, wait_for_user, return_output)
+    micro.InfoBar():Message(string.format("Executed \"%s\"", runcmd))
+  else
     local errmsg = string.format("can't exec, unknown filetype '%s' :(", ftype)
     micro.InfoBar():Message(errmsg)
-    return
   end
-
-  local runcmd = string.format(cmd_template, bufpane.Buf.Path)
-  local wait_for_user = true
-  local return_output = false
-  shell.RunInteractiveShell(runcmd, wait_for_user, return_output)
-  micro.InfoBar():Message(string.format("Executed \"%s\"", runcmd))
 end
