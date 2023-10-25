@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Deep House Radio",
+    "url": "http://62.210.105.16:7000/stream"
+  },
+  {
+    "name": "HouseTime.FM",
+    "url": "https://listen.housetime.fm/aac-hd.pls"
+  },
+  {
+    "name": "TranceBase.fm",
+    "url": "https://listen.trancebase.fm/aac-hd.pls"
+  },
+  {
+    "name": "TechnoBase.fm",
+    "url": "https://listen.technobase.fm/aac-hd.pls"
+  },
+  {
+    "name": "Jam FM",
+    "url": "https://online2.jamfm.ru/jam_aacplus"
+  },
+  {
+    "name": "Wappuradio",
+    "url": "http://stream.wappuradio.fi/icecast/wappuradio-legacy-streamer1.opus"
+  },
+  {
+    "name": "Радио СПУТНИК",
+    "url": "http://online.sputnikfm.ru:8000/sputnik_mp3"
+  },
+  {
+    "name": "Järviradio",
+    "url": "https://jarviradio.radiotaajuus.fi:9000/jr"
+  },
+  {
+    "name": "Groove FM",
+    "url": "https://ms-live-groove.nm-elemental.nelonenmedia.fi/master.m3u8"
+  },
+  {
+    "name": "Hitmix",
+    "url": "https://ms-live-hitmix.nm-elemental.nelonenmedia.fi/master.m3u8"
+  },
+  {
+    "name": "Easy Hits",
+    "url": "https://ms-live-easyhits.nm-elemental.nelonenmedia.fi/master.m3u8"
+  },
+  {
+    "name": "Loop",
+    "url": "https://ms-live-loop.nm-elemental.nelonenmedia.fi/master.m3u8"
+  },
+  {
+    "name": "Radio Suomi",
+    "url": "https://yleradiolive.akamaized.net/hls/live/2027718/in-YleTampere/master.m3u8"
+  },
+  {
+    "name": "Klassinen",
+    "url": "https://yleradiolive.akamaized.net/hls/live/2027676/in-YleKlassinen/master.m3u8"
+  },
+  {
+    "name": "RauteMusik 90s",
+    "url": "http://90s-high.rautemusik.fm/"
+  }
+]
