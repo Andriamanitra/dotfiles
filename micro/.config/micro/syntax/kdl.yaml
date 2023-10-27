@@ -1,0 +1,37 @@
+filetype: kdl
+
+detect:
+    filename: "\\.kdl$"
+
+rules:
+    - statement: "[=\\{\\}]"
+    - constant.number: "[0-9][0-9_\\.]*"
+    - constant.number: "0b[01]+"
+    - constant.number: "0o[0-7]+"
+    - constant.number: "0x[0-9a-f]+"
+    - constant.bool: "true|false"
+    - constant: "null"
+    - default:
+        start: "\\("
+        end: "\\)"
+        rules:
+            - type: "i8|i16|i32|i64|u8|u16|u32|u64|isize|usize|f32|f64|decimal64|decimal128|date-time|time|date|duration|decimal|currency|country-2|country-3|country-subdivision|email|idn-email|hostname|idn-hostname|ipv4|ipv6|url-reference|url|irl-reference|irl|uuid|regex|base64"
+    - constant.string: 
+        start: "\""
+        end: "\""
+        skip: "\\\\."
+        rules: 
+            - constant.specialChar: "\\\\."
+    - comment: 
+        start: "//"
+        end: "$"
+        rules: []
+
+    # technically this kind of comment can also be nested (which regex can't handle)
+    - comment:
+        start: "/\\*"
+        end: "\\*/"
+        rules: []
+
+    # /- comments would be hard to regex properly
+    - comment: "/-"
