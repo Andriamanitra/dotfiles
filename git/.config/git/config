@@ -9,4 +9,4 @@
 	unstage = reset HEAD --
 	last = log -1 --stat HEAD
 	st = status --short --branch
-	pr = !sh -c 'git fetch $1 pull/$2/head:PR/$2 && git switch PR/$2' -
+	pr = !sh -c 'git fetch --update-head-ok $1 pull/$2/head:PR/$2 && git switch PR/$2' -
