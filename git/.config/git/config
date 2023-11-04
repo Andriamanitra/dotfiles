@@ -4,6 +4,14 @@
 	ff = only
 [core]
 	excludesfile = ~/.config/git/gitignore
+[delta]
+    features = decorations
+[delta "decorations"]
+    file-decoration-style = blue ul ol
+    hunk-header-style = omit
+    line-numbers = true
+    line-numbers-left-format = ""
+    line-numbers-right-format = "{np:^4}│"
 [alias]
 	undo = reset HEAD^
 	unstage = reset HEAD --
