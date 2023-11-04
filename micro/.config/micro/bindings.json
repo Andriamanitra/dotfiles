@@ -11,11 +11,13 @@
     "Alt-f": "command:format",
     "Alt-r": "command:find-references",
     "Alt-h": "command:hover",
+    "Alt-i": "command:diagnostic-info",
     "Alt-q": "PreviousSplit",
     "Alt-w": "NextSplit",
     "Alt-/": "lua:comment.comment",
     "Alt-Z": "command-edit:textfilter ",
     "Alt-z": "command-edit:textfilter ",
+    "Alt-m": "JumpToMatchingBrace",
     "Alt-n": "SkipMultiCursor",
     "Alt-c": "lua:comment.comment",
 
