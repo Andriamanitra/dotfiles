@@ -1,19 +1,9 @@
-function fish_prompt --description 'Write out the prompt, prepending the Debian chroot environment if present'
-    # Set variable identifying the chroot you work in (used in the prompt below)
-    if not set -q debian_chroot
-        and test -r /etc/debian_chroot
-        set debian_chroot (cat /etc/debian_chroot)
+function fish_prompt --description 'Write out the prompt'
+    set_color cyan
+    if set -q PRE_PROMPT
+        echo -n -s "$PRE_PROMPT"
     end
-    if not set -q __fish_debian_chroot_prompt
-        and set -q debian_chroot
-        and test -n "$debian_chroot"
-        set -g __fish_debian_chroot_prompt "($debian_chroot)"
-    end
-
-    # Prepend the chroot environment if present
-    if set -q __fish_debian_chroot_prompt
-        echo -n -s (set_color yellow) "$__fish_debian_chroot_prompt" (set_color normal) ' '
-    end
+    set_color normal
 
     switch "$USER"
         case root toor

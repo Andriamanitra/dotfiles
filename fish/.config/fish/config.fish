@@ -11,7 +11,6 @@ abbr -a -- vvenv 'test -d venv || python3 -m virtualenv venv && . venv/bin/activ
 abbr -a -- bpast 'curl https://bpa.st/curl -F "raw=<-"'
 abbr -a -- pasters 'curl -X POST https://paste.rs --data-binary @-'
 abbr -a -- v 'xclip -o -selection clipboard'
-abbr -a -- nixsh 'nix-shell --command fish -p'
 
 # key bindings:
 # !! = last command from history
