@@ -6,44 +6,46 @@ detect:
     header: "^#!.*/(env +)?[bg]?just --justfile"
 
 rules:
-    # NAME
     - identifier: "^[a-zA-Z_][a-zA-Z0-9_-]*"
-    - bracket: "[\\{\\}]"
+    - symbol.brackets: "[\\{\\}]"
 
-    # ALIAS
+    # Alias
     - identifier: "^alias\\s+[a-zA-Z_][a-zA-Z0-9_-]*\\s*:=\\s*[a-zA-Z_][a-zA-Z0-9_-]*$"
     - statement: "^(alias|export)\\b"
 
-    # functions without params
+    # Functions
     - statement: "\\b(arch|os|os_family|invocation_directory|justfile|justfile_directory|just_executable|uuid)\\b"
-    # env functions
+    # Env
     - statement: "\\b(env|env_var|env_var_or_default)\\b"
-    # string manipulation
+    # String manipulation
     - statement: "\\b(quote|replace|replace_regex|trim_end_matches|trim_end_match|trim_end|trim_start_matches|trim_start_match|trim_start|trim|capitalize|uppercamelcase|lowercamelcase|lowercase|shoutykebabcase|shoutysnakecase|snakecase|titlecase|uppercase|kebabcase)\\b"
-    # path manipulation
+    # Path manipulation
     - statement: "\\b(absolute_path|extension|file_name|file_stem|parent_directory|without_extension|clean|join|path_exists)\\b"
-    # other misc functions
+    # Other misc functions
     - statement: "\\b(error|sha256|sha256_file|semver_matches)\\b"
 
     - statement: "\\b(if|else)\\b"
-    - symbol.operator: "\\s[/+]|==|!=\\s"
     - statement: "\\{\\{|\\}\\}"
 
-    - symbol.operator: ":="
+    # Infix operators only highlighted when surrounded by whitespace
+    # to reduce false positives
+    - symbol.operator: "\\s[/+]|==|!=\\s"
 
-    # RECIPE
+    # Recipe
     - identifier: "^\\S.*?:(\\s|$)"
     - symbol.operator: "^\\s*[@-]*"
-
-    # PARAMETERS
+    # Reset to default after recipe identifier
     - default: "\\s.*:( |$)"
+
+    # Variadic parameters
     - special: "\\s+[*+]\\$?[a-zA-Z_][a-zA-Z0-9_-]*"
 
+    # Environment variables
     - blue: "\\$[A-Za-z0-9_]+"
 
-    - symbol.operator: ":( |$)"
+    - symbol.operator: ":=?"
 
-    # ATTRIBUTE
+    # Attribute
     - bracket:
         start: "^\\["
         end: "\\]"
@@ -52,7 +54,7 @@ rules:
             - constant: "\\b(no-cd|no-exit-message|linux|macos|unix|windows|private)\\b"
             - statement: ","
 
-    # built-in settings
+    # Built-in settings
     - statement:
         start: "^set\\b"
         end: "$"
@@ -63,7 +65,7 @@ rules:
             - bracket: "\\[|\\]"
             - statement: ","
             - constant.bool: "\\b(true|false)\\b"
-            # these are not perfect but they seem to work most of the time
+            # these are not perfect but they work for the simple cases
             - constant.string: "\"\"\".*\"\"\""
             - constant.string: "'''.*'''"
             - constant.string: "\".*?\""
@@ -78,7 +80,7 @@ rules:
         start: "'''"
         end: "'''"
         rules: []
-    
+
     - constant.string:
         start: "\""
         end: "\""
@@ -93,7 +95,7 @@ rules:
         rules:
             - constant.specialChar: "\\\\."
 
-    # command evaluation using backticks
+    # Command evaluation using backticks
     - constant.string:
         start: "`"
         end: "`"
