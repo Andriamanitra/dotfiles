@@ -7,7 +7,8 @@
 
     "Alt-,": "PreviousTab",
     "Alt-.": "NextTab",
-    "Alt-d": "command:goto-definition",
+    "Alt-d": "DeleteWordRight",
+    "Alt-g": "command:goto-definition",
     "Alt-f": "command:format",
     "Alt-r": "command:find-references",
     "Alt-h": "command:hover",
@@ -20,6 +21,8 @@
     "Alt-m": "JumpToMatchingBrace",
     "Alt-n": "SkipMultiCursor",
     "Alt-c": "lua:comment.comment",
+    "Alt-x": "command:goto-mark",
+    "Ctrl-Space": "command:mark",
 
     "AltUp": "MoveLinesUp",
     "AltDown": "MoveLinesDown",
