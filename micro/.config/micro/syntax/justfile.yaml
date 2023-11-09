@@ -46,12 +46,11 @@ rules:
     - symbol.operator: ":=?"
 
     # Attribute
-    - bracket:
+    - symbol.brackets:
         start: "^\\["
         end: "\\]"
         rules:
-            - identifier: "^[a-zA-Z_][a-zA-Z0-9_-]*"
-            - constant: "\\b(no-cd|no-exit-message|linux|macos|unix|windows|private)\\b"
+            - symbol.tag: "\\b(no-cd|no-exit-message|linux|macos|unix|windows|private)\\b"
             - statement: ","
 
     # Built-in settings

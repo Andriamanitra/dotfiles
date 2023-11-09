@@ -4,7 +4,7 @@ detect:
     filename: "\\.desktop$"
 
 rules:
-    - special: "^\\[[^\\]\\[]+\\]"
+    - symbol.tag: "^\\[[^\\]\\[]+\\]"
     - statement: "="
     - statement: ";"
     - identifier: "^(Type|Version|Name|GenericName|NoDisplay|Comment|Icon|Hidden|OnlyShowIn|NotShowIn|DBusActivatable|TryExec|Exec|Path|Terminal|Actions|MimeType|Categories|Implements|Keywords|StartupNotify|StartupWMClass|URL|PrefersNonDefaultGPU|SingleMainWindow)"

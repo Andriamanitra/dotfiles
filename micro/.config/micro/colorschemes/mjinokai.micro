@@ -27,7 +27,7 @@ color-link gutter-info "#AB9B8B,#1F1F1F"
 color-link gutter-warning "#CB4B16,#1F1F1F"
 color-link gutter-error "#DE2020,#1F1F1F"
 color-link symbol.brackets "default"
-color-link symbol.tag "#AE81FF,#1F1F1F"
+color-link symbol.tag "#FD51DD,#1F1F1F"
 color-link error-message "#DE2020"
 
 # custom additions
