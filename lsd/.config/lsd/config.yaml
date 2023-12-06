@@ -11,7 +11,7 @@ hyperlink: auto
 size: short
 
 sorting:
-    column: size
+    column: name
     dir-grouping: first
 
 symlink-arrow: "->"
