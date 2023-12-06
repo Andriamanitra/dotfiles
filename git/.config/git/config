@@ -12,6 +12,7 @@
     line-numbers = true
     line-numbers-left-format = ""
     line-numbers-right-format = "{np:^4}│"
+    tabs = 4
 [alias]
 	undo = reset HEAD^
 	unstage = reset HEAD --
