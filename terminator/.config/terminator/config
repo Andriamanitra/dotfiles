@@ -2,11 +2,17 @@
   dbus = False
   inactive_color_offset = 1.0
   enabled_plugins = SearchPlugin,
+  case_sensitive = False
   title_at_bottom = True
 [keybindings]
+  cycle_next = <Primary>Tab
   go_up = <Alt>KP_8
   go_down = <Alt>KP_2
+  search = <Primary><Shift>f
+  resize_left = ""
+  resize_right = ""
   full_screen = ""
+  hide_window = ""
   layout_launcher = ""
   help = ""
 [profiles]
