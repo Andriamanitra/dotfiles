@@ -1,0 +1,20 @@
+filetype: flix
+
+detect: 
+    filename: "\\.flix$"
+
+rules:
+    - statement: "\\b(if|else|deref|ref|def|let|use|match|case|type alias|enum|pub|instance|trait|yield|foreach|forM|forA)\\b"
+    - type: "\\b(Adaptor|Add|Applicative|Array|Assert|Benchmark|BigDecimal|BigInt|Bool|Boxable|Boxed|Chain|Channel|Char|Closeable|CodePoint|Collectable|CommutativeGroup|CommutativeMonoid|CommutativeSemiGroup|Comparison|Console|DelayList|DelayMap|Div|Down|Environment|Eq|File|Files|Filterable|Fixpoint|Float32|Float64|Foldable|FromString|Functor|GetOpt|Graph|Group|Hash|IO|IOError|Identity|Int16|Int32|Int64|Int8|Iterable|Iterator|JoinLattice|List|LowerBound|Map|MeetLattice|Monad|MonadZero|MonadZip|Monoid|Mul|MultiMap|MutDeque|MutDisjointSets|MutList|MutMap|MutQueue|MutSet|Nec|Neg|Nel|NonDet|Object|Option|Order|PartialOrder|Proxy|Random|Reader|RedBlackTree|Reducible|Ref|Reflect|Regex|Region|Result|SemiGroup|Sendable|Set|String|StringBuilder|Sub|System|Thread|Time|ToJava|ToString|Traversable|UnorderedFoldable|UpperBound|Validation|Vector|Void|Witherable|Unit)\\b"
+    - constant: "\\b(Ok|Err|Some|None|Nil)\\b"
+    - symbol.tag: "@[Tt]est\\b"
+    - identifier: "\\b(bug!|constant|debug!?!?|e?identity|flip|fst|snd|on|println|swap|touch|unreachable!)\\b"
+    # decimal number
+    - constant.number: "\\b[-+]?([0-9_]+|[0-9_]+\\.[0-9_]*|\\.[0-9_]+)"
+    # hexadecimal number
+    - constant.number: "\\b[-+]?0x([A-Fa-f0-9_]+)?"
+    - constant.string:
+        start: "\""
+        end: "\""
+        skip: "\\\\."
+        rules: []
