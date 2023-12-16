@@ -42,6 +42,8 @@
     "Ctrl-d": "SpawnMultiCursor",
     "Ctrl-g": "JumpLine",
     "Ctrl-w": "DeleteWordLeft",
+    "OldBackspace": "DeleteWordLeft",
+    "Ctrl-Delete": "DeleteWordRight",
     "CtrlAlt-q": "QuitAll",
     "CtrlUnderscore": "lua:comment.comment",
 
