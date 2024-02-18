@@ -62,10 +62,10 @@ function fish_setup --description "run once to setup env variables, aliases, etc
 
     # Package installation locations
     # todo: maybe use .gemrc, .npmrc instead?
-    set -Ux CARGO_PATH ~/Packages/cargo
+    set -Ux CARGO_HOME ~/Packages/cargo
     set -Ux RUSTUP_HOME ~/Packages/rustup
     set -Ux GEM_HOME ~/Packages/gem
-    set -Ux GEM_PATH $GEM_HOME:/usr/lib64/ruby/gems/3.0.0
+    set -Ux GEM_PATH $GEM_HOME
     set -Ux GEM_SPEC_CACHE ~/Packages/gem/spec_cache
     set -Ux GOPATH ~/Packages/go
     set -Ux JULIA_DEPOT_PATH ~/Packages/julia
