@@ -7,7 +7,7 @@ local shell = import("micro/shell")
 function init()
     -- linter can be nil if linter is turned off
     if linter then
-        linter.makeLinter("ruff", "python", "ruff", {"%f"}, "%f:%l:%c: %m")
+        linter.makeLinter("ruff", "python", "ruff", {"check", "%f"}, "%f:%l:%c: %m")
         linter.makeLinter("quick-lint-js", "javascript", "quick-lint-js", {"%f"}, "%f:%l:%c: %m")
         linter.makeLinter("rubocop", "ruby", "rubocop", {"%f"}, "%f:%l:%c: %m")
     end
@@ -22,7 +22,7 @@ function ruffix()
     -- you to align things with extra spaces)
     shell.ExecCommand("autopep8", "--in-place", buf.Path)
 
-    shell.ExecCommand("ruff", "--fix", buf.Path)
+    shell.ExecCommand("ruff", "check", "--fix", buf.Path)
 
     -- without this the changes won't show up and micro will prompt
     -- to reopen current buffer because file on disk has changed

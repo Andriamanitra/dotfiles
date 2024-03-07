@@ -1,5 +1,10 @@
 line-length = 105
+# apparently the default is to pollute every dir where you happen to run
+# ruff with ./.ruff_cache so let's use a global cache dir instead
+cache-dir = "~/.cache/ruff"
 
+[lint]
+preview = true
 select = [
     "F",    # Pyflakes
     "E",    # pycodestyle error
@@ -63,6 +68,7 @@ unfixable = [
     "SIM105",
 ]
 
-# apparently the default is to pollute every dir where you happen to run
-# ruff with ./.ruff_cache so let's use a global cache dir instead
-cache-dir = "~/.cache/ruff"
+ignore = [
+    # these otherwise useful rules currently trigger a warning "can cause conflicts"
+    "COM812", "ISC001"
+]
