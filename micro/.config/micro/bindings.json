@@ -44,7 +44,7 @@
     "Ctrl-w": "DeleteWordLeft",
     "OldBackspace": "DeleteWordLeft",
     "Ctrl-Delete": "DeleteWordRight",
-    "CtrlAlt-q": "QuitAll",
+    "CtrlAlt-q": "ForceQuit",
     "CtrlUnderscore": "lua:comment.comment",
 
     "<Ctrl-r><b>": "ShellMode",
@@ -79,5 +79,5 @@
     "F12": "PlayMacro",
 
     "Enter": "lua:ag2.openResultSmart|InsertNewline",
-    "Alt-Enter": "lua:ag2.openResultSmartAndClose",
+    "Alt-Enter": "lua:ag2.openResultInCurrentPane",
 }
