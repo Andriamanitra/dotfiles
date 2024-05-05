@@ -3,7 +3,7 @@
 "TranceBase.fm" url="https://listen.trancebase.fm/aac-hd.pls"
 "TechnoBase.fm" url="https://listen.technobase.fm/aac-hd.pls"
 "Jam FM" url="https://online2.jamfm.ru/jam_aacplus"
-// "Wappuradio" url="http://stream.wappuradio.fi/icecast/wappuradio-legacy-streamer1.opus"
+//"Wappuradio" url="http://stream1.wappuradio.fi/wappuradio.opus"
 "Радио СПУТНИК" url="http://online.sputnikfm.ru:8000/sputnik_mp3"
 "Järviradio" url="https://jarviradio.radiotaajuus.fi:9000/jr"
 "Groove FM" url="https://ms-live-groove.nm-elemental.nelonenmedia.fi/master.m3u8"
