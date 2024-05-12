@@ -41,6 +41,7 @@
     "Ctrl-b": "FindPrevious",
     "Ctrl-d": "SpawnMultiCursor",
     "Ctrl-g": "JumpLine",
+    "Ctrl-j": "command:jumptag",
     "Ctrl-w": "DeleteWordLeft",
     "Ctrl-k": "SelectToEndOfLine,Delete",
     "OldBackspace": "DeleteWordLeft",
