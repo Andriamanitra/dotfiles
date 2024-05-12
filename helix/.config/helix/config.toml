@@ -1,13 +1,18 @@
-theme = "my_theme"
+theme = "molokai"
 
 [editor]
 auto-pairs = false
 scrolloff = 8
 middle-click-paste = false
-gutters = ["diagnostics", "line-numbers"]
+gutters = ["line-numbers", "diagnostics"]
 
 [editor.file-picker]
 hidden = false
+
+[keys.insert]
+C-q = ":q!"
+C-s = ":w"
+C-e = "command_mode"
 
 [keys.normal]
 C-s = ":w"

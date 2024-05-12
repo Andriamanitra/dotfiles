@@ -22,6 +22,10 @@ nnoremap <C-q> :q!<cr>
 inoremap <C-s> <esc>:w<cr>a
 nnoremap <C-s> :w<cr>
 
+" Ctrl-E to open command prompt
+inoremap <C-e> <esc>:
+nnoremap <C-e> :
+
 " helper function to keep cursor position when indenting
 func! Indent(ind)
   if &sol
