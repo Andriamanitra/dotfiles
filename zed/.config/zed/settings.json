@@ -3,6 +3,11 @@
 // For information on how to configure Zed, see the Zed
 // documentation: https://zed.dev/docs/configuring-zed
 {
+  "languages": {
+    "Rust": {
+      "format_on_save": "off" // does not respect rustfmt.toml :(
+    }
+  },
   "features": {
     "copilot": false,
     "inline_completion_provider": "none"
@@ -40,6 +45,5 @@
   "terminal": {
     "font_family": "Source Code Pro"
   },
-  "line_indicator_format": "long",
-  "format_on_save": "off" // does not respect rustfmt.toml :(
+  "line_indicator_format": "long"
 }
