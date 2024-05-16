@@ -24,9 +24,6 @@
     "button": false
   },
   "show_inline_completions": false,
-  "inline_completions": {
-    "provider": "none"
-  },
   "ui_font_size": 16,
   "git": {
     "git_gutter": "tracked_files",
