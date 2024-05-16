@@ -1,0 +1,8 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-e": "command_palette::Toggle"
+    }
+  }
+]

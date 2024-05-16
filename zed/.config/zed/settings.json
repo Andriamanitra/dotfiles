@@ -1,0 +1,45 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+{
+  "features": {
+    "copilot": false,
+    "inline_completion_provider": "none"
+  },
+  "assistant": {
+    "version": "1",
+    "enabled": false,
+    "button": false
+  },
+  "chat_panel": {
+    "button": false
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "show_inline_completions": false,
+  "inline_completions": {
+    "provider": "none"
+  },
+  "ui_font_size": 16,
+  "git": {
+    "git_gutter": "tracked_files",
+    "inline_blame": {
+      "enabled": false
+    }
+  },
+  "ui_font_family": "Roboto",
+  "use_autoclose": false,
+  "unstable.ui_density": "compact",
+  "buffer_font_size": 14,
+  "buffer_font_family": "Droid Sans Mono",
+  "buffer_line_height": "standard",
+  "multi_cursor_modifier": "cmd_or_ctrl",
+  "theme": "One Dark",
+  "terminal": {
+    "font_family": "Source Code Pro"
+  },
+  "line_indicator_format": "long",
+  "format_on_save": "off" // does not respect rustfmt.toml :(
+}
