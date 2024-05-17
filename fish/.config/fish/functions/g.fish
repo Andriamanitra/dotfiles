@@ -20,7 +20,7 @@ function g
     if test -d "$target"
         cd "$target"
     # text file
-    else if test -f "$target"; and string match --quiet --regex "text/" (file --dereference --brief --mime-type "$target")
+    else if test -f "$target"; and string match --quiet --regex "text/|application/json" (file --dereference --brief --mime-type "$target")
         $EDITOR "$target"
     # other file that exists
     else if test -e "$target"
