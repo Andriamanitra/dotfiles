@@ -3,6 +3,8 @@ set tabstop=4
 set shiftwidth=4
 colorscheme afterglow
 
+set statusline=%f\ %m%y%r%w%=line\ %l/%L\ \ col\ %2.c\ 
+
 " move to first non-whitespace with å
 nnoremap å ^
 
