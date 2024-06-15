@@ -87,7 +87,6 @@ rules:
             - constant.specialChar:
                 start: "[{]"
                 end: "[}]"
-                skip: ""
                 rules:
                     - default: "."
 
@@ -103,7 +102,6 @@ rules:
             - constant.specialChar:
                 start: "[{]"
                 end: "[}]"
-                skip: ""
                 rules:
                     - default: "."
     - constant.string:
@@ -119,7 +117,6 @@ rules:
             - constant.specialChar:
                 start: "[{]"
                 end: "[}]"
-                skip: ""
                 rules:
                     - default: "."
 
@@ -135,7 +132,6 @@ rules:
             - constant.specialChar:
                 start: "[{]"
                 end: "[}]"
-                skip: ""
                 rules:
                     - default: "."
 
