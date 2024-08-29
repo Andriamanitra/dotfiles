@@ -21,7 +21,8 @@
     "Alt-m": "JumpToMatchingBrace",
     "Alt-n": "SkipMultiCursor",
     "Alt-c": "lua:comment.comment",
-    "Alt-x": "command:goto-mark",
+    "Alt-x": "command:go-to-mark",
+    "Alt-X": "command:select-to-mark",
     "Ctrl-Space": "command:mark",
 
     "AltUp": "MoveLinesUp",

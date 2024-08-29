@@ -9,7 +9,7 @@ function addMark(bufpane)
     mark = buffer.Loc(cursor.Loc.X, cursor.Loc.Y)
 end
 
-function gotoMark(bufpane)
+function goToMark(bufpane)
     local cursor = bufpane.Buf:GetActiveCursor()
     local prev = buffer.Loc(cursor.Loc.X, cursor.Loc.Y)
     cursor:GotoLoc(mark)
@@ -18,7 +18,15 @@ function gotoMark(bufpane)
     bufpane:Relocate()
 end
 
+function selectToMark(bufpane)
+    local cursor = bufpane.Buf:GetActiveCursor()
+    local curr = buffer.Loc(cursor.Loc.X, cursor.Loc.Y)
+    cursor:SetSelectionStart(mark)
+    cursor:SetSelectionEnd(curr)
+end
+
 function init()
     config.MakeCommand("mark", addMark, config.NoComplete)
-    config.MakeCommand("goto-mark", gotoMark, config.NoComplete)
+    config.MakeCommand("go-to-mark", goToMark, config.NoComplete)
+    config.MakeCommand("select-to-mark", selectToMark, config.NoComplete)
 end
