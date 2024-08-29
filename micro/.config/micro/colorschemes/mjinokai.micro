@@ -7,6 +7,7 @@ color-link line-number "#AAAAAA,#242424"
 
 color-link default "#F8F8F2,#1A1A1A"
 color-link comment "#75715E,#1A1A1A"
+color-link ignore "#75715E,#1A1A1A"
 color-link comment.bright "#9B8B7B,#1A1A1A"
 color-link identifier "#66D9EF,#1A1A1A"
 color-link constant "#AE81FF,#1A1A1A"
