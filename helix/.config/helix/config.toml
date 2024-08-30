@@ -1,4 +1,4 @@
-theme = "molokai"
+theme = "monokai"
 
 [editor]
 auto-pairs = false
@@ -8,6 +8,14 @@ gutters = ["line-numbers", "diagnostics"]
 
 [editor.file-picker]
 hidden = false
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name", "read-only-indicator", "file-modification-indicator", "file-type"]
+center = []
+right = ["diagnostics", "register", "position", "file-encoding"]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
 
 [keys.insert]
 C-q = ":q!"
@@ -29,5 +37,8 @@ C-right = ["move_next_word_end", "collapse_selection"]
 C-p = "command_palette"
 C-e = "command_mode"
 C-f = "search"
-X = "toggle_comments"
+c = "toggle_comments"
+l = "extend_line_below"
+L = "extend_to_line_bounds"
 x = { w = "increment", s = "decrement", u = "switch_to_uppercase", l = "switch_to_lowercase", k = "switch_case", f = "select_regex", d = "split_selection", j = "join_selections", x = "toggle_comments" }
+s = { r = "select_regex", s = "split_selection", n = "split_selection_on_newline", m = "merge_selections", t = "trim_selections", c = "collapse_selection" }
