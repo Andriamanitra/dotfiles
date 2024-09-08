@@ -1,5 +1,5 @@
 -- improved version of https://github.com/sebkolind/micro-ag
-PLUGIN_VERSION = "2.0.0"
+PLUGIN_VERSION = "2.1.0"
 PLUGIN_NAME = "ag2"
 
 local micro = import("micro")
@@ -111,7 +111,7 @@ function getFilePathFromCurrentLine(buf)
     end
 
     local currentLine = buf:Line(buf:GetActiveCursor().Y)
-    local fpath, linenum, colnum = currentLine:match("^([^:]+):(%d+):?(%d*)")
+    local fpath, linenum, colnum = currentLine:match("([^\t:]+):(%d+):?(%d*)$")
 
 
     if fpath == nil then
