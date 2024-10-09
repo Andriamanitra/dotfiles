@@ -19,6 +19,7 @@ Convenient links to quickly install the essentials:
 * Middle click to auto scroll: `general.autoScroll = true`
 * Disable pocket (also gets rid of the entry in right click menu): `extensions.pocket.enabled = false`
 * Disable annoying beep when ctrl+f finds nothing: `accessibility.typeaheadfind.enablesound = false`
+* Disable annoying tab hover preview: `browser.tabs.hoverPreview.enabled = false`
 * Always show punycode (prevent [IDN homograph attacks](https://en.wikipedia.org/wiki/IDN_homograph_attack)): `network.IDN_show_punycode = true`
 * Make scrollbar not disappear: `layout.testing.overlay-scrollbars.always-visible = true`
 * Restore "Show image info" in image context menus `browser.menu.showViewImageInfo = true`
