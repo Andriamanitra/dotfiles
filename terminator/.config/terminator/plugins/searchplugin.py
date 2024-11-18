@@ -1,6 +1,7 @@
 import os
 import tempfile
 import webbrowser
+from urllib.parse import quote
 
 import terminatorlib.plugin as plugin
 
@@ -46,7 +47,7 @@ class SearchPlugin(plugin.MenuItem):
         return " ".join(self.selection.split())
 
     def search(self, menu):
-        webbrowser.open(SEARCH_URL % self.cleaned_selection)
+        webbrowser.open(SEARCH_URL % quote(self.cleaned_selection))
 
     def editor(self, menu):
         tempf = tempfile.NamedTemporaryFile(mode="w+t", delete=False)
