@@ -31,8 +31,22 @@ function init()
     config.MakeCommand("mark", addMark, config.NoComplete)
     config.MakeCommand("go-to-mark", goToMark, config.NoComplete)
     config.MakeCommand("select-to-mark", selectToMark, config.NoComplete)
-    config.MakeCommand("bash", function () shell.RunInteractiveShell("bash", false, false) end, config.NoComplete)
-    config.MakeCommand("fish", function () shell.RunInteractiveShell("fish", false, false) end, config.NoComplete)
+    makeInteractiveShellCommand("bat", "bat ABSPATH", {waitForUser = true})
+    makeInteractiveShellCommand("r", "ARGS", {waitForUser = true})
+end
+
+function makeInteractiveShellCommand(cmd, template, options)
+    options = options or {}
+    local callback = function (bp, argsUserdata)
+        local arguments = {}
+        for i = 1, #argsUserdata do
+            table.insert(arguments, argsUserdata[i])
+        end
+        local template = string.gsub(template, "ABSPATH", bp.Buf.AbsPath)
+        local template = string.gsub(template, "ARGS", table.concat(arguments, " "))
+        shell.RunInteractiveShell(template, options.waitForUser or false, options.getOutput or false)
+    end
+    config.MakeCommand(cmd, callback, config.FileComplete)
 end
 
 local colonIndentable = {
