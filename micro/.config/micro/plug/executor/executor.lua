@@ -9,6 +9,7 @@ local executor_map = {
   ["coconut"]    = "coconut --quiet --run '%s'",
   ["crystal"]    = "crystal run '%s'",
   ["d"]          = "ldc2 -run '%s'",
+  ["elixir"]     = "elixir '%s'",
   ["flix"]       = "flix run '%s'",
   ["fortran"]    = "sh -c \"gfortran -o /tmp/prog '%s' && /tmp/prog\"",
   ["go"]         = "go run '%s'",

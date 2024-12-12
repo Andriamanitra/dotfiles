@@ -11,6 +11,9 @@
     "*.rb": {
         "tabsize": 2
     },
+    "*.ex": {
+        "tabsize": 2
+    },
     "autoclose": false,
     "colorscheme": "mjinokai",
     "diffgutter": true,
