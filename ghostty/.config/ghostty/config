@@ -1,0 +1,40 @@
+gtk-titlebar = false
+gtk-adwaita = false
+window-height = 30
+window-width = 100
+window-padding-y = 1
+window-padding-x = 1
+unfocused-split-opacity = 0.9
+
+font-family = "Source Code Pro Semibold"
+font-size = 12
+cursor-color = "#AAAAAA"
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
+
+theme = "Monokai Remastered"
+palette = 0=#000000
+palette = 1=#cc0000
+palette = 2=#4e9a06
+palette = 3=#c4a000
+palette = 4=#3465a4
+palette = 5=#75507b
+palette = 6=#06989a
+palette = 7=#d3d7cf
+palette = 8=#555753
+palette = 9=#ef2929
+palette = 10=#8ae234
+palette = 11=#fce94f
+palette = 12=#729fcf
+palette = 13=#ad7fa8
+palette = 14=#34e2e2
+palette = 15=#eeeeec
+bold-is-bright = true
+
+keybind = "ctrl+shift+r=reload_config"
+
+# these were being captured by ghostty so shift+home/end to
+# select to start/end of line wouldn't work in micro-editor
+keybind = "unconsumed:shift+end=ignore"
+keybind = "unconsumed:shift+home=ignore"
