@@ -38,3 +38,5 @@ keybind = "ctrl+shift+r=reload_config"
 # select to start/end of line wouldn't work in micro-editor
 keybind = "unconsumed:shift+end=ignore"
 keybind = "unconsumed:shift+home=ignore"
+keybind = "unconsumed:ctrl+shift+left=ignore"
+keybind = "unconsumed:ctrl+shift+right=ignore"
