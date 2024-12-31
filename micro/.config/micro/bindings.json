@@ -50,7 +50,7 @@
     "CtrlAlt-q": "ForceQuit",
     "CtrlUnderscore": "lua:comment.comment",
 
-    "Ctrl-r": "command-edit:r ",
+    "Ctrl-r": "command:bashmode",
 
     "F1": "ToggleHelp",
     "F2": "None",
@@ -73,6 +73,7 @@
         "Ctrl-l": "AbortCommand",
         "Ctrl-f": "AbortCommand",
         "Ctrl-g": "AbortCommand",
+        "Ctrl-r": "AbortCommand",
         "Ctrl-k": "SelectToEndOfLine,Delete",
         "Ctrl-a": "SelectAll",
     }
