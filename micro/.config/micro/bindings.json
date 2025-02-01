@@ -18,6 +18,7 @@
     "Alt-/": "lua:comment.comment",
     "Alt-Z": "command-edit:textfilter ",
     "Alt-z": "command-edit:textfilter ",
+    "Alt-<": "command:prompt-textfilter",
     "Alt-m": "JumpToMatchingBrace",
     "Alt-n": "SkipMultiCursor",
     "Alt-c": "lua:comment.comment",

@@ -46,6 +46,19 @@ function init()
         end,
         config.NoComplete
     )
+
+    config.MakeCommand(
+        "prompt-textfilter",
+        function (bufpane)
+            local callback = function (resp, canceled)
+                if not canceled and resp ~= "" then
+                    bufpane:HandleCommand(string.format("textfilter sh -c '%s'", resp))
+                end
+            end
+            micro.InfoBar():Prompt("|> ", "", "Textfilter", nil, callback)
+        end,
+        config.NoComplete
+    )
 end
 
 local colonIndentable = {
