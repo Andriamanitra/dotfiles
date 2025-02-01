@@ -5,13 +5,13 @@
     "*.cr": {
         "tabsize": 2
     },
+    "*.ex": {
+        "tabsize": 2
+    },
     "*.hs": {
         "tabsize": 2
     },
     "*.rb": {
-        "tabsize": 2
-    },
-    "*.ex": {
         "tabsize": 2
     },
     "autoclose": false,
@@ -27,7 +27,7 @@
         "https://raw.githubusercontent.com/andriamanitra/micro-gotoctags/main/repo.json"
     ],
     "reload": "auto",
-    "statusformatl": "$(filename) $(modified)($(line),$(col)) $(status.paste)| ft:$(opt:filetype) | µlsp:$(mlsp.status)",
-    "statusformatr": "line $(line)/$(status.lines) ($(status.size)) ",
+    "statusformatl": "$(initlua.shortfname) $(modified)$(status.paste)| ft:$(opt:filetype) | µlsp:$(mlsp.status)",
+    "statusformatr": "$(col),$(line)/$(status.lines) ($(status.size)) ",
     "tabstospaces": true
 }

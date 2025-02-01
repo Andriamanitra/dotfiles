@@ -27,10 +27,30 @@ function selectToMark(bufpane)
     cursor:SetSelectionEnd(curr)
 end
 
+function shortfname(buf)
+    local home = os.getenv("HOME")
+    if home ~= nil then
+        return buf.Path:gsub("^" .. home, "~")
+    end
+    return buf.Path
+end
+
 function init()
     config.MakeCommand("mark", addMark, config.NoComplete)
     config.MakeCommand("go-to-mark", goToMark, config.NoComplete)
     config.MakeCommand("select-to-mark", selectToMark, config.NoComplete)
+
+    micro.SetStatusInfoFn("initlua.shortfname")
+
+    config.MakeCommand(
+        "date",
+        function (bp, args)
+            local fmt = #args > 0 and args[1] or "%Y-%m-%d"
+            micro.InfoBar():Message(os.date(fmt))
+        end,
+        config.NoComplete
+    )
+
     config.MakeCommand(
         "bashmode",
         function (_bp, _args)
