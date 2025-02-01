@@ -76,7 +76,7 @@ rules:
     # f-strings
     - constant.string:
         start: "f\""
-        end: "(\"|$)"
+        end: "\""
         skip: "\\\\."
         rules:
             - constant.specialChar: "\\\\['\"nrtbf\\\\]"
@@ -84,29 +84,24 @@ rules:
             - constant.specialChar: "\\\\x[0-9A-Fa-f]{2}"
             - constant.specialChar: "\\\\u[0-9A-Fa-f]{4}"
             - constant.specialChar: "\\\\U[0-9A-Fa-f]{8}"
-            - constant.specialChar:
-                start: "[{]"
-                end: "[}]"
-                rules:
-                    - default: "."
+            - cyan: "[{](([{][^}]*[}])?[^{}]*)*[}]"
+            - symbol.brackets: "[{}]"
 
     - constant.string:
         start: "f\"\"\""
-        end: "(\"\"\"|$)"
+        end: "\"\"\""
         rules:
             - constant.specialChar: "\\\\['\"nrtbf\\\\]"
             - constant.specialChar: "\\\\0[0-7]{0,2}"
             - constant.specialChar: "\\\\x[0-9A-Fa-f]{2}"
             - constant.specialChar: "\\\\u[0-9A-Fa-f]{4}"
             - constant.specialChar: "\\\\U[0-9A-Fa-f]{8}"
-            - constant.specialChar:
-                start: "[{]"
-                end: "[}]"
-                rules:
-                    - default: "."
+            - cyan: "[{](([{][^}]*[}])?[^{}]*)*[}]"
+            - symbol.brackets: "[{}]"
+
     - constant.string:
         start: "f'"
-        end: "('|$)"
+        end: "'"
         skip: "\\\\."
         rules:
             - constant.specialChar: "\\\\['\"nrtbf\\\\]"
@@ -114,26 +109,20 @@ rules:
             - constant.specialChar: "\\\\x[0-9A-Fa-f]{2}"
             - constant.specialChar: "\\\\u[0-9A-Fa-f]{4}"
             - constant.specialChar: "\\\\U[0-9A-Fa-f]{8}"
-            - constant.specialChar:
-                start: "[{]"
-                end: "[}]"
-                rules:
-                    - default: "."
+            - cyan: "[{](([{][^}]*[}])?[^{}]*)*[}]"
+            - symbol.brackets: "[{}]"
 
     - constant.string:
         start: "f'''"
-        end: "('''|$)"
+        end: "'''"
         rules:
             - constant.specialChar: "\\\\['\"nrtbf\\\\]"
             - constant.specialChar: "\\\\0[0-7]{0,2}"
             - constant.specialChar: "\\\\x[0-9A-Fa-f]{2}"
             - constant.specialChar: "\\\\u[0-9A-Fa-f]{4}"
             - constant.specialChar: "\\\\U[0-9A-Fa-f]{8}"
-            - constant.specialChar:
-                start: "[{]"
-                end: "[}]"
-                rules:
-                    - default: "."
+            - cyan: "[{](([{][^}]*[}])?[^{}]*)*[}]"
+            - symbol.brackets: "[{}]"
 
     - comment:
         start: "#"
