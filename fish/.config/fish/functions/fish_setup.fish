@@ -13,6 +13,9 @@ function fish_setup --description "run once to setup env variables, aliases, etc
 
     fish_add_path ~/Packages/cargo/bin
     fish_add_path ~/Packages/npm/bin
+    fish_add_path ~/Packages/deno/bin
+    fish_add_path ~/Packages/gem/bin
+    fish_add_path ~/Packages/go/bin
     fish_add_path ~/.local/bin
     fish_add_path ~/bin
 
@@ -70,6 +73,7 @@ function fish_setup --description "run once to setup env variables, aliases, etc
     set -Ux GOPATH ~/Packages/go
     set -Ux JULIA_DEPOT_PATH ~/Packages/julia
     set -Ux JULIAUP_DEPOT_PATH ~/Packages/julia
+    set -Ux DENO_INSTALL_ROOT ~/Packages/deno
     type -q npm && npm config set prefix ~/Packages/npm
 
     set -Ux GHCUP_USE_XDG_DIRS yes
