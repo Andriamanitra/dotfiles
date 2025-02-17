@@ -4,15 +4,19 @@
 	ff = only
 [core]
 	excludesfile = ~/.config/git/gitignore
+[help]
+	autocorrect = prompt
+
 [delta]
-    features = decorations
+	features = decorations
 [delta "decorations"]
-    file-decoration-style = blue ul ol
-    hunk-header-style = omit
-    line-numbers = true
-    line-numbers-left-format = ""
-    line-numbers-right-format = "{np:^4}│"
-    tabs = 4
+	file-decoration-style = blue ul ol
+	hunk-header-style = omit
+	line-numbers = true
+	line-numbers-left-format = ""
+	line-numbers-right-format = "{np:^4}│"
+	tabs = 4
+
 [alias]
 	undo = reset HEAD^
 	unstage = reset HEAD --
@@ -23,7 +27,7 @@
 	root = rev-parse --show-toplevel
 
 [url "git@github.com:"]
-    insteadOf = "gh:"
+	insteadOf = "gh:"
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
