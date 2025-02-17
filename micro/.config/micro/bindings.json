@@ -18,7 +18,6 @@
     "Alt-/": "lua:comment.comment",
     "Alt-Z": "command-edit:textfilter ",
     "Alt-z": "command-edit:textfilter ",
-    "Alt-<": "command:prompt-textfilter",
     "Alt-m": "JumpToMatchingBrace",
     "Alt-n": "SkipMultiCursor",
     "Alt-c": "lua:comment.comment",
@@ -52,6 +51,7 @@
     "CtrlUnderscore": "lua:comment.comment",
 
     "Ctrl-r": "command:bashmode",
+    "Ctrl-p": "command:pipemode",
 
     "F1": "ToggleHelp",
     "F2": "None",

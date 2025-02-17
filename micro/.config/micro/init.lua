@@ -28,6 +28,10 @@ function selectToMark(bufpane)
 end
 
 function shortfname(buf)
+    if buf.Path == "" then
+        return "No name"
+    end
+
     local home = os.getenv("HOME")
     if home ~= nil then
         return buf.Path:gsub("^" .. home, "~")
@@ -68,7 +72,7 @@ function init()
     )
 
     config.MakeCommand(
-        "prompt-textfilter",
+        "pipemode",
         function (bufpane)
             local callback = function (resp, canceled)
                 if not canceled and resp ~= "" then
