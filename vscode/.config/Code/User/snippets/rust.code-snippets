@@ -1,0 +1,183 @@
+{
+	"let x = ..": {
+		"scope": "rust",
+		"prefix": "let",
+		"body": [
+			"let $1 = $2;"
+		]
+	},
+	"let mut x = ..": {
+		"scope": "rust",
+		"prefix": "let mut",
+		"body": [
+			"let mut $1 = "
+		]
+	},
+	"if x { .. } else { .. }": {
+		"scope": "rust",
+		"prefix": "if else",
+		"body": [
+			"if $1 {",
+			"    $2",
+			"} else {",
+			"    $3",
+			"}"
+		]
+	},
+	"struct definition": {
+		"scope": "rust",
+		"prefix": "define struct",
+		"body": [
+			"#[derive(${1:Debug})]",
+			"struct $2 {",
+			"    $3",
+			"}"
+		]
+	},
+	"enum definition": {
+		"scope": "rust",
+		"prefix": "define enum",
+		"body": [
+			"#[derive(${1:Debug, Copy, Clone, PartialEq, Eq})]",
+			"enum $2 {",
+			"    $3",
+			"}"
+		]
+	},
+	"impl X for Y": {
+		"scope": "rust",
+		"prefix": "impl for",
+		"body": [
+			"impl $1 for $2 {",
+			"    $3",
+			"}"
+		]
+	},
+	"function definition": {
+		"scope": "rust",
+		"prefix": "define function",
+		"body": [
+			"fn ${1:func}($2) $3{",
+			"    $4",
+			"}"
+		]
+	},
+	"|| { .. }": {
+		"scope": "rust",
+		"prefix": "lambda",
+		"body": [
+			"${1:move }|$2| {",
+			"    $3",
+			"}"
+		]
+	},
+	"fn new": {
+		"scope": "rust",
+		"prefix": "new",
+		"body": [
+			"fn new($1) -> Self {",
+			"    $2",
+			"    Self {$3}",
+			"}"
+		]
+	},
+	"main function definition": {
+		"scope": "rust",
+		"prefix": "main",
+		"body": [
+			"fn main() {",
+			"    $1",
+			"}"
+		]
+	},
+	"Option<T>": {
+		"scope": "rust",
+		"prefix": "opt",
+		"body": [
+			"Option<$1>"
+		]
+	},
+	"Result<T>": {
+		"scope": "rust",
+		"prefix": "res",
+		"body": [
+			"Result<$1>"
+		]
+	},
+	"impl From<...> for ...": {
+		"scope": "rust",
+		"prefix": "from",
+		"body": [
+			"impl From<$1> for $2 {",
+			"    fn from(${3:val}: $1) -> Self {",
+			"        $4",
+			"    }\n}"
+		]
+	},
+	"println debug": {
+		"scope": "rust",
+		"prefix": "show",
+		"body": [
+			"println!(\"$1 = {:?}\", $1);"
+		]
+	},
+	"vec![]": {
+		"scope": "rust",
+		"prefix": "vec",
+		"body": [
+			"vec![$1]"
+		]
+	},
+	"test function": {
+		"scope": "rust",
+		"prefix": "test",
+		"body": [
+			"#[test]",
+			"fn test_$1() {",
+			"    $2",
+			"}"
+		]
+	},
+	"test module": {
+		"scope": "rust",
+		"prefix": "mod test",
+		"body": [
+			"#[cfg(test)]",
+			"mod ${1:tests} {",
+			"    use super::*;\n",
+			"    #[test]",
+			"    fn test_$2() {",
+			"        $3",
+			"    }",
+			"}"
+		]
+	},
+	"#[derive(X)]": {
+		"scope": "rust",
+		"prefix": "derive",
+		"body": [
+			"#[derive(${1:Debug})]"
+		]
+	},
+	"#[derive(Copy, Clone, Debug, Default)]": {
+		"scope": "rust",
+		"prefix": "derive more",
+		"body": [
+			"#[derive(Copy, Clone, Debug, PartialEq, Eq, Default$1)]"
+		]
+	},
+	"#[cfg(X)]": {
+		"scope": "rust",
+		"prefix": "cfg",
+		"body": [
+			"#[cfg($1)]"
+		]
+	},
+	"#[cfg(feature = \"X\")]": {
+		"scope": "rust",
+		"prefix": "cfg feature",
+		"body": [
+			"#[cfg(feature = \"$1\")]"
+		]
+	},
+}
