@@ -24,7 +24,7 @@
 			"}"
 		]
 	},
-	"struct definition": {
+	"struct X { .. }": {
 		"scope": "rust",
 		"prefix": "define struct",
 		"body": [
@@ -34,7 +34,7 @@
 			"}"
 		]
 	},
-	"enum definition": {
+	"enum X { .. }": {
 		"scope": "rust",
 		"prefix": "define enum",
 		"body": [
@@ -44,21 +44,31 @@
 			"}"
 		]
 	},
+	"fn X() { .. }": {
+		"scope": "rust",
+		"prefix": "define function",
+		"body": [
+			"fn ${1:func}($2)${3: -> $4} {",
+			"    $5",
+			"}"
+		]
+	},
+	"fn main() { .. }": {
+		"scope": "rust",
+		"prefix": "define main",
+		"body": [
+			"fn main()${1: -> std::io::Result<()>} {",
+			"    $2",
+			"    Ok(())",
+			"}"
+		]
+	},
 	"impl X for Y": {
 		"scope": "rust",
 		"prefix": "impl for",
 		"body": [
 			"impl $1 for $2 {",
 			"    $3",
-			"}"
-		]
-	},
-	"function definition": {
-		"scope": "rust",
-		"prefix": "define function",
-		"body": [
-			"fn ${1:func}($2) $3{",
-			"    $4",
 			"}"
 		]
 	},
@@ -78,15 +88,6 @@
 			"fn new($1) -> Self {",
 			"    $2",
 			"    Self {$3}",
-			"}"
-		]
-	},
-	"main function definition": {
-		"scope": "rust",
-		"prefix": "main",
-		"body": [
-			"fn main() {",
-			"    $1",
 			"}"
 		]
 	},
@@ -111,7 +112,8 @@
 			"impl From<$1> for $2 {",
 			"    fn from(${3:val}: $1) -> Self {",
 			"        $4",
-			"    }\n}"
+			"    }",
+			"}"
 		]
 	},
 	"println debug": {
@@ -180,4 +182,12 @@
 			"#[cfg(feature = \"$1\")]"
 		]
 	},
+	"#![feature(X)]": {
+		"scope": "rust",
+		"prefix": "enable experimental feature",
+		"body": [
+			"#![feature($1)]"
+		]
+	}
+
 }

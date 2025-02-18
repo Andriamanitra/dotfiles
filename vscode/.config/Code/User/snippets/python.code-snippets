@@ -1,0 +1,14 @@
+{
+	"main function template": {
+		"scope": "python",
+		"prefix": "define main",
+		"body": [
+			"def main() -> int:",
+			"    $1",
+			"    return 0",
+			"",
+			"if __name__ == \"__main__\":",
+			"    raise SystemExit(main())\n",
+		]
+	}
+}
