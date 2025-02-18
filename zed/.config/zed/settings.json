@@ -10,10 +10,10 @@
   },
   "features": {
     "copilot": false,
-    "inline_completion_provider": "none"
+    "edit_prediction_provider": "none"
   },
   "assistant": {
-    "version": "1",
+    "version": "2",
     "enabled": false,
     "button": false
   },
@@ -23,7 +23,7 @@
   "collaboration_panel": {
     "button": false
   },
-  "show_inline_completions": false,
+  "show_edit_predictions": false,
   "ui_font_size": 16,
   "git": {
     "git_gutter": "tracked_files",
