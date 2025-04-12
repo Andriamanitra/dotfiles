@@ -43,6 +43,7 @@ function init()
     config.MakeCommand("mark", addMark, config.NoComplete)
     config.MakeCommand("go-to-mark", goToMark, config.NoComplete)
     config.MakeCommand("select-to-mark", selectToMark, config.NoComplete)
+    config.MakeCommand("select-to-matching-brace", selectToMatchingBrace, config.NoComplete)
 
     micro.SetStatusInfoFn("initlua.shortfname")
 
@@ -107,4 +108,28 @@ end
 function onInsertNewline(bp)
     if shouldIndent then bp:IndentLine() end
     shouldIndent = false
+end
+
+function selectToMatchingBrace(bp)
+    local buf = bp.Buf
+    local cursors = buf:GetCursors()
+    local i = 0
+    while i < #cursors do
+        i = i + 1
+        local cursor = cursors[i]
+        local originalLoc = -cursor.Loc
+        matchingBraceLoc, left, found = buf:FindMatchingBrace(originalLoc)
+        if found then
+            if not left and buf.Settings["matchbraceleft"] then
+                matchingBraceLoc = matchingBraceLoc:Move(1, buf)
+            end
+            if originalLoc:GreaterThan(matchingBraceLoc) then
+                cursor:SetSelectionStart(matchingBraceLoc)
+                cursor:SetSelectionEnd(originalLoc)
+            else
+                cursor:SetSelectionStart(originalLoc)
+                cursor:SetSelectionEnd(matchingBraceLoc)
+            end
+        end
+    end
 end

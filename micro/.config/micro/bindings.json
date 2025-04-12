@@ -19,6 +19,7 @@
     "Alt-Z": "command-edit:textfilter ",
     "Alt-z": "command-edit:textfilter ",
     "Alt-m": "JumpToMatchingBrace",
+    "Alt-M": "command:select-to-matching-brace",
     "Alt-n": "SkipMultiCursor",
     "Alt-c": "lua:comment.comment",
     "Alt-x": "command:go-to-mark",
