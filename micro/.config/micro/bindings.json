@@ -67,8 +67,6 @@
     "F11": "ToggleMacro",
     "F12": "PlayMacro",
 
-    "Enter": "lua:ag2.openResultSmart|InsertNewline",
-    "Alt-Enter": "lua:ag2.openResultInCurrentPane",
     "command": {
         "Ctrl-e": "AbortCommand",
         "Ctrl-o": "AbortCommand",
