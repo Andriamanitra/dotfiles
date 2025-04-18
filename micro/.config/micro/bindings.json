@@ -64,7 +64,7 @@
     "F6": "command:reload",
     "F7": "command:lsp",
     "F8": "command:format",
-    "F9": "lua:initlua.asd",
+    "F9": "None",
     "F10": "None",
     "F11": "ToggleMacro",
     "F12": "PlayMacro",
