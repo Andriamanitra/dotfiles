@@ -96,5 +96,6 @@ function fish_setup --description "run once to setup env variables, aliases, etc
     set -Ux HISTFILE ~/.history/bash_history
     set -Ux SQLITE_HISTORY ~/.history/sqlite_history
     set -Ux NODE_REPL_HISTORY ~/.history/node_history
+    set -Ux PYTHON_HISTORY ~/.history/python_history
     return 0
 end
