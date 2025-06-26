@@ -22,8 +22,8 @@
 	unstage = reset HEAD --
 	last = log -1 --stat HEAD
 	st = status --short --branch
-	pr = !sh -c 'git fetch --force --update-head-ok $1 pull/$2/head:PR/$2 && git switch PR/$2' -
-	pr-clean = !sh -c 'git branch -D `git branch --list "PR/*"`'
+	pr = !sh -c 'git fetch --force --update-head-ok $1 pull/$2/head:PR$2 && git switch PR$2' -
+	pr-clean = !sh -c 'git branch -D `git branch --list "PR*"`'
 	root = rev-parse --show-toplevel
 
 [url "git@github.com:"]
