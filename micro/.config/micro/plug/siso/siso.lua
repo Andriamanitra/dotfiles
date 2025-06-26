@@ -60,9 +60,6 @@ function selectInner(bp, tokenPairs, includeDelims)
             then
                 skips = skips + 1
             end
-            if startLoc.X == 0 and startLoc.Y == 0 then
-                break
-            end
             startLoc = startLoc:Move(-1, buf)
         end
 
@@ -73,11 +70,7 @@ function selectInner(bp, tokenPairs, includeDelims)
         while endLoc:LessEqual(buf:End():Move(-#endTok, buf)) do
             if util.String(buf:Substr(endLoc, endLoc:Move(#endTok, buf))) == endTok then
                 if skips == 0 then
-                    if includeDelims then
-                        return true, startLoc:Move(-#startTok, buf), endLoc:Move(#endTok, buf)
-                    else
-                        return true, startLoc, endLoc
-                    end
+                    return true, startLoc, endLoc
                 end
                 skips = skips - 1
             elseif endLoc:LessEqual(buf:End():Move(-#startTok, buf))
@@ -97,8 +90,13 @@ function selectInner(bp, tokenPairs, includeDelims)
         local from = foundStart and foundStart:Move(1, buf) or buf:Start()
         local found, startLoc, endLoc = tryToFind(startTok, endTok, from)
         if found then
-            foundStart = startLoc:Move(#startTok, buf)
-            foundEnd = endLoc
+            if includeDelims then
+                foundStart = startLoc
+                foundEnd = endLoc:Move(#endTok, buf)
+            else
+                foundStart = startLoc:Move(#startTok, buf)
+                foundEnd = endLoc
+            end
         end
     end
     -- micro.InfoBar():Message("si/", tokenPairs, " found/", foundStart, "/", foundEnd)
