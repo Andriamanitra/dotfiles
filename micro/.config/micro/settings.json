@@ -2,24 +2,35 @@
     "*": {
         "linter": false
     },
-    "*.cr": {
+    "ft:crystal": {
         "tabsize": 2
     },
-    "*.ex": {
+    "ft:elixir": {
         "tabsize": 2
     },
-    "*.hs": {
+    "ft:haskell": {
         "tabsize": 2
     },
-    "*.rb": {
+    "ft:ruby": {
         "tabsize": 2
     },
+    "ft:unknown": {
+        "tabstospaces": false
+    },
+    "ft:makefile": {
+        "tabstospaces": false
+    },
+    "ft:go": {
+        "tabstospaces": false
+    },
+    "ftoptions": false,
     "autoclose": false,
     "colorscheme": "mjinokai",
     "diffgutter": true,
     "divchars": "  ",
     "eofnewline": false,
     "hlsearch": true,
+    "hltaberrors": true,
     "ignorecase": false,
     "mkparents": true,
     "parsecursor": true,

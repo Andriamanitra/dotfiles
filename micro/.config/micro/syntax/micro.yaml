@@ -69,6 +69,7 @@ rules:
     - type.keyword: "\\btype\\.keyword\\b"
     - underlined: "\\bunderlined\\b"
     - hlsearch: "\\bhlsearch\\b"
+    - tab-error: "\\btab-error\\b"
 
     # don't need preview because always visible:
     - identifier:  "\\b(cursor\\-line|line\\-number|current\\-line\\-number|color\\-column)\\b"
