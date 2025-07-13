@@ -17,7 +17,7 @@ function parseTokenPairArgs(args)
     if args ~= nil and #args > 0 then
         -- replace empty string with " so users can do `si ""` as alias for `si \"`
         local startTok = args[1]:gsub("^$", '"')
-        local endTok = #args > 1 and args[2]:gsub("^$", '"') or startTok:gsub("[\(\[{\<]", allPairs)
+        local endTok = #args > 1 and args[2]:gsub("^$", '"') or startTok:gsub("[%(%[{<]", allPairs)
         return { [startTok] = endTok }
     end
     -- defaults
