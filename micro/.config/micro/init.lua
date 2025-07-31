@@ -77,7 +77,7 @@ function init()
         function (bufpane)
             local callback = function (resp, canceled)
                 if not canceled and resp ~= "" then
-                    bufpane:HandleCommand(string.format("textfilter sh -c '%s'", resp))
+                    bufpane:TextFilterCmd({"sh", "-c", resp})
                 end
             end
             micro.InfoBar():Prompt("|> ", "", "Textfilter", nil, callback)
