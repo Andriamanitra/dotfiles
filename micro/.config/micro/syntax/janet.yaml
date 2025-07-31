@@ -1,6 +1,6 @@
 filetype: janet
 
-detect: 
+detect:
     filename: "\\.janet$"
 
 rules:
