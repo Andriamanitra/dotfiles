@@ -70,6 +70,8 @@ rules:
     - underlined: "\\bunderlined\\b"
     - hlsearch: "\\bhlsearch\\b"
     - tab-error: "\\btab-error\\b"
+    - match-brace: "\\bmatch-brace\\b"
+    - trailingws: "\\btrailingws\\b"
 
     # don't need preview because always visible:
     - identifier:  "\\b(cursor\\-line|line\\-number|current\\-line\\-number|color\\-column)\\b"

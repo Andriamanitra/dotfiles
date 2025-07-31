@@ -31,6 +31,7 @@ color-link symbol.brackets "#D8D8D2,#1A1A1A"
 color-link symbol.tag "#F351ED,#1A1A1A"
 color-link error-message "#F42525"
 color-link tab-error "#4A1A1A"
+color-link trailingws "#4A1A1A"
 
 # custom additions
 color-link diff-added "#30CF50"
