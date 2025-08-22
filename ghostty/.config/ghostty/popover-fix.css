@@ -1,0 +1,21 @@
+popover > contents {
+	background-color: #3c3c3c;
+	border-radius: 5px;
+}
+
+popover modelbutton {
+	font-size: 12px;
+	border-radius: 4px;
+	min-height: 24px;
+	padding-left: 24px;
+	padding-right: 8px;
+}
+popover modelbutton:hover {
+	background-color: #4d4d4d;
+}
+popover separator {
+	margin: 3px 0px;
+}
+popover stack > box {
+	padding: 3px;
+}

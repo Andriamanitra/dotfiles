@@ -1,10 +1,10 @@
-gtk-titlebar = false
-gtk-adwaita = false
+window-decoration = server
 window-height = 30
 window-width = 100
 window-padding-y = 1
 window-padding-x = 1
 unfocused-split-opacity = 0.9
+gtk-custom-css = ?~/.config/ghostty/popover-fix.css
 
 font-family = Source Code Pro Semibold
 font-size = 12
