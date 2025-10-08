@@ -1,6 +1,6 @@
 function fish_setup --description "run once to setup env variables, aliases, etc"
     # Disable default greeting ("Welcome to fish, the friendly interactive shell")
-    set --universal fish_greeting
+    set -Ux fish_greeting
 
     set -Ux XDG_CONFIG_HOME $HOME/.config
     set -Ux XDG_CACHE_HOME $HOME/.cache
@@ -74,6 +74,7 @@ function fish_setup --description "run once to setup env variables, aliases, etc
     set -Ux JULIA_DEPOT_PATH ~/Packages/julia
     set -Ux JULIAUP_DEPOT_PATH ~/Packages/julia
     set -Ux DENO_INSTALL_ROOT ~/Packages/deno
+    set -Ux NPM_CONFIG_USERCONFIG $XDG_CONFIG_HOME/npm/npmrc
     type -q npm && npm config set prefix ~/Packages/npm
 
     set -Ux GHCUP_USE_XDG_DIRS yes
