@@ -1,0 +1,11 @@
+[status]
+separator_open = ""
+separator_close = ""
+permissions_t = {fg = "white"}
+permissions_r = {fg = "white"}
+permissions_w = {fg = "white"}
+permissions_x = {fg = "white"}
+permissions_s = {fg = "white"}
+
+[mgr]
+syntect_theme = "~/.config/yazi/monokai.tmTheme"
