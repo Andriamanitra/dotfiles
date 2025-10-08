@@ -1,0 +1,44 @@
+{
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.autoClosingBrackets": "never",
+    "editor.autoClosingQuotes": "never",
+    "editor.formatOnSaveMode": "modificationsIfAvailable",
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "editor.snippetSuggestions": "top",
+    "emmet.showSuggestionsAsSnippets": true,
+    "emmet.triggerExpansionOnTab": true,
+    "errorLens.delay": 1000,
+    "explorer.confirmDelete": false,
+    "extensions.ignoreRecommendations": true,
+    "git.blame.editorDecoration.enabled": false,
+    "git.confirmSync": false,
+    "html.autoClosingTags": false,
+    "html.autoCreateQuotes": false,
+    "rust-analyzer.check.command": "clippy",
+    "rust-analyzer.completion.autoimport.exclude": [
+        {
+            "path": "core::borrow::Borrow",
+            "type": "methods"
+        },
+        {
+            "path": "core::borrow::BorrowMut",
+            "type": "methods"
+        }
+    ],
+    "rust-analyzer.diagnostics.warningsAsHint": [
+        "dead_code",
+        "unused_variables"
+    ],
+    "rust-analyzer.runnables.extraEnv": {
+        "RUST_BACKTRACE": "0"
+    },
+    "telemetry.telemetryLevel": "crash",
+    "window.commandCenter": false,
+    "window.customTitleBarVisibility": "auto",
+    "window.titleBarStyle": "custom",
+    "workbench.enableExperiments": false,
+    "workbench.layoutControl.enabled": false,
+    "workbench.startupEditor": "none"
+}
