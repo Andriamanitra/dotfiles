@@ -33,3 +33,4 @@ Arch repos should have all of these, other distros are probably missing some...
 * do **NOT** install ghc or julia or rust directly – use ghcup, juliaup and rustup to manage the installations instead
 * use [xdg-ninja](https://github.com/b3nj5m1n/xdg-ninja) to help in the war against $HOME directory pollution
 * themes: use [Fluent](https://github.com/vinceliuice/Fluent-gtk-theme) for good window decorations and [Papirus-folders](https://github.com/PapirusDevelopmentTeam/papirus-folders) to make ePapirus folder colors less silly
+* to prevent `stow` from creating symlinks to directories use the `--no-folding` flag (or switch to `xstow` instead of GNU stow)
