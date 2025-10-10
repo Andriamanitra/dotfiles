@@ -30,11 +30,6 @@ function fish_setup --description "run once to setup env variables, aliases, etc
 
     # If bat (https://github.com/sharkdp/bat/) is installed
     if type -q bat
-
-        # Use bat as a manpager (for syntax highlighting in man pages)
-        set -Ux MANPAGER "sh -c \"col -bx | bat -l man -p\""
-        set -Ux MANROFFOPT "-c" # get rid of extra formatting characters
-
         # replace "cat" with bat's plain mode (no decorations or paging)
         # NOTE: use ctrl+space instead of space to prevent abbreviation from expanding
         alias --save cat="bat -pp"
@@ -75,6 +70,9 @@ function fish_setup --description "run once to setup env variables, aliases, etc
     set -Ux JULIAUP_DEPOT_PATH ~/Packages/julia
     set -Ux DENO_INSTALL_ROOT ~/Packages/deno
     set -Ux NPM_CONFIG_USERCONFIG $XDG_CONFIG_HOME/npm/npmrc
+    set -Ux NPM_CONFIG_INIT_MODULE $XDG_CONFIG_HOME/npm/config/npm-init.js
+    set -Ux NPM_CONFIG_CACHE $XDG_CACHE_HOME/npm
+    set -Ux NPM_CONFIG_TMP $XDG_RUNTIME_DIR/npm
     type -q npm && npm config set prefix ~/Packages/npm
 
     set -Ux GHCUP_USE_XDG_DIRS yes
@@ -92,11 +90,10 @@ function fish_setup --description "run once to setup env variables, aliases, etc
     set -Ux BUNDLE_USER_CACHE $XDG_CACHE_HOME/bundle
 
     set -Ux INPUTRC $XDG_CONFIG_HOME/readline/inputrc
-
-    set -Ux RLWRAP_HOME ~/.history
-    set -Ux HISTFILE ~/.history/bash_history
-    set -Ux SQLITE_HISTORY ~/.history/sqlite_history
-    set -Ux NODE_REPL_HISTORY ~/.history/node_history
-    set -Ux PYTHON_HISTORY ~/.history/python_history
+    set -Ux RLWRAP_HOME $XDG_STATE_HOME/history
+    set -Ux HISTFILE $XDG_STATE_HOME/history/bash_history
+    set -Ux SQLITE_HISTORY $XDG_STATE_HOME/history/sqlite3_history
+    set -Ux NODE_REPL_HISTORY $XDG_STATE_HOME/history/node_history
+    set -Ux PYTHON_HISTORY $XDG_STATE_HOME/history/python_history
     return 0
 end
