@@ -1,0 +1,102 @@
+@define-color bg #131c26;
+@define-color fg #b1b8c9;
+@define-color bg_hover #2d766f;
+@define-color fg_hover #e5e5e5;
+
+* {
+    border-radius: 0px;
+    box-shadow: none;
+    text-shadow: none;
+}
+menu, menuitem, tooltip, button {
+    font-family: sans-serif;
+}
+
+window#waybar {
+    font-family: RobotoMono Nerd Font SmBd, sans-serif;
+    background: linear-gradient(180deg, #333 0%, #222 30%, #000 70%, #171717 100%);
+    color: white;
+}
+
+tooltip, tooltip label {
+    background: @bg;
+    color: @fg;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+menu {
+    border: 0;
+    padding: 0;
+    background: @bg;
+}
+
+separator {
+    background: #333;
+    margin: 0 5px;
+}
+
+menuitem {
+    font-size: 14px;
+    color: @fg;
+    border: 3px solid @bg;
+}
+button {
+    color: @fg;
+    border: 0;
+}
+
+menuitem:hover, button:hover {
+    background: @bg_hover;
+    color: white;
+}
+
+.modules-right {
+    margin-right: 5px;
+}
+
+#custom-startmenu {
+    padding-left: 6px;
+    padding-right: 12px;
+    margin: 0;
+}
+
+#taskbar, window, .modules-left {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+#workspaces {
+    margin: 0;
+}
+#workspaces button {
+    margin: 4px 0;
+    padding: 0 4px;
+}
+button {
+    border-radius: 3px;
+    border: 0;
+}
+#taskbar button {
+    min-width: 200px;
+    font-size: 14px;
+    margin-top: 3px;
+    padding: 0 5px;
+    transition: 0.2s;
+}
+#taskbar button.active {
+    background: rgba(255,255,255,0.15);
+}
+
+button:hover {
+    background: rgba(255,255,255,0.1);
+    -gtk-icon-shadow: none;
+}
+
+#wireplumber {
+    min-width: 60px;
+}
+
+#tray {
+    margin: 0 12px;
+}

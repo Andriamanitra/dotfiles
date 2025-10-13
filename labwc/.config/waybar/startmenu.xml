@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <object class="GtkMenu" id="menu">
+        <child>
+            <object class="GtkMenuItem" id="terminal">
+                <property name="label">Terminal</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="files">
+                <property name="label">Files</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="run">
+                <property name="label">Run..</property>
+            </object>
+        </child>
+    </object>
+</interface>

@@ -1,0 +1,6 @@
+wlr-randr --output HDMI-A-2 --pos 0,0 --output DP-1 --pos 2560,0
+
+pkill -x pipewire      >/dev/null 2>&1
+pipewire               >/dev/null 2>&1 &
+swaybg -c '#113322'    >/dev/null 2>&1 &
+waybar                 >/dev/null 2>&1 &

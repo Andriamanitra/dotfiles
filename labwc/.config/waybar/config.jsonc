@@ -1,0 +1,83 @@
+{
+    "layer": "top",
+    "output": ["DP-1"],
+    "position": "bottom",
+    "height": 32,
+    "spacing": 8,
+
+    "modules-left": ["custom/startmenu", "ext/workspaces", "wlr/taskbar"],
+    "modules-center": [],
+    "modules-right": ["cpu", "tray", "wireplumber", "clock"],
+
+    "ext/workspaces": {
+        "format": "{name}",
+        "sort-by-id": true,
+        "on-click": "activate",
+    },
+
+    "wlr/taskbar": {
+        "all-outputs": true,
+        "format": "{icon} {title:.23}",
+        "on-click": "minimize-raise",
+        "on-click-middle": "close",
+        "tooltip-format": "{title}",
+    },
+
+    "cpu": {
+        "interval": 5,
+        "format": " {usage}%",
+        "max-length": 10,
+        "on-click": "foot -T btop btop --preset 1",
+    },
+
+    "tray": {
+        "icon-size": 18
+    },
+
+    "wireplumber": {
+        "format": "{icon} {volume}%",
+        "format-muted": "\ueee8 {volume}%",
+        "format-icons": ["\uf026", "\uf027", "\uf028"],
+        "scroll-step": 5,
+        "on-click": "pavucontrol",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "align": 0,
+    },
+
+    "clock": {
+        "interval": 1,
+        "format": "{:%H:%M:%S}",
+        "format-icons": {},
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "iso8601": true,  // v0.15.0+
+            "mode": "month",
+            "mode-mon-col": 12,
+            "weeks-pos": "left",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#fff'><b>{}</b></span>",
+                "days": "<span><b>{}</b></span>",
+                "weeks": "<span color='#777'>{}</span>",
+                "weekdays": "<span color='#777'>{}</span>",
+                "today": "<span color='#f0f'><b>{}</b></span>"
+            },
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-scroll-down": "shift_up",
+            "on-scroll-up": "shift_down",
+        }
+    },
+    "custom/startmenu": {
+        "format": "\uf32e",
+        "tooltip": false,
+        "menu": "on-click-right",
+        "menu-file": "~/.config/waybar/startmenu.xml",
+        "menu-actions": {
+            "run": "chpst -P12 setsid fuzzel",
+            "files": "thunar",
+            "terminal": "ghostty",
+        },
+    },
+}
