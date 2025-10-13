@@ -6,13 +6,20 @@ window-padding-x = 1
 unfocused-split-opacity = 0.9
 gtk-custom-css = ?~/.config/ghostty/popover-fix.css
 
-font-family = Source Code Pro Semibold
+font-family = Source Code Pro
+font-style = Semibold
+font-style-bold = Bold
+font-style-italic = Semibold Italic
+font-style-bold-italic = Bold Italic
 font-size = 12
 cursor-color = "#AAAAAA"
 split-divider-color = "#242424"
 cursor-style = block
 cursor-style-blink = false
 shell-integration-features = no-cursor
+
+clipboard-read = allow
+clipboard-write = allow
 
 theme = "Monokai Remastered"
 palette = 0=#000000
