@@ -76,8 +76,8 @@
         "menu-file": "~/.config/waybar/startmenu.xml",
         "menu-actions": {
             "run": "chpst -P12 setsid fuzzel",
-            "files": "thunar",
-            "terminal": "ghostty",
+            "files": "chpst -P12 setsid thunar",
+            "terminal": "chpst -P12 setsid ghostty",
         },
     },
 }
