@@ -39,7 +39,8 @@ separator {
 menuitem {
     font-size: 14px;
     color: @fg;
-    border: 3px solid @bg;
+    border: 0;
+    padding: 5px;
 }
 button {
     color: @fg;
