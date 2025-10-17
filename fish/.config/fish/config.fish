@@ -1,4 +1,4 @@
-if status is-interactive
+if status is-interactive && type -q tabs
     tabs -4  # set tab stops to 4, 8, 12, ...
 end
 
@@ -48,4 +48,8 @@ end
 function fish_user_key_bindings
     bind ! bind_bang
     functions -q fzf_key_bindings && fzf_key_bindings
+end
+
+if type -q zoxide
+    zoxide init fish | source
 end
