@@ -25,7 +25,13 @@
       <action name="ToggleDecorations"/>
     </keybind>
     <keybind key="W-m">
+      <action name="ToggleMaximize"/>
+    </keybind>
+    <keybind key="W-f">
       <action name="ToggleFullscreen"/>
+    </keybind>
+    <keybind key="W-c">
+      <action name="ToggleSnapToRegion" region="center" />
     </keybind>
     <keybind key="Print">
       <action name="Execute" command="screenshot"/>
@@ -41,6 +47,10 @@
   <placement>
     <policy>cursor</policy>
   </placement>
+
+  <regions>
+    <region name="center" x="25%" y="15%" width="50%" height="70%" />
+  </regions>
 
   <mouse>
     <!-- time is in ms -->
@@ -201,12 +211,6 @@
       </mousebind>
       <mousebind button="Middle" action="Press">
         <action name="ShowMenu" menu="client-list-combined-menu" />
-      </mousebind>
-      <mousebind direction="Up" action="Scroll">
-        <action name="GoToDesktop" to="left" wrap="no" />
-      </mousebind>
-      <mousebind direction="Down" action="Scroll">
-        <action name="GoToDesktop" to="right" wrap="no" />
       </mousebind>
     </context>
   </mouse>
