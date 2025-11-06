@@ -7,7 +7,7 @@
 
     "modules-left": ["custom/startmenu", "ext/workspaces", "wlr/taskbar"],
     "modules-center": [],
-    "modules-right": ["cpu", "tray", "wireplumber", "clock"],
+    "modules-right": ["cpu", "wireplumber", "tray", "clock"],
 
     "ext/workspaces": {
         "format": "{name}",
@@ -29,11 +29,12 @@
         "format": " {usage}%",
         "max-length": 10,
         "on-click": "foot -T btop btop --preset 1",
+        "align": 0,
     },
 
     "tray": {
-        "icon-size": 20,
-        "spacing": 8,
+        "icon-size": 16,
+        "spacing": 4,
     },
 
     "wireplumber": {
@@ -58,11 +59,11 @@
             "weeks-pos": "left",
             "on-scroll": 1,
             "format": {
-                "months": "<span color='#fff'><b>{}</b></span>",
+                "months": "<span color='#100'><b>{}</b></span>",
                 "days": "<span><b>{}</b></span>",
-                "weeks": "<span color='#777'>{}</span>",
-                "weekdays": "<span color='#777'>{}</span>",
-                "today": "<span color='#f0f'><b>{}</b></span>"
+                "weeks": "<span color='#666'>{}</span>",
+                "weekdays": "<span color='#666'>{}</span>",
+                "today": "<span color='#f00'><b>{}</b></span>"
             },
         },
         "actions": {
@@ -77,6 +78,7 @@
         "menu": "on-click-right",
         "menu-file": "~/.config/waybar/startmenu.xml",
         "menu-actions": {
+            "suspend": "loginctl suspend",
             "run": "chpst -P12 setsid fuzzel",
             "files": "chpst -P12 setsid thunar",
             "terminal": "chpst -P12 setsid ghostty",

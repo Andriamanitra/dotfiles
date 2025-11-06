@@ -1,7 +1,9 @@
-@define-color bg #131c26;
-@define-color fg #b1b8c9;
-@define-color bg_hover #2d766f;
-@define-color fg_hover #e5e5e5;
+@define-color bg #bbb;
+@define-color fg #100;
+@define-color bg_hover #283b5c;
+@define-color fg_hover #ffffff;
+@define-color border_color_top #ddd;
+@define-color border_color_bottom #444;
 
 * {
     border-radius: 0px;
@@ -13,9 +15,10 @@ menu, menuitem, tooltip, button {
 }
 
 window#waybar {
-    font-family: RobotoMono Nerd Font SmBd, sans-serif;
-    background: linear-gradient(180deg, #333 0%, #222 30%, #000 70%, #171717 100%);
-    color: white;
+    /* font-family: RobotoMono Nerd Font SmBd, sans-serif; */
+    background: #bbb;
+    border: 2px outset grey;
+    color: #100;
 }
 
 tooltip, tooltip label {
@@ -27,8 +30,9 @@ tooltip, tooltip label {
 }
 menu {
     border: 0;
-    padding: 0;
+    padding: 2px;
     background: @bg;
+    border: 1px outset #aaa;
 }
 
 separator {
@@ -40,7 +44,7 @@ menuitem {
     font-size: 14px;
     color: @fg;
     border: 0;
-    padding: 5px;
+    padding: 3px 5px;
 }
 button {
     color: @fg;
@@ -57,9 +61,14 @@ menuitem:hover, button:hover {
 }
 
 #custom-startmenu {
-    padding-left: 6px;
-    padding-right: 12px;
+    color: #353940;
+    min-width: 32px;
     margin: 0;
+    margin-top: 2px;
+    padding-right: 6px;
+    background: #bbb;
+    border: 2px outset #888;
+    border-top-width: 0;
 }
 
 #taskbar, window, .modules-left {
@@ -68,30 +77,70 @@ menuitem:hover, button:hover {
     padding: 0;
 }
 #workspaces {
+    font-size: 12px;
     margin: 0;
 }
 #workspaces button {
-    margin: 4px 0;
-    padding: 0 4px;
+    transition: 0.2s;
+    margin: 5px 2px;
+    padding: 0 5px;
+    min-height: 10px;
+    border-radius: 4px;
+    color: @fg;
+
+    background: #bbb;
+    border: 3px outset #777;
 }
+#workspaces button.active {
+    border: 3px inset #777;
+}
+#workspaces button.active:hover {
+    background: #ddd;
+}
+#workspaces button:hover {
+    background: #ccc;
+    -gtk-icon-shadow: none;
+}
+
 button {
     border-radius: 3px;
     border: 0;
 }
 #taskbar button {
     min-width: 200px;
+    min-height: 22px;
     font-size: 14px;
-    margin-top: 3px;
-    padding: 0 5px;
     transition: 0.2s;
+    margin: 3px 1px;
+    padding: 0 5px;
+    border-radius: 4px;
+    color: @fg;
+
+    background: #bbb;
+    border: 2px outset #777;
 }
 #taskbar button.active {
-    background: rgba(255,255,255,0.15);
+    border: 2px inset #777;
+    background: #ccc;
 }
 
-button:hover {
-    background: rgba(255,255,255,0.1);
+#taskbar button.active:hover {
+    background: #ddd;
+}
+#taskbar button:hover {
+    background: #ccc;
     -gtk-icon-shadow: none;
+}
+
+#wireplumber, #cpu {
+    margin: 5px 0;
+    padding: 0 5px;
+    border-radius: 4px;
+    background: #a0a0a0;
+    border: 1px solid #888;
+}
+#cpu {
+    min-width: 50px;
 }
 
 #wireplumber {
@@ -99,5 +148,12 @@ button:hover {
 }
 
 #tray {
-    margin: 0 12px;
+    margin: 6px 0px;
+    color: white;
+}
+#tray > * > image {
+    min-width: 28px;
+    border-radius: 4px;
+    background: #353940;
+    border: 1px outset #353940;
 }
