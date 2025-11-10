@@ -1,2 +1,2 @@
-IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.history/irb_history"
+IRB.conf[:HISTORY_FILE] = "#{ENV['XDG_STATE_HOME']}/history/irb_history"
 IRB.conf[:PROMPT_MODE] = :SIMPLE
