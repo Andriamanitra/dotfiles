@@ -18,7 +18,6 @@ Arch repos should have all of these, other distros are probably missing some...
 * tealdeer (tldr pages)
 * stow (for dotfiles)
 * just (command runner)
-* ranger (terminal based file system navigation)
 * julia (programming language for more complicated calculations)
 * fd (better than find)
 * the_silver_searcher / ag (code search)
@@ -26,6 +25,8 @@ Arch repos should have all of these, other distros are probably missing some...
 * jq (json querying & formatting)
 * qalculate (superb calculator with unit support)
 * bpython (nicer python interpreter)
+* yazi (terminal based file system navigation) + [optional dependencies for file previews](https://yazi-rs.github.io/docs/installation/)
+* zoxide (better cd)
 
 ### LESSONS LEARNED:
 
