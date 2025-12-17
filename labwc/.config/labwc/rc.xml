@@ -8,6 +8,7 @@
       <name>1</name>
       <name>2</name>
     </names>
+    <popupTime>1</popupTime>
   </desktops>
   <keyboard>
     <default/>
@@ -15,6 +16,9 @@
       <action name="Execute" command="fuzzel"/>
     </keybind>
     <!-- The W- prefix refers to the Super key -->
+    <keybind key="W-Tab">
+      <action name="GoToDesktop" to="right" wrap="yes"/>
+    </keybind>
     <keybind key="W-r">
       <action name="Execute" command="fuzzel"/>
     </keybind>
