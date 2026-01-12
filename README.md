@@ -14,7 +14,7 @@ Arch repos should have all of these, other distros are probably missing some...
 
 * fish (shell)
 * micro (terminal-based text editor)
-* terminator (terminal emulator)
+* ghostty (terminal emulator)
 * tealdeer (tldr pages)
 * stow (for dotfiles)
 * just (command runner)
