@@ -9,6 +9,8 @@
 
 [delta]
 	features = decorations
+	navigate = true
+	hyperlinks = true
 [delta "decorations"]
 	file-decoration-style = blue ul ol
 	hunk-header-style = omit
@@ -22,7 +24,7 @@
 	unstage = reset HEAD --
 	last = log -1 --stat HEAD
 	st = status --short --branch
-	pr = !sh -c 'git fetch --force --update-head-ok $1 pull/$2/head:PR$2 && git switch PR$2' -
+	pr = !sh -c 'git fetch --force --update-head-ok $1 pull/$2/head:PR$2 && git switch PR$2 && git restore :/' -
 	pr-clean = !sh -c 'git branch -D `git branch --list "PR*"`'
 	root = rev-parse --show-toplevel
 
