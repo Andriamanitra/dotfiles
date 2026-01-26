@@ -23,4 +23,5 @@ Convenient links to quickly install the essentials:
 * Always show punycode (prevent [IDN homograph attacks](https://en.wikipedia.org/wiki/IDN_homograph_attack)): `network.IDN_show_punycode = true`
 * Make scrollbar not disappear: `layout.testing.overlay-scrollbars.always-visible = true`
 * Restore "Show image info" in image context menus `browser.menu.showViewImageInfo = true`
+* Disable annoying banner about enabling DRM: `browser.eme.ui.enabled = false`
 * More about:config tricks: [Betterfox](https://github.com/yokoffing/Betterfox)
