@@ -1,0 +1,15 @@
+[general]
+corner-roundness = 0
+initial-tool = "brush"
+output-filename = "~/Pictures/screenshots/satty-%Y-%m-%d-%H:%M:%S.png"
+
+[color-palette]
+palette = [
+    "#ff0000",
+    "#00ff00",
+    "#0000ff",
+    "#ff00ff",
+    "#ffffff",
+    "#777777",
+    "#000000",
+]
