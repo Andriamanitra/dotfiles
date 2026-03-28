@@ -90,6 +90,7 @@ local colonIndentable = {
     python = true,
     yaml = true,
     nim = true,
+    gdscript = true,
 }
 
 local shouldIndent = false
