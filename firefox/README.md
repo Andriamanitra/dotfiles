@@ -25,3 +25,6 @@ Convenient links to quickly install the essentials:
 * Restore "Show image info" in image context menus `browser.menu.showViewImageInfo = true`
 * Disable annoying banner about enabling DRM: `browser.eme.ui.enabled = false`
 * More about:config tricks: [Betterfox](https://github.com/yokoffing/Betterfox)
+
+## about:keyboard
+* Disable <kbd>Ctrl</kbd><kbd>D</kbd> and <kbd>Ctrl</kbd><kbd>P</kbd> because you'll be accidentally pressing them all the time from muscle memory
