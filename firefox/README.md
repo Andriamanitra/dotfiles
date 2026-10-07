@@ -24,6 +24,7 @@ Convenient links to quickly install the essentials:
 * Make scrollbar not disappear: `layout.testing.overlay-scrollbars.always-visible = true`
 * Restore "Show image info" in image context menus `browser.menu.showViewImageInfo = true`
 * Disable annoying banner about enabling DRM: `browser.eme.ui.enabled = false`
+* Firefox 157 introduced a new excessively rounded UI, disable it with `browser.nova.enabled = false`
 * More about:config tricks: [Betterfox](https://github.com/yokoffing/Betterfox)
 
 ## about:keyboard
