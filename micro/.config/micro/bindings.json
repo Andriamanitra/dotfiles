@@ -49,7 +49,7 @@
     "Ctrl-j": "command:jumptag",
     "Ctrl-w": "DeleteWordLeft",
     "Ctrl-k": "SelectToEndOfLine,Delete",
-    "OldBackspace": "DeleteWordLeft",
+    "Ctrl-Backspace": "DeleteWordLeft",
     "Ctrl-Delete": "DeleteWordRight",
     "CtrlAlt-q": "ForceQuit",
     "CtrlUnderscore": "lua:comment.comment",
