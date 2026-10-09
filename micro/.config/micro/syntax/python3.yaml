@@ -75,6 +75,18 @@ rules:
 
     # f-strings
     - constant.string:
+        start: "f\"\"\""
+        end: "\"\"\""
+        rules:
+            - constant.specialChar: "\\\\['\"nrtbf\\\\]"
+            - constant.specialChar: "\\\\0[0-7]{0,2}"
+            - constant.specialChar: "\\\\x[0-9A-Fa-f]{2}"
+            - constant.specialChar: "\\\\u[0-9A-Fa-f]{4}"
+            - constant.specialChar: "\\\\U[0-9A-Fa-f]{8}"
+            - cyan: "[{](([{][^}]*[}])?[^{}]*)*[}]"
+            - symbol.brackets: "[{}]"
+
+    - constant.string:
         start: "f\""
         end: "\""
         skip: "\\\\."
@@ -87,9 +99,10 @@ rules:
             - cyan: "[{](([{][^}]*[}])?[^{}]*)*[}]"
             - symbol.brackets: "[{}]"
 
+
     - constant.string:
-        start: "f\"\"\""
-        end: "\"\"\""
+        start: "f'''"
+        end: "'''"
         rules:
             - constant.specialChar: "\\\\['\"nrtbf\\\\]"
             - constant.specialChar: "\\\\0[0-7]{0,2}"
@@ -103,18 +116,6 @@ rules:
         start: "f'"
         end: "'"
         skip: "\\\\."
-        rules:
-            - constant.specialChar: "\\\\['\"nrtbf\\\\]"
-            - constant.specialChar: "\\\\0[0-7]{0,2}"
-            - constant.specialChar: "\\\\x[0-9A-Fa-f]{2}"
-            - constant.specialChar: "\\\\u[0-9A-Fa-f]{4}"
-            - constant.specialChar: "\\\\U[0-9A-Fa-f]{8}"
-            - cyan: "[{](([{][^}]*[}])?[^{}]*)*[}]"
-            - symbol.brackets: "[{}]"
-
-    - constant.string:
-        start: "f'''"
-        end: "'''"
         rules:
             - constant.specialChar: "\\\\['\"nrtbf\\\\]"
             - constant.specialChar: "\\\\0[0-7]{0,2}"
