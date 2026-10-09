@@ -41,6 +41,9 @@
     <keybind key="Print">
       <action name="Execute" command="screenshot"/>
     </keybind>
+    <keybind key="W-Print">
+      <action name="Execute" command="screenshot --fullscreen"/>
+    </keybind>
     <repeatRate>50</repeatRate>
     <repeatDelay>300</repeatDelay>
   </keyboard>

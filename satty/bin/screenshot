@@ -1,3 +1,18 @@
 #!/usr/bin/env sh
 
-grim -g "$(slurp)" - | satty --filename -
+usage() {
+    echo "Usage: ${0##*/} [--fullscreen]"
+}
+
+case "$1" in
+    "--fullscreen")
+        grim -c - | satty --filename -
+        ;;
+    "")
+        grim -g "$(slurp -d)" - | satty --filename -
+        ;;
+    *)
+        usage
+        exit 1
+        ;;
+esac
