@@ -45,6 +45,7 @@
 
     "Ctrl-b": "FindPrevious",
     "Ctrl-d": "SpawnMultiCursor",
+    "Ctrl-Shift-d": "SkipMultiCursor",
     "Ctrl-g": "JumpLine",
     "Ctrl-j": "command:jumptag",
     "Ctrl-w": "DeleteWordLeft",
@@ -79,5 +80,7 @@
         "Ctrl-r": "AbortCommand",
         "Ctrl-k": "SelectToEndOfLine,Delete",
         "Ctrl-a": "SelectAll",
+        "Up": "HistorySearchUp",
+        "Down": "HistorySearchDown"
     }
 }
