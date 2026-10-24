@@ -35,3 +35,8 @@ Arch repos should have all of these, other distros are probably missing some...
 * use [xdg-ninja](https://github.com/b3nj5m1n/xdg-ninja) to help in the war against $HOME directory pollution
 * themes: use [Fluent](https://github.com/vinceliuice/Fluent-gtk-theme) for good window decorations and [Papirus-folders](https://github.com/PapirusDevelopmentTeam/papirus-folders) to make ePapirus folder colors less silly
 * to prevent `stow` from creating symlinks to directories use the `--no-folding` flag (or switch to `xstow` instead of GNU stow)
+* steam (flatpak): to make desktop icons created through Steam GUI work symlink the icon and desktop directories:
+```
+ln -s $HOME/.var/app/com.valvesoftware.Steam/Desktop $HOME/.local/share/applications/steam
+ln -s $HOME/.var/app/com.valvesoftware.Steam/.local/share/icons/hicolor $HOME/.local/share/icons/hicolor
+```
