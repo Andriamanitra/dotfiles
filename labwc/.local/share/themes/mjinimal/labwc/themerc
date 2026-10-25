@@ -43,6 +43,9 @@ window.inactive.label.bg: parentrelative
 window.inactive.label.text.color: #80807d
 
 !! window buttons
+window.button.height: 20
+window.button.width: 20
+window.button.spacing: 1
 window.*.button.*.bg: parentrelative
 window.active.button.*.hover.bg: flat
 window.inactive.button.*.hover.bg: parentrelative
