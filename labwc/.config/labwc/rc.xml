@@ -1,8 +1,5 @@
 <?xml version="1.0"?>
 <labwc_config>
-  <theme>
-    <font place="MenuItem" size="11px" />
-  </theme>
   <desktops>
     <names>
       <name>1</name>
@@ -48,8 +45,9 @@
     <repeatDelay>300</repeatDelay>
   </keyboard>
   <theme>
+    <name>mjinimal</name>
     <cornerRadius>0</cornerRadius>
-    <name>Adwaita</name>
+    <font place="MenuItem" size="11px" />
     <dropShadows>yes</dropShadows>
   </theme>
   <placement>
